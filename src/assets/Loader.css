@@ -163,13 +163,13 @@ input {
 #package:checked ~ .scene .package__shadow {
   --step: 9;
 }
-#package:checked ~ .scene .package__icon--html {
+#package:checked ~ .scene .package__icon--2 {
   --step: 10;
 }
-#package:checked ~ .scene .package__icon--css {
+#package:checked ~ .scene .package__icon--1 {
   --step: 11;
 }
-#package:checked ~ .scene .package__icon--js {
+#package:checked ~ .scene .package__icon--3 {
   --step: 12;
 }
 #package:checked ~ .scene .package__side--extra > .package__flap--top {
@@ -258,13 +258,13 @@ input {
 .package__shadow {
   --step: 13;
 }
-.package__icon--html {
+.package__icon--2 {
   --step: 8;
 }
-.package__icon--css {
+.package__icon--1 {
   --step: 7;
 }
-.package__icon--js {
+.package__icon--3 {
   --step: 6;
 }
 .package__side--extra > .package__flap--top {
@@ -421,19 +421,19 @@ input {
   transform: translate(-50%, -50%) translate3d(calc(var(--x, 0) * 1%), calc((((1 - var(--packaged, 0)) * (var(--y, 0) * (max(var(--height), var(--depth), var(--width)))))) * -1vmin), calc(var(--z, 0) * 1vmin));
   opacity: var(--packaged);
 }
-.package__icon--js {
+.package__icon--3 {
   --x: 60;
   --y: 1.4;
   --z: 0;
   fill: #f7df1e;
 }
-.package__icon--html {
+.package__icon--2 {
   --x: 0;
   --y: 1.6;
   --z: -3;
   fill: #e34f26;
 }
-.package__icon--css {
+.package__icon--1 {
   --x: -50;
   --y: 1.2;
   --z: 3;
