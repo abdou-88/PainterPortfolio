@@ -2,13 +2,11 @@ import React, { FC } from "react";
 
 import signature from "/signature1.png";
 import CR from "/Cright.png";
-import menuBG from "/menubg.png";
+import signtureBG from "/signturebg.png";
 
-interface FooterProps {
-  
-}
+interface FooterProps {}
 
-const Footer: FC<FooterProps> = ({  }) => {
+const Footer: FC<FooterProps> = ({}) => {
   return (
     <>
       <img
@@ -46,7 +44,7 @@ const Footer: FC<FooterProps> = ({  }) => {
           right: "40px",
           bottom: "0px",
         }}
-        src={menuBG}
+        src={signtureBG}
       />
     </>
   );

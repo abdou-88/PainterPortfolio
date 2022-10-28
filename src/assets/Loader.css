@@ -38,6 +38,7 @@ body {
   overflow: hidden;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  
 }
 :root {
   --packaged: 0;
@@ -88,7 +89,7 @@ body {
   right: -30%;
   bottom: 0;
   position: absolute;
-  background-image: url("/white-swipe.png");
+  background-image: url("white-swipe.png");
   background-position: top right;
   background-size: cover;
   background-repeat: no-repeat;
@@ -108,7 +109,7 @@ body {
 }
 .text-wrapper > h1,
 h3 {
-  color: black;
+  color: white;
   text-transform: uppercase;
   font-family: "OpenSans";
 }

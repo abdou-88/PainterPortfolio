@@ -1,3 +1,8 @@
+/* ///// hide chrome scrollbar ///// */
+*::-webkit-scrollbar {
+  display: none;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -25,8 +30,6 @@
 }
 
 .rightMain {
- 
- 
   grid-area: 2 / 2 / 3 / 3;
 }
 
@@ -41,3 +44,5 @@
   margin-left: 10px;
   margin-top: 10px;
 }
+
+
