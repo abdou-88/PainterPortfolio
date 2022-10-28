@@ -44,6 +44,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
       100,
       delta
     );
+
       if (offset <= 0.50){
         
         state.camera.position.set(
@@ -57,25 +58,15 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           Math.atan(offset * 2 * Math.PI) * 6,
           Math.cos(offset * 2 * Math.PI) * -10
         );
-
+          state.camera.lookAt(0, 2, 0);
    
-        console.log(state.camera.position);
-      }
-       if (offset >= 0.5) {
         
-         state.camera.position.set(
-           Math.sin(offset * 2) * 5,
-           Math.atan(offset * 2 * Math.PI) * 6,
-           Math.cos(offset * 2 * Math.PI) * -10
-         );
-             state.camera.position.set(
-               offset / 10,
-               Math.atan(offset * 2 * Math.PI) * 6,
-               Math.cos(offset * 2 * Math.PI) * -10
-             );
-
+      }
+       if (state.camera.position.x >= 4.17) {
+       state.camera.position.set(-2,1,2);
+       state.camera.lookAt(0, 0, 0);
        }
-       state.camera.lookAt(0, 2, 0);
+       
    
     
   });
