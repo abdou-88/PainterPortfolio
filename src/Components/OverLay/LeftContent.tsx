@@ -1,7 +1,5 @@
 import React, { FC } from "react";
-
-import menuBGUp from "/menubgUp.png";
-import menuBGUpleft from "/menubgUpleft.png";
+import "../../assets/LeftContent.css";
 
 interface LeftProps {
   active: boolean;

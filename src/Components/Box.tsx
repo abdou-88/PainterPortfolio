@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useScroll, useGLTF, useAnimations } from "@react-three/drei";
-import { Vector3 } from "three";
+import gsap from "gsap"
 
 export default function Box(props: JSX.IntrinsicElements["group"]) {
   const scroll = useScroll();
@@ -32,45 +32,131 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
      }, [page, scroll.el, size.width]);
 
 
-
+const tl = gsap.timeline();
   useFrame((state, delta) => {
     const action: any = actions["Take 001"];
     // The offset is between 0 and 1, you can apply it to your models any way you like
     const offset = scroll.offset;
-   
+// run first animation
     action.time = THREE.MathUtils.damp(
       action.time,
-      action.getClip().duration * (offset*2),
+      action.getClip().duration * (offset * 10),
       100,
       delta
     );
 
-      if (offset <= 0.50){
-        
-        state.camera.position.set(
-          Math.sin(offset*2) * 10,
-          Math.atan(offset * 2  * Math.PI * 2) * 6,
-          Math.cos((offset * 2 * Math.PI) / 3) * -10
-        );
+   //first movement to zoom in to the character
+    if (offset <= 0.1) {
+      changeCamP(4, 7, 9);
+    } else if (offset > 0.1 && offset <= 0.125) {
+      changeCamP(1, 2, 1);
+    } else if (offset > 0.125 && offset <= 0.15) {
+      changeCamP(-1, 1.5, 1);
+    } else if (offset > 0.15 && offset <= 0.175) {
+      changeCamP(-1, 1, -1);
+    } else if (offset > 0.175 && offset <= 0.2) {
+      changeCamP(1, 1, -1);
+      changeScenP(0,0,0);   
+      // going to selected works area   - second area
+    } else if (offset > 0.2 && offset <= 0.3) {
 
-        state.camera.position.set(
-          Math.sin(offset*2) * 5,
-          Math.atan(offset * 2 * Math.PI) * 6,
-          Math.cos(offset * 2 * Math.PI) * -10
-        );
-          state.camera.lookAt(0, 2, 0);
-   
-        
-      }
-       if (state.camera.position.x >= 4.17) {
-       state.camera.position.set(-2,1,2);
-       state.camera.lookAt(0, 0, 0);
-       }
-       
-   
+      changeCamP(1, 1, -1);
+      changeScenP(0, 0, 4);    
+      // going to news area - 3rd area
+    } else if (offset > 0.3 && offset <= 0.4) {
+      changeCamP(1, 2, 1);
+      changeScenP(-4, 0, 0);    
+      // going to media area - 4th area
+    } else if (offset > 0.4 && offset <= 0.5) {
+      changeCamP(-1, 1, 1);
+      changeScenP(4, 0, 0);   
+      // going to contact area - 5th area    
+    } else if (offset > 0.5 && offset <= 0.6) {
+      changeCamP(1, 1, 1);
+      changeScenP(0, 0, -4);     
+    } 
+
+
+
+    function changeScenP(x: number, y: number, z: number) {
+      gsap.to(state.scene.position, {
+        z,
+        y,
+        x,
+
+        duration: 1.5,
+        onUpdate: function () {
+          state.camera.lookAt(0, 0, 0);
+        },
+      });
+    }
+    function changeCamP(x: number, y: number, z: number) {
+      gsap.to(state.camera.position, {
+        z,
+        y,
+        x,
+
+        duration: 1.5,
+        onUpdate: function () {
+          state.camera.lookAt(0, 0, 0);
+        },
+      });
+    }
     
+
   });
   
+ function OverLayMov(x: number, y: number, z: number) {
+  //  gsap.to(camera.position, {
+  //    z,
+  //    y,
+  //    x,
+
+  //    duration: 1.5,
+  //    onUpdate: function () {
+  //      camera.lookAt(0, 0, 0);
+  //    },
+  //  });
+ }
+  const desktopAnimation = (state: any) => {
+    let section = 0;
+    const tl = gsap.timeline({
+      default: {
+        duration: 1,
+        ease: "power2.inOut",
+      },
+      scrollTrigger: {
+        trigger: ".page",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0.1,
+        markers: true,
+      },
+    });
+
+    // Title Section
+
+    tl.to(state.camera.position, { x: 1.5 }, section);
+    tl.to(state.camera.rotation, { y:  -0.3 }, section);
+
+    // Bear Stats
+
+    section += 1;
+    tl.to(state.camera.position, { x: 5, ease: "power4.in" }, section);
+
+    // Witch Stats
+
+    section += 1;
+    section += 1;
+    tl.to(state.camera.position, { x: 1, z: 2, ease: "power4.out" }, section);
+
+    // Winner
+
+    section += 1;
+    section += 1;
+    tl.to(state.camera.position, { x: 1, z: 0 }, section);
+  };
+
 
   return (
     <>
@@ -212,60 +298,3 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
 useGLTF.preload("/boxwithmainscene.glb");
 
 
-
-
-// const Setup = () => {
-//   const ref = useRef();
-//   const snap = useSnapshot(state);
-
-//   const scroll = useScroll();
-//   const { size } = useThree();
-//   const page = state.clicked;
-
-//   useEffect(() => {
-//     console.log(state.page);
-//     scroll.el.scrollLeft = size.width * (page - 1);
-//   }, [page, scroll.el, size.width]);
-
-//   useFrame((state) => {
-//     const step = 0.1;
-//     switch (snap.clicked) {
-//       case 1:
-//         state.camera.lookAt(new Vector3(2.2, -0.4, -12.8));
-//         state.camera.position.lerp(new Vector3(5.1, 0.1, 4.6), step);
-//         state.camera.updateProjectionMatrix();
-//         break;
-//       case 2:
-//         state.camera.lookAt(new Vector3(7, -2.9, -12.8));
-//         state.camera.position.lerp(new Vector3(10.0, 0.58, 4.3), step);
-//         state.camera.updateProjectionMatrix();
-//         break;
-//       case 3:
-//         state.camera.lookAt(new Vector3(9, -0, -12.8));
-//         state.camera.position.lerp(new Vector3(16.4, 0.5, 3.7), step);
-//         state.camera.updateProjectionMatrix();
-//         break;
-//       case 4:
-//         state.camera.lookAt(new Vector3(11.7, 0, -12.8));
-//         state.camera.position.lerp(new Vector3(10.0, 0.58, 4.3), step);
-//         state.camera.updateProjectionMatrix();
-//         break;
-//       case 5:
-//         state.camera.lookAt(new Vector3(16.03, 0, 0));
-//         state.camera.position.lerp(new Vector3(25.5, 0.5, 3.3), step);
-//         state.camera.updateProjectionMatrix();
-//         break;
-//       default:
-//         cameraPositionCurve.getPoint(scroll.offset, state.camera.position);
-//         cameraLookAtCurve.getPoint(scroll.offset, cameraLookAt);
-//         state.camera.lookAt(cameraLookAt);
-//         break;
-//     }
-//   });
-
-//   return (
-//     <>
-//       <Model />
-//     </>
-//   );
-// };

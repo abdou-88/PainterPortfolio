@@ -10,44 +10,50 @@ interface CanvasProps {}
 
 const MainCanvas: FC<CanvasProps> = ({}) => {
   return (
-   
-      <Canvas
-        style={{ position: "absolute" }}
-        dpr={[1, 2]}
-        shadows
-        camera={{ position: [0, 0, 10], near: 0.1, far: 1000 }}
-      >
-        <ambientLight intensity={0.03} />
-        <fog attach="fog" args={["#dba776", 5, 18]} />
+    <Canvas
+      style={{ position: "absolute" }}
+      dpr={[1, 2]}
+      shadows
+      camera={{ position: [0, 0, 10], near: 0.1, far: 1000 }}
+    >
+      <ambientLight intensity={0.03} />
+      <fog attach="fog" args={["#dba776", 5, 18]} />
 
-        <Suspense fallback={<LoaderBox />}>
+      <Suspense fallback={<LoaderBox />}>
+        <spotLight
+          angle={0.24}
+          color="#eab37b"
+          penumbra={1}
+          position={[15, 50, 30]}
+          shadow-mapSize={[2048, 2048]}
+          shadow-bias={-0.001}
+          castShadow
+        />
+        <spotLight
+          angle={0.24}
+          color="#eab37b"
+          penumbra={1}
+          position={[15, 30, -30]}
+          shadow-mapSize={[2048, 2048]}
+          shadow-bias={-0.001}
+          castShadow
+        />
 
-          <spotLight
-            angle={0.14}
-            color="#eab37b"
-            penumbra={1}
-            position={[25, 50, -20]}
-            shadow-mapSize={[2048, 2048]}
-            shadow-bias={-0.001}
-            castShadow
-          />
-
-          {/* Wrap contents you want to scroll into <ScrollControls> */}
-          <ScrollControls
-            style={{
-                msOverflowStyle: "none",
-                scrollbarWidth: "none",               
-            }}
-            infinite={false}
-            pages={2}
-          >
-            {/* <Rig> */}
-            <Box scale={2} position={[0, 0, 0]} />
-            {/* </Rig> */}
-          </ScrollControls>
-        </Suspense>
-      </Canvas>
-    
+        {/* Wrap contents you want to scroll into <ScrollControls> */}
+        <ScrollControls
+          style={{
+            msOverflowStyle: "none",
+            scrollbarWidth: "none",
+          }}
+          infinite={false}
+          pages={10}
+        >
+          {/* <Rig> */}
+          <Box scale={2} position={[0, 0, 0]} />
+          {/* </Rig> */}
+        </ScrollControls>
+      </Suspense>
+    </Canvas>
   );
 };
 
