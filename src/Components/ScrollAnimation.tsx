@@ -1,0 +1,66 @@
+import gsap from "gsap";
+
+export function ScrollAnimation(
+  offset: number,
+  setActiveBox: Function,
+  state: any
+) {
+  //first movement to zoom in to the character
+  if (offset <= 0.1) {
+    changeCamP(4, 7, 9, state), state;
+  } else if (offset > 0.1 && offset <= 0.125) {
+    changeCamP(1, 2, 1, state);
+    setActiveBox(true);
+  } else if (offset > 0.125 && offset <= 0.15) {
+    changeCamP(-1, 1.5, 1, state);
+    setActiveBox(false);
+  } else if (offset > 0.15 && offset <= 0.175) {
+    changeCamP(-1, 1, -1, state);
+  } else if (offset > 0.175 && offset <= 0.2) {
+    changeCamP(1, 1, -1, state);
+    changeScenP(0, 0, 0, state);
+    setActiveBox(false);
+    // going to selected works area   - second area
+  } else if (offset > 0.2 && offset <= 0.3) {
+    setActiveBox(true);
+    changeCamP(1, 1, -1, state);
+    changeScenP(0, 0, 4, state);
+    // going to news area - 3rd area
+  } else if (offset > 0.3 && offset <= 0.4) {
+    changeCamP(1, 2, 1, state);
+    changeScenP(-4, 0, 0, state);
+    // going to media area - 4th area
+  } else if (offset > 0.4 && offset <= 0.5) {
+    changeCamP(-1, 1, 1, state);
+    changeScenP(4, 0, 0, state);
+    // going to contact area - 5th area
+  } else if (offset > 0.5 && offset <= 0.6) {
+    changeCamP(1, 1, 1, state);
+    changeScenP(0, 0, -4, state);
+  }
+}
+
+function changeScenP(x: number, y: number, z: number, state: any) {
+  gsap.to(state.scene.position, {
+    z,
+    y,
+    x,
+
+    duration: 1.5,
+    onUpdate: function () {
+      state.camera.lookAt(0, 0, 0);
+    },
+  });
+}
+function changeCamP(x: number, y: number, z: number, state: any) {
+  gsap.to(state.camera.position, {
+    z,
+    y,
+    x,
+
+    duration: 1.5,
+    onUpdate: function () {
+      state.camera.lookAt(0, 0, 0);
+    },
+  });
+}

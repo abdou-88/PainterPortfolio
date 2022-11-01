@@ -33,16 +33,29 @@
   grid-area: 2 / 2 / 3 / 3;
 }
 
-/* ///////////// */
-.hamburger-icon {
-  display: block;
-  border-bottom: 12px double #ccc;
-  border-top: 4px solid #ccc;
-  content: "";
-  height: 5px;
-  width: 24px;
-  margin-left: 10px;
-  margin-top: 10px;
+
+
+
+
+
+/* ////////// */
+.text-wrapperScroll {
+  top: 45%;
+  opacity: 0;
+  left: 85%;
+  position: relative;
+  width: 12.5%;
+  transform: translate(-50%, -50%);
+  animation: fadeInUp 1s linear forwards;
+  animation-delay: 0.75s;
+
+  background-color: #7d3712;
 }
-
-
+.text-wrapperScroll > h3 {
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  color: #ccc;
+  background-color: #b07c54;
+  text-transform: uppercase;
+  font-family: "OpenSans";
+}

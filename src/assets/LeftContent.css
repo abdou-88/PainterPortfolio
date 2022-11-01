@@ -1,6 +1,15 @@
-
 /* /////////////////////////////// */
-
+.section-header-nobefore {
+  background-image: url("acn-header-img2.png");
+  background-position: top left;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  height: 10vh;
+  min-height: 550px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
 .section-header {
   background-image: url("acn-header-img2.png");
   background-position: top left;
@@ -31,7 +40,7 @@
 .text-wrapper {
   top: 40%;
   opacity: 0;
-  left: 55%;
+  left: 60%;
   position: relative;
   width: 40%;
   transform: translate(-50%, -50%);
@@ -39,6 +48,7 @@
   animation-delay: 0.75s;
   max-width: 500px;
 }
+
 .text-wrapper > h1,
 h3 {
   color: black;
@@ -54,28 +64,6 @@ h3 {
   letter-spacing: 0.1em;
 }
 
-
-.text-wrapperScroll {
-  top: 45%;
-  opacity: 0;
-  left: 85%;
-  position: relative;
-  width: 12.5%;
-  transform: translate(-50%, -50%);
-  animation: fadeInUp 1s linear forwards;
-  animation-delay: 0.75s;
-  
-  background-color: #7d3712;
-}
-.text-wrapperScroll > h3 {
-  font-weight: 200;
-  letter-spacing: 0.1em;
-  color: #ccc;
-  background-color: #b07c54;
-  text-transform: uppercase;
-  font-family: "OpenSans";
-
-}
 @keyframes brush {
   0% {
     transform: translate(0, 0);
@@ -104,4 +92,35 @@ h3 {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
+}
+
+
+/* ////////////////////// */
+
+.ex {
+  height: 10vh;
+  min-height: 550px;
+  width: 100%;
+  visibility: visible;
+}
+
+.ex.active div,
+.ex.animate div {
+  pointer-events: initial;
+}
+.rotate-left {
+  perspective: 1300px;
+}
+.rotate-left div {
+  opacity: 0;
+  transform: translateZ(100px) translateX(-100%) rotateY(90deg);
+  transform-style: perserve-3d;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.rotate-left-hovered {
+  opacity: 1;
+  transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
+    rotateX(0deg);
+  transform-style: perserve-3d;
 }
