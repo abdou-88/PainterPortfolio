@@ -14,11 +14,7 @@ const Menu: FC<MenuProps> = ({ active }) => {
   return (
     <>
       <img
-        style={{
-          position: "absolute",
-          left: "50%",
-          top: "0px",
-        }}
+       className= "menuBGUp"
         src={menuBGUp}
       />
       <div

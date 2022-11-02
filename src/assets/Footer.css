@@ -1,0 +1,25 @@
+.Cright {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+.signatureBG {
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+}
+
+
+.signature {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.linkcright {
+  position: absolute;
+  left: 25px;
+  bottom: 1.5px;
+  color: #ccc;
+  text-decoration: none;
+ 
+}
