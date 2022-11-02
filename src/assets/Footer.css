@@ -1,14 +1,28 @@
 .Cright {
   position: absolute;
-  left: 0px;
-  bottom: 0px;
+  left: 10px;
+  bottom: 10px;
 }
 .signatureBG {
   position: absolute;
   left: 50%;
   bottom: 0px;
+  opacity: 0;
+  transform: translateY(100%) rotateX(90deg);
+  transform-style: perserve-3d;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
+.signatureBG-hovered {
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  opacity: 1;
+  transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
+    rotateX(0deg);
+  transform-style: perserve-3d;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
 
 .signature {
   position: absolute;
@@ -17,9 +31,23 @@
 }
 .linkcright {
   position: absolute;
-  left: 25px;
-  bottom: 1.5px;
+  left: 35px;
+  bottom: 10px;
   color: #ccc;
   text-decoration: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .signatureBG {
+  
+  left: 0%;
  
+}
+
+.signatureBG-hovered {
+ 
+  left: 0%;
+  
+}
 }

@@ -11,7 +11,7 @@ const LeftContent: FC<LeftProps> = ({ active }) => {
   
   return (
     <div
-      // onClick={() => setActiveSt(!active)}
+      
       className={active ? "ex  rotate-left-hovered " : "ex  rotate-left"}
     >
       <div className={active ? "section-header" : "section-header-nobefore"}>

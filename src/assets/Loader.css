@@ -28,30 +28,11 @@
 }
 
 /* /////////// */
-
-body {
-  background: #000000;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  perspective: 100vmin;
-  overflow: hidden;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  
-}
-:root {
-  --packaged: 0;
-  --steps: 23;
-  --delay: 0.2;
-  --speed: 0.2;
-  --face-1: #be8e64;
-  --face-2: #dba776;
-  --face-3: #e7b37e;
-  --face-4: #f3bf86;
-  --face-5: #eab37b;
-  --face-6: #7d3712;
-  --tape: #b07c54;
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
 }
 
 .containerpercentage {
@@ -59,10 +40,4 @@ body {
   text-align: center;
   color: #e7b37e;
   font-size: 45px;
-}
-/* Bottom left text */
-.bottom-left {
-  position: absolute;
-  bottom: 20px;
-  left: 50px;
 }

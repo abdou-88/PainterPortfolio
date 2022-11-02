@@ -14,7 +14,7 @@ const Menu: FC<MenuProps> = ({ active }) => {
   return (
     <>
       <img
-       className= "menuBGUp"
+        className={active ? "menuBGUp-hovered" : "menuBGUp"}
         src={menuBGUp}
       />
       <div

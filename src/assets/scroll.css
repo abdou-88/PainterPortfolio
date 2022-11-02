@@ -1,0 +1,39 @@
+.scrollimg {
+  position: absolute;
+  right: 0px;
+  top: 40%;
+}
+
+/* ////////// */
+.text-wrapperScroll {
+  top: 45%;
+  opacity: 0;
+  left: 85%;
+  position: relative;
+  width: 12.5%;
+ transform: translateZ(100px) translateX(100%) rotateY(-90deg);
+	 transform-style: perserve-3d;
+	 transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+}
+.text-wrapperScroll-hovered {
+  top: 45%;
+  opacity: 1;
+  left: 85%;
+  position: relative;
+  width: 12.5%;
+  opacity: 1;
+  transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
+    rotateX(0deg);
+  transform-style: perserve-3d;
+   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+}
+.text-wrapperScroll, .text-wrapperScroll-hovered > h3 {
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  color: #ccc;
+  background-color: #ce8c40;
+  text-transform: uppercase;
+  font-family: "OpenSans";
+}

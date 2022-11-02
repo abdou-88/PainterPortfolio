@@ -11,7 +11,7 @@ interface CanvasProps {}
 const MainCanvas: FC<CanvasProps> = ({}) => {
   return (
     <Canvas
-      style={{ position: "absolute" }}
+      
       dpr={[1, 2]}
       shadows
       camera={{ position: [0, 0, 10], near: 0.1, far: 1000 }}
@@ -59,7 +59,7 @@ const MainCanvas: FC<CanvasProps> = ({}) => {
 
 export default MainCanvas;
 
-useGLTF.preload("/cleanerversion.glb");
+
 
 ///////////////// this is to check later if i ll add it to the final project or not//////////////
 

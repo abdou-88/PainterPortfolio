@@ -20,25 +20,22 @@ const [activeBox, setActiveBox] = useState<boolean>(true);
   
   return (
     <MyGlobalContext.Provider value={{ activeBox, setActiveBox }}>
-      <div style={{ position: "relative" }}>
+      <div>
         <div className="container">
-          <div className="header">
-            <Menu active={false} />
-          </div>
-
           <div className="main">
             <MainCanvas />
           </div>
-
           <div className="leftMain">
             <LeftContent active={activeBox} />
           </div>
           <div className="rightMain">
-            <ScrollDiv active={true} />
+            <ScrollDiv active={activeBox} />
           </div>
-
+          <div className="header">
+            <Menu active={activeBox} />
+          </div>
           <div className="footer">
-            <Footer />
+            <Footer active={activeBox} />
           </div>
         </div>
       </div>
