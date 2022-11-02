@@ -13,6 +13,14 @@ const Menu: FC<MenuProps> = ({ active }) => {
   const [open, setOpen] = useState(!active);
   return (
     <>
+      <img
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "0px",
+        }}
+        src={menuBGUp}
+      />
       <div
         id="nav-icon"
         className={open ? "" : "open"}
@@ -22,15 +30,6 @@ const Menu: FC<MenuProps> = ({ active }) => {
         <span></span>
         <span></span>
       </div>
-
-      <img
-        style={{
-          position: "absolute",
-          left: "50%",
-          top: "0px",
-        }}
-        src={menuBGUp}
-      />
     </>
   );
 };

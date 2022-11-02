@@ -3,7 +3,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useScroll, useGLTF, useAnimations } from "@react-three/drei";
 
-import { useGlobalContext } from "../App";
+import { useGlobalContext } from "../Components/GlobalContext";
 import { ScrollAnimation } from "./ScrollAnimation";
 
 export default function Box(props: JSX.IntrinsicElements["group"]) {

@@ -17,7 +17,24 @@ const Footer: FC<FooterProps> = ({}) => {
         }}
         src={CR}
       />
-      <a
+     
+      <img
+        style={{
+          position: "absolute",
+          right: "0px",
+          bottom: "0px",
+        }}
+        src={signature}
+      />
+      <img
+        style={{
+          position: "absolute",
+          left: "50%",
+          bottom: "0px",
+        }}
+        src={signtureBG}
+      />
+       <a
         style={{
           position: "absolute",
           left: "25px",
@@ -30,22 +47,6 @@ const Footer: FC<FooterProps> = ({}) => {
       >
         A.Yousfi
       </a>
-      <img
-        style={{
-          position: "absolute",
-          right: "0px",
-          bottom: "0px",
-        }}
-        src={signature}
-      />
-      <img
-        style={{
-          position: "absolute",
-          right: "40px",
-          bottom: "0px",
-        }}
-        src={signtureBG}
-      />
     </>
   );
 };
