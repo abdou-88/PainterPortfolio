@@ -16,17 +16,20 @@ import { MyGlobalContext } from "./Components/GlobalContext";
 
 export default function App() {
 
-const [activeBox, setActiveBox] = useState<boolean>(true);
-  
+  const [activeBox, setActiveBox] = useState<boolean>(true);
+  const [contentBox, setContentBox] = useState<string>("boxfolio");
+
   return (
-    <MyGlobalContext.Provider value={{ activeBox, setActiveBox }}>
+    <MyGlobalContext.Provider value={{
+      activeBox, setActiveBox, contentBox, setContentBox
+    }}>
       <div>
         <div className="container">
           <div className="main">
             <MainCanvas />
           </div>
           <div className="leftMain">
-            <LeftContent active={activeBox} />
+            <LeftContent active={activeBox} headerText={contentBox} />
           </div>
           <div className="rightMain">
             <ScrollDiv active={activeBox} />
@@ -45,21 +48,21 @@ const [activeBox, setActiveBox] = useState<boolean>(true);
 
 
 
-const Content = (props:any) => {
+const Content = (props: any) => {
   const [contentHover, setContentHover] = useState(false);
-  const contentRef:any = useRef(null);
+  const contentRef: any = useRef(null);
 
   useEffect(() => {
-   const handleScrolling = (event:any) => {
-     if (contentRef !== null) {
-       if (contentHover === false) {
-         contentRef.current.scrollTo({
-           top: contentRef.current.scrollTop + event.deltaY,
-           behavior: "smooth",
-         });
-       }
-     }
-   };
+    const handleScrolling = (event: any) => {
+      if (contentRef !== null) {
+        if (contentHover === false) {
+          contentRef.current.scrollTo({
+            top: contentRef.current.scrollTop + event.deltaY,
+            behavior: "smooth",
+          });
+        }
+      }
+    };
 
     window.addEventListener("wheel", handleScrolling);
 

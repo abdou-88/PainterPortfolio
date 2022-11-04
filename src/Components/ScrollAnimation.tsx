@@ -3,6 +3,7 @@ import gsap from "gsap";
 export function ScrollAnimation(
   offset: number,
   setActiveBox: Function,
+  setContentBox: Function,
   state: any
 ) {
   //first movement to zoom in to the character
@@ -11,6 +12,7 @@ export function ScrollAnimation(
   } else if (offset > 0.1 && offset <= 0.125) {
     changeCamP(1, 2, 1, state);
     setActiveBox(true);
+    setContentBox("Boxfolio");
   } else if (offset > 0.125 && offset <= 0.15) {
     changeCamP(-1, 1.5, 1, state);
     setActiveBox(false);
@@ -23,18 +25,22 @@ export function ScrollAnimation(
     // going to selected works area   - second area
   } else if (offset > 0.2 && offset <= 0.3) {
     setActiveBox(true);
+    setContentBox("Projects");
     changeCamP(1, 1, -1, state);
     changeScenP(0, 0, 4, state);
     // going to news area - 3rd area
   } else if (offset > 0.3 && offset <= 0.4) {
+    setContentBox("news");
     changeCamP(1, 2, 1, state);
     changeScenP(-4, 0, 0, state);
     // going to media area - 4th area
   } else if (offset > 0.4 && offset <= 0.5) {
+    setContentBox("Media");
     changeCamP(-1, 1, 1, state);
     changeScenP(4, 0, 0, state);
     // going to contact area - 5th area
   } else if (offset > 0.5 && offset <= 0.6) {
+    setContentBox("Contact");
     changeCamP(1, 1, 1, state);
     changeScenP(0, 0, -4, state);
   }

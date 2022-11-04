@@ -7,7 +7,9 @@ import { useGlobalContext } from "../Components/GlobalContext";
 import { ScrollAnimation } from "./ScrollAnimation";
 
 export default function Box(props: JSX.IntrinsicElements["group"]) {
-  const { setActiveBox } = useGlobalContext();
+  const { setActiveBox, setContentBox } = useGlobalContext();
+
+  
 
   const scroll = useScroll();
   const group: any = useRef<THREE.Group>();
@@ -35,7 +37,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
       delta
     );
 
-    ScrollAnimation(offset, setActiveBox, state);
+    ScrollAnimation(offset, setActiveBox, setContentBox, state);
   });
 
   return (
@@ -146,6 +148,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
                 scale={0.96}
               />
             </group>
+            
           </group>
           <mesh
             name="MainPaint"
@@ -171,6 +174,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           />
         </group>
       </group>
+      
     </>
   );
 }
