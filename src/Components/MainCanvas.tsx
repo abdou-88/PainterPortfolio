@@ -2,26 +2,32 @@ import { FC } from "react";
 
 import { Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import { ScrollControls } from "@react-three/drei";
+import { Html, Scroll, ScrollControls } from "@react-three/drei";
 import LoaderBox from "./LoaderBox";
 import Box from "./Box";
 import { Chair } from "./Chair";
 import { ChairAvatar } from "./ChairAvatar";
+import LeftContent from "./OverLay/LeftContent";
+import { useGlobalContext } from "./GlobalContext";
 
-interface CanvasProps {}
 
-const MainCanvas: FC<CanvasProps> = ({}) => {
-  const refCanvas :any = useRef(null);
-  refCanvas.current?.scrollIntoView({ behavior: "smooth" });
+interface CanvasProps { }
+
+const MainCanvas: FC<CanvasProps> = ({ }) => {
+  const refCanvas: any = useRef(null);
+  const { activeBox, contentBox } = useGlobalContext();
+
   return (
+
     <Canvas
       ref={refCanvas}
       dpr={[1, 2]}
       shadows
       camera={{ position: [0, 0, 10], near: 0.1, far: 1000 }}
+      className="test3"
     >
+
       <ambientLight intensity={0.03} />
-      <fog attach="fog" args={["#dba776", 5, 18]} />
 
       <Suspense fallback={<LoaderBox />}>
         <spotLight
@@ -33,7 +39,7 @@ const MainCanvas: FC<CanvasProps> = ({}) => {
           shadow-bias={-0.001}
           castShadow
         />
-        
+
         <spotLight
           angle={0.24}
           color="#eab37b"
@@ -44,22 +50,30 @@ const MainCanvas: FC<CanvasProps> = ({}) => {
           castShadow
         />
 
+
         {/* Wrap contents you want to scroll into <ScrollControls> */}
         <ScrollControls
           style={{
             msOverflowStyle: "none",
             scrollbarWidth: "none",
           }}
+
           infinite={false}
           pages={10}
         >
+          <LeftContent active={activeBox} headerText={contentBox} />
           <Chair />
-          <ChairAvatar/>
+          <ChairAvatar />
+
           <Box scale={2} position={[0, 0, 0]} />
-          
+
+
+
         </ScrollControls>
+
       </Suspense>
     </Canvas>
+
   );
 };
 

@@ -37,3 +37,28 @@
   text-transform: uppercase;
   font-family: "OpenSans";
 }
+
+@media only screen and (max-width: 600px) {
+  .text-wrapperScroll {
+   top:  70%;
+  
+  left:-100px;
+  
+ 
+
+}
+.text-wrapperScroll-hovered {
+   top:  70%;
+  
+  left:-100px;
+
+
+
+ 
+
+}
+.text-wrapperScroll, .text-wrapperScroll-hovered > h3 {
+  font-weight: 100;
+
+}
+}

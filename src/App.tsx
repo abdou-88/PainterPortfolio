@@ -4,7 +4,7 @@ import Menu from "./Components/OverLay/Menu";
 
 import MainCanvas from "./Components/MainCanvas";
 import Footer from "./Components/OverLay/Footer";
-import LeftContent from "./Components/OverLay/LeftContent";
+
 import ScrollDiv from "./Components/OverLay/Scroll";
 
 import { useEffect, useRef, useState } from "react";
@@ -18,19 +18,18 @@ export default function App() {
 
   const [activeBox, setActiveBox] = useState<boolean>(true);
   const [contentBox, setContentBox] = useState<string>("boxfolio");
+  const [scrollSide, setScrollSide] = useState<string>("boxfolio");
 
   return (
     <MyGlobalContext.Provider value={{
-      activeBox, setActiveBox, contentBox, setContentBox
+      activeBox, setActiveBox, contentBox, setContentBox, scrollSide, setScrollSide
     }}>
       <div>
         <div className="container">
           <div className="main">
             <MainCanvas />
           </div>
-          <div className="leftMain">
-            <LeftContent active={activeBox} headerText={contentBox} />
-          </div>
+         
           <div className="rightMain">
             <ScrollDiv active={activeBox} />
           </div>

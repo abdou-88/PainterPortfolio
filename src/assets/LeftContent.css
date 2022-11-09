@@ -1,13 +1,14 @@
 /* /////////////////////////////// */
 .section-header-nobefore {
+  
   background-image: url("acn-header-img2.png");
   background-position: top left;
   background-size: auto 100%;
   background-repeat: no-repeat;
   height: 10vh;
   min-height: 80vh;
-  width: 100%;
- 
+  width: 50%;
+  
   z-index: 1;
 }
 .section-header {
@@ -17,14 +18,14 @@
   background-repeat: no-repeat;
   height: 10vh;
   min-height: 80vh;
-  width: 100%;
+  width: 50%;
  
   z-index: 1;
 }
 .section-header:before {
   content: "";
   height: 90%;
-  width: 100%;
+  width: 60% ;
   bottom: 0;
   left: 0;
   right: -30%;
@@ -106,6 +107,7 @@ h3 {
 }
 
 .rotate-left-hovered {
+ 
   opacity: 1;
   transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
     rotateX(0deg);
@@ -131,4 +133,14 @@ h3 {
   width: 60%;
   top: 37%;
 }
+.section-header-nobefore {
+  width: 100%;
+}
+.section-header {
+  width: 100%;
+}
+.section-header:before {
+  width: 100%;
+}
+
 }

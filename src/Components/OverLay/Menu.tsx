@@ -10,7 +10,7 @@ interface MenuProps {
 }
 
 const Menu: FC<MenuProps> = ({ active }) => {
-  const [open, setOpen] = useState(!active);
+  const [open, setOpen] = useState(active);
   return (
     <>
       <img

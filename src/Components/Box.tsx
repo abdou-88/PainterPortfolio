@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useScroll, useGLTF, useAnimations } from "@react-three/drei";
 
@@ -7,9 +7,9 @@ import { useGlobalContext } from "../Components/GlobalContext";
 import { ScrollAnimation } from "./ScrollAnimation";
 
 export default function Box(props: JSX.IntrinsicElements["group"]) {
-  const { setActiveBox, setContentBox } = useGlobalContext();
+  const { setActiveBox, setContentBox, scrollSide, setScrollSide } = useGlobalContext();
 
-  
+
 
   const scroll = useScroll();
   const group: any = useRef<THREE.Group>();
@@ -18,17 +18,22 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
   const { actions }: any = useAnimations(animations, group);
 
   useLayoutEffect(() =>
+
     Object.values(nodes).forEach(
       (node) => (node.receiveShadow = node.castShadow = true)
-    )
+    ),
+    
   );
 
   useEffect(() => void (actions["Take 001"].play().paused = true), [actions]);
 
+ 
+  
   useFrame((state, delta) => {
+    const offset = scroll.offset;
     const action: any = actions["Take 001"];
     // The offset is between 0 and 1, you can apply it to your models any way you like
-    const offset = scroll.offset;
+   
     // run first animation
     action.time = THREE.MathUtils.damp(
       action.time,
@@ -36,6 +41,14 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
       100,
       delta
     );
+
+    if (scrollSide === "U"){
+      scroll.offset = offset + 0.0102;
+      setScrollSide("N");
+    } else if (scrollSide==="D"){
+      scroll.offset = offset - 0.0102;
+      setScrollSide("N");
+    }
 
     ScrollAnimation(offset, setActiveBox, setContentBox, state);
   });
