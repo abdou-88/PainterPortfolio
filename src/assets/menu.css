@@ -119,3 +119,131 @@
     top: 12px;
   }
 }
+
+
+
+
+
+/* ////////////////////// */
+.mcd-menu div {
+  position:absolute;
+  top: 0px;
+  left : 100px;
+  opacity: 0;
+  transform: translateY(-100%) rotateX(-90deg);
+  transform-style: perserve-3d;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+ 
+}
+.opened div {
+ 
+  opacity: 1;
+  transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
+    rotateX(0deg);
+  transform-style: perserve-3d;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+ 
+}
+
+.mcd-menu div a {
+  display: block;
+  text-decoration: none;
+  padding: 6px 10px;
+  color: #777;
+
+  /* == */
+  text-align: left;
+  height: 36px;
+  position: relative;
+  border-bottom: 1px solid #eee;
+  /* == */
+}
+
+.mcd-menu div a strong {
+  display: block;
+  text-transform: uppercase;
+}
+.mcd-menu div a small {
+  display: block;
+  font-size: 10px;
+}
+
+.mcd-menu div a strong,
+.mcd-menu div a small {
+  position: relative;
+
+  transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -webkit-transition: all 300ms linear;
+}
+
+.mcd-menu div:hover a strong {
+  opacity: 1;
+  -webkit-animation: moveFromLeft 300ms ease-in-out;
+  -moz-animation: moveFromLeft 300ms ease-in-out;
+  -ms-animation: moveFromLeft 300ms ease-in-out;
+  -o-animation: moveFromLeft 300ms ease-in-out;
+  animation: moveFromLeft 300ms ease-in-out;
+}
+.mcd-menu div:hover a small {
+  opacity: 1;
+  -webkit-animation: moveFromRight 300ms ease-in-out;
+  -moz-animation: moveFromRight 300ms ease-in-out;
+  -ms-animation: moveFromRight 300ms ease-in-out;
+  -o-animation: moveFromRight 300ms ease-in-out;
+  animation: moveFromRight 300ms ease-in-out;
+}
+
+.mcd-menu div:hover > a {
+  color: white;
+}
+.mcd-menu div a.active {
+  position: relative;
+  color: white;
+  border: 0;
+  box-shadow: 0 0 5px #ddd;
+  -moz-box-shadow: 0 0 5px #ddd;
+  -webkit-box-shadow: 0 0 5px #ddd;
+
+ 
+}
+
+
+@-webkit-keyframes moveFromLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(200%);
+    -moz-transform: translateX(200%);
+    -ms-transform: translateX(200%);
+    -o-transform: translateX(200%);
+    transform: translateX(200%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes moveFromRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-200%);
+    -moz-transform: translateX(-200%);
+    -ms-transform: translateX(-200%);
+    -o-transform: translateX(-200%);
+    transform: translateX(-200%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
