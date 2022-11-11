@@ -3,8 +3,8 @@
 #nav-icon {
   width: 40px;
   height: 35px;
-  position: relative;
-  margin: 10px 10px;
+  position: absolute;
+  margin: 4px 10px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -120,29 +120,27 @@
   }
 }
 
-
-
-
-
 /* ////////////////////// */
+.mcd-menu {
+  overflow: hidden;
+  width: 50%;
+  white-space: nowrap;
+}
 .mcd-menu div {
-  position:absolute;
+  float: right;
   top: 0px;
-  left : 100px;
+  left: 100px;
   opacity: 0;
   transform: translateY(-100%) rotateX(-90deg);
   transform-style: perserve-3d;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
- 
 }
 .opened div {
- 
   opacity: 1;
   transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
     rotateX(0deg);
   transform-style: perserve-3d;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
- 
 }
 
 .mcd-menu div a {
@@ -152,8 +150,8 @@
   color: #777;
 
   /* == */
-  text-align: left;
-  height: 36px;
+  text-align: center;
+  height: 32px;
   position: relative;
   border-bottom: 1px solid #eee;
   /* == */
@@ -206,10 +204,7 @@
   box-shadow: 0 0 5px #ddd;
   -moz-box-shadow: 0 0 5px #ddd;
   -webkit-box-shadow: 0 0 5px #ddd;
-
- 
 }
-
 
 @-webkit-keyframes moveFromLeft {
   from {
