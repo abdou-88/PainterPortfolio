@@ -1,0 +1,1 @@
+export const menuItems = ["home", "about me", "news", "media", "contact"]

@@ -1,8 +1,10 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 import menuBGUp from "/menubgUp.png";
+import {menuItems}  from "../../Data/general"
 
 import "../../assets/menu.css";
+import React from "react";
 
 interface MenuProps {
   active: boolean;
@@ -10,37 +12,53 @@ interface MenuProps {
 
 
 const Menu: FC<MenuProps> = ({ active }) => {
-  const [open, setOpen] = useState(true);
 
+
+  const [open, setOpen] = useState(true);
   const [activeItem, setActiveItem] = useState([false, true, false, false, false]);
 
+ 
 
   const MBclick = (index: number) => {
     let items = [false, false, false, false, false];
     items[index] = true;
     setActiveItem(items);
-    
-
   }
-  const MButton = (name: string, active: boolean, index: number) => {
-    return (
-      <div onClick={(e) => { MBclick(index) }}>
-        <a href="#" className={active ? "active" : ""} >
-          <strong>{name}</strong>
-          <small>------------------------</small>
-        </a>
-      </div>
 
-    );
+
+  const MButtons = () => {
+
+    var items:any = [];
+
+    for (var i = 0; i < menuItems.length; i++) {
+
+      const Aclass = activeItem[i] ? "active" : "";
+
+      var Mdiv = React.createElement("div", {
+        onClick: (e) => { MBclick(parseInt (e.currentTarget.id)) } , key: i , id: i       
+      },
+        React.createElement("a", { href: "#", className: Aclass },
+          React.createElement("strong", {}, menuItems[i]),
+          React.createElement("small", {}, "------------------------")
+        )
+      );
+      
+      items.push(Mdiv);
+    }
+ 
+    return (items);
+
   }
 
   return (
     <>
+      <div className={open ? "mcd-menu opened" : "mcd-menu"} >
+        {MButtons()}        
+      </div>
       <img
         className={active ? "menuBGUp-hovered" : "menuBGUp"}
         src={menuBGUp}
       />
-
       <div
         id="nav-icon"
         className={open ? "open" : ""}
@@ -50,14 +68,6 @@ const Menu: FC<MenuProps> = ({ active }) => {
         <span></span>
       </div>
 
-
-      <div className={open ? "mcd-menu opened" : "mcd-menu"} >
-        {MButton("Home", activeItem[0], 0)}
-        {MButton("About me", activeItem[1], 1)}
-        {MButton("news", activeItem[2], 2)}
-        {MButton("media", activeItem[3], 3)}
-        {MButton("contact", activeItem[4], 4)}
-      </div>
     </>
   );
 };

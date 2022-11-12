@@ -4,7 +4,8 @@
   width: 40px;
   height: 35px;
   position: absolute;
-  margin: 4px 10px;
+  top:1%;
+  left: 1%;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -24,7 +25,8 @@
   background: #cccccc;
   border-radius: 4px;
   opacity: 1;
-  left: 0;
+  top:1%;
+  left: 1%;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -125,17 +127,18 @@
   overflow: hidden;
   width: 50%;
   white-space: nowrap;
+   opacity: 0;
+  transform: translateY(-100%) rotateX(-90deg);
+  transform-style: perserve-3d;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 .mcd-menu div {
   float: right;
   top: 0px;
   left: 100px;
-  opacity: 0;
-  transform: translateY(-100%) rotateX(-90deg);
-  transform-style: perserve-3d;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+ 
 }
-.opened div {
+.opened  {
   opacity: 1;
   transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
     rotateX(0deg);
@@ -241,4 +244,20 @@
     -o-transform: translateX(0%);
     transform: translateX(0%);
   }
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+ .mcd-menu { 
+  position: absolute;
+ padding-top: 20%;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+}
+.mcd-menu div {
+  float:none;
+
+}
 }
