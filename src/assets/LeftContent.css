@@ -99,7 +99,7 @@ h3 {
 /* ////////////////////// */
 
 
-.rotate-left {
+/* .rotate-left {
   opacity: 0;
   transform: translateZ(100px) translateX(-100%) rotateY(90deg);
   transform-style: perserve-3d;
@@ -113,7 +113,7 @@ h3 {
     rotateX(0deg);
   transform-style: perserve-3d;
    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
+} */
 
 
 

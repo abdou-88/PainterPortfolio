@@ -1,5 +1,6 @@
-import { Html } from "@react-three/drei";
-import React, { FC } from "react";
+import { Html, useScroll } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
+import React, { FC, useRef } from "react";
 
 import "../../assets/LeftContent.css";
 
@@ -10,19 +11,35 @@ interface LeftProps {
 }
 
 const LeftContent: FC<LeftProps> = ({ active, headerText }) => {
- 
-  
+  const data = useScroll();
+  const ref:any = useRef()
+  const { width: w, height: h } = useThree((state) => state.viewport)
+
   return (
-    <Html fullscreen >
+    <>
    
-      <div className={active ? "section-header" : "section-header-nobefore"}>
-        <div className="text-wrapper">
-          <h1>{headerText}</h1>
-          <h3>This is a Boxfolio project designed and developed by A.Yousfi</h3>
+      <Html as='div'  ref={ref} fullscreen >
+
+        <div className={active ? "section-header" : "section-header-nobefore"}>
+          <div className="text-wrapper">
+            <h1>{headerText}</h1>
+            <h3>This is a Boxfolio project designed and developed by A.Yousfi</h3>
+          </div>
         </div>
-      </div>
+
+      </Html>
+      <Html   fullscreen >
+
+        <div className={active ? "section-header" : "section-header-nobefore"}>
+          <div className="text-wrapper">
+            <h1>{headerText}</h1>
+            <h3>This is a Boxfolio project designed and developed by A.Yousfi</h3>
+          </div>
+        </div>
+
+      </Html>
+    </>
     
-    </Html>
   );
 };
 
