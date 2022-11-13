@@ -4,7 +4,7 @@
   width: 40px;
   height: 35px;
   position: absolute;
-  top:1%;
+  top:0px;
   left: 1%;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -101,24 +101,26 @@
 
   #nav-icon {
     width: 30px;
+    left: 5px;
   }
   #nav-icon span:nth-child(1) {
-    top: 5px;
+    top: 10px;
   }
 
   #nav-icon span:nth-child(2) {
-    top: 12px;
+    top: 17px;
   }
 
   #nav-icon span:nth-child(3) {
-    top: 19px;
+    top: 24px;
   }
 
   #nav-icon.open span:nth-child(1) {
-    top: 12px;
+    top: 18px;
+    
   }
   #nav-icon.open span:nth-child(3) {
-    top: 12px;
+    top: 18px;
   }
 }
 
@@ -150,7 +152,7 @@
   display: block;
   text-decoration: none;
   padding: 6px 10px;
-  color: #777;
+  color: rgba(204, 204, 204, 0.581);
 
   /* == */
   text-align: center;

@@ -14,8 +14,8 @@ interface MenuProps {
 const Menu: FC<MenuProps> = ({ active }) => {
 
 
-  const [open, setOpen] = useState(true);
-  const [activeItem, setActiveItem] = useState([false, true, false, false, false]);
+  const [open, setOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState([true, false, false, false, false]);
 
  
 

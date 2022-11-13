@@ -4,9 +4,9 @@ import { Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Html, Scroll, ScrollControls } from "@react-three/drei";
 import LoaderBox from "./LoaderBox";
-import Box from "./Box";
-import { Chair } from "./Chair";
-import { ChairAvatar } from "./ChairAvatar";
+import Box from "./Models/Box";
+import { Chair } from "./Models/Chair";
+import { ChairAvatar } from "./Models/ChairAvatar";
 import LeftContent from "./OverLay/LeftContent";
 import { useGlobalContext } from "./GlobalContext";
 

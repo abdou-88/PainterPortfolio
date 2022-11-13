@@ -13,7 +13,7 @@ const LeftContent: FC<LeftProps> = ({ active, headerText }) => {
  
   
   return (
-    <Html fullscreen  >
+    <Html fullscreen >
    
       <div className={active ? "section-header" : "section-header-nobefore"}>
         <div className="text-wrapper">

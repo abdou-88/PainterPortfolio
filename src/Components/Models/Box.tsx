@@ -3,8 +3,8 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useScroll, useGLTF, useAnimations } from "@react-three/drei";
 
-import { useGlobalContext } from "../Components/GlobalContext";
-import { ScrollAnimation } from "./ScrollAnimation";
+import { useGlobalContext } from "../GlobalContext";
+import { ScrollAnimation } from "../ScrollAnimation";
 
 export default function Box(props: JSX.IntrinsicElements["group"]) {
   const { setActiveBox, setContentBox, scrollSide, setScrollSide } = useGlobalContext();
