@@ -2,6 +2,7 @@
   position: absolute;
   left: 10px;
   bottom: 10px;
+  z-index: 18;
 }
 .signatureBG {
   position: absolute;
@@ -33,6 +34,7 @@
   position: absolute;
   left: 35px;
   bottom: 10px;
+  z-index: 17;
   color: #ccc;
   text-decoration: none;
 }
@@ -40,13 +42,13 @@
 
 @media only screen and (max-width: 600px) {
   .signatureBG {
-  
+  z-index: 18;
   left: 0%;
  
 }
 
 .signatureBG-hovered {
- 
+ z-index: 17;
   left: 0%;
   
 }

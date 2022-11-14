@@ -53,6 +53,7 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
 
         {/* Wrap contents you want to scroll into <ScrollControls> */}
         <ScrollControls
+        
           style={{
             msOverflowStyle: "none",
             scrollbarWidth: "none",
