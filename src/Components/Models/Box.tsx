@@ -44,7 +44,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
 
     if (scrollSide === "U"){
       scroll.offset = offset + 0.0102;
-      setScrollSide("N"):
+      setScrollSide("N");
     } else if (scrollSide==="D"){
       scroll.offset = offset - 0.0102;
       setScrollSide("N");
