@@ -63,8 +63,7 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
           pages={10}
         >
           <LeftContent active={activeBox} headerText={contentBox} />
-          <Chair />
-          <ChairAvatar />
+          
 
           <Box scale={2} position={[0, 0, 0]} />
 

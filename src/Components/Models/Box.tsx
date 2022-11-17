@@ -5,6 +5,8 @@ import { useScroll, useGLTF, useAnimations } from "@react-three/drei";
 
 import { useGlobalContext } from "../GlobalContext";
 import { ScrollAnimation } from "../ScrollAnimation";
+import { Chair } from "./Chair";
+import { ChairAvatar } from "./ChairAvatar";
 
 export default function Box(props: JSX.IntrinsicElements["group"]) {
   const { setActiveBox, setContentBox, scrollSide, setScrollSide } = useGlobalContext();
@@ -13,6 +15,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
 
   const scroll = useScroll();
   const group: any = useRef<THREE.Group>();
+  const box: any = useRef<THREE.Group>();
   const { nodes, materials, animations } = useGLTF("/boxwithmainscene.glb");
 
   const { actions }: any = useAnimations(animations, group);
@@ -50,13 +53,15 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
       setScrollSide("N");
     }
 
-    ScrollAnimation(offset, setActiveBox, setContentBox, state);
+    ScrollAnimation(offset, setActiveBox, setContentBox, state, box);
   });
 
   return (
     <>
       <group ref={group} {...props} dispose={null}>
-        <group name="Scene">
+        <group ref={box}  name="Scene">
+          <Chair />
+          <ChairAvatar />
           <group name="fullBox" position={[0.02, 0.98, 0.03]}>
             <group name="backCover" position={[-0.02, 0.89, -0.96]}>
               <mesh

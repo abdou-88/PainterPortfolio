@@ -20,9 +20,9 @@ export function ChairAvatar(props: JSX.IntrinsicElements["group"]) {
                     // @ts-ignore
                     geometry={nodes.result_mesh.geometry}
                     material={materials["Material.002"]}
-                    position={[0, 0.38, 0]}
-                    rotation={[1.658, 0, -3.15]}
-                    scale={0.0037}
+                    position={[0, 0.2, 0.035]}
+                    rotation={[1.52, 0, -3.05]}
+                    scale={0.0018}
                 />
             </group>
         </group>
