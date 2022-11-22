@@ -17,6 +17,7 @@ const LeftContent: FC<LeftProps> = ({ active, headerText }) => {
 
 
 
+
   return (
     <>
    
@@ -30,25 +31,6 @@ const LeftContent: FC<LeftProps> = ({ active, headerText }) => {
           </div>
         </div>
     
-        <div style={{ height: "100%" }}></div>
-        <div style={{ height: "50%" }}></div>
-
-        <div className={active ? "section-header" : "section-header-nobefore"}>
-          <div className="text-wrapper">
-            <h1>{headerText}</h1>
-            <h3>This is a Boxfolio project designed and developed by A.Yousfi</h3>
-          </div>
-        </div>
-        
-        <div style={{ height: "50%" }}></div>
-
-        <div className={active ? "section-header" : "section-header-nobefore"}>
-          <div className="text-wrapper">
-            <h1>{headerText}</h1>
-            <h3>This is a Boxfolio project designed and developed by A.Yousfi</h3>
-          </div>
-        </div>
-
       </Html>
     
     </>

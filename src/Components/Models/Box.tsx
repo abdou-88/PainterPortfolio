@@ -7,6 +7,7 @@ import { useGlobalContext } from "../GlobalContext";
 import { ScrollAnimation } from "../ScrollAnimation";
 import { Chair } from "./Chair";
 import { ChairAvatar } from "./ChairAvatar";
+import { Tools } from "./tools";
 
 export default function Box(props: JSX.IntrinsicElements["group"]) {
   const { setActiveBox, setContentBox, scrollSide, setScrollSide } = useGlobalContext();
@@ -16,7 +17,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
   const scroll = useScroll();
   const group: any = useRef<THREE.Group>();
   const box: any = useRef<THREE.Group>();
-  const { nodes, materials, animations } = useGLTF("/boxwithmainscene.glb");
+  const { nodes, materials, animations } = useGLTF("/cleanerversioEyes.glb");
 
   const { actions }: any = useAnimations(animations, group);
 
@@ -25,18 +26,19 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
     Object.values(nodes).forEach(
       (node) => (node.receiveShadow = node.castShadow = true)
     ),
-    
+
   );
 
   useEffect(() => void (actions["Take 001"].play().paused = true), [actions]);
 
- 
-  
+
+
   useFrame((state, delta) => {
     const offset = scroll.offset;
+
     const action: any = actions["Take 001"];
     // The offset is between 0 and 1, you can apply it to your models any way you like
-   
+
     // run first animation
     action.time = THREE.MathUtils.damp(
       action.time,
@@ -45,10 +47,10 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
       delta
     );
 
-    if (scrollSide === "U"){
+    if (scrollSide === "U") {
       scroll.offset = offset + 0.0102;
       setScrollSide("N");
-    } else if (scrollSide==="D"){
+    } else if (scrollSide === "D") {
       scroll.offset = offset - 0.0102;
       setScrollSide("N");
     }
@@ -58,10 +60,12 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
 
   return (
     <>
+
       <group ref={group} {...props} dispose={null}>
-        <group ref={box}  name="Scene">
+        <group ref={box} name="Scene">
           <Chair />
           <ChairAvatar />
+          <Tools />
           <group name="fullBox" position={[0.02, 0.98, 0.03]}>
             <group name="backCover" position={[-0.02, 0.89, -0.96]}>
               <mesh
@@ -123,6 +127,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
                 position={[0.83, 0.52, -0.01]}
               />
               <mesh
+               
                 name="bottomSide"
                 castShadow
                 receiveShadow
@@ -132,43 +137,9 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
               />
             </group>
           </group>
-          <group
-            name="Armature"
-            position={[0, 0.2, 0]}
-            rotation={[1.64, -0.02, -3.14]}
-            scale={0}
-          >
-            <primitive object={nodes.mixamorigHips} />
-            <skinnedMesh
-              name="result_mesh"
-              // @ts-ignore
-              geometry={nodes.result_mesh.geometry}
-              material={materials["Material.002"]}
-              // @ts-ignore
-              skeleton={nodes.result_mesh.skeleton}
-            />
-          </group>
-          <group
-            name="Sketchfab_model"
-            position={[0, 0.28, -0.02]}
-            rotation={[-Math.PI / 2, 0, 0]}
-            scale={0}
-          >
-            <group name="chairobjcleanermaterialmergergles">
-              <mesh
-                name="Object_2"
-                castShadow
-                receiveShadow
-                // @ts-ignore
-                geometry={nodes.Object_2.geometry}
-                material={materials["default"]}
-                position={[-1.21, -9.65, 8.77]}
-                scale={0.96}
-              />
-            </group>
-            
-          </group>
+
           <mesh
+            onClick={(e) => console.log('tableau clicked')}
             name="MainPaint"
             castShadow
             receiveShadow
@@ -178,8 +149,15 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             position={[-0.01, 0.46, -0.73]}
             rotation={[1.54, 0, 0]}
             scale={0.26}
+
           />
+          
           <mesh
+            onClick={(e) => console.log('head  clicked')}
+            onPointerOver={(e) => console.log('over')}
+            onPointerOut={(e) => console.log('out')}
+            onPointerEnter={(e) => console.log('enter')}
+            onPointerLeave={(e) => console.log('leave')}
             name="Cube"
             castShadow
             receiveShadow
@@ -188,13 +166,26 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             material={materials["Material.003"]}
             position={[0, 0.45, -0.02]}
             rotation={[-0.23, 0, 0]}
-            scale={-0.03}
+            scale={-0.032}
           />
         </group>
       </group>
-      
+
     </>
   );
 }
 
-useGLTF.preload("/boxwithmainscene.glb");
+useGLTF.preload("/cleanerversioEyes.glb");
+
+            // onContextMenu={(e) => console.log('context menu')}
+            // onDoubleClick={(e) => console.log('double click')}
+            // onWheel={(e) => console.log('wheel spins')}
+            // onPointerUp={(e) => console.log('up')}
+            // onPointerDown={(e) => console.log('down')}
+            // onPointerOver={(e) => console.log('over')}
+            // onPointerOut={(e) => console.log('out')}
+            // onPointerEnter={(e) => console.log('enter')}
+            // onPointerLeave={(e) => console.log('leave')}
+            // onPointerMove={(e) => console.log('move')}
+            // onPointerMissed={() => console.log('missed')}
+            // onUpdate={(self) => console.log('props have been updated')}

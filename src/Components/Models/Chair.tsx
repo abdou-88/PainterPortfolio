@@ -16,7 +16,7 @@ export function Chair(props: JSX.IntrinsicElements["group"]) {
                 material={materials["default"]}
                 position={[0.001026, 0.285, 0.015]}
                 rotation = {[-1.57,0,0]}
-                scale={0.0013}
+                scale={0.0014}
             />
         </group>
     );
