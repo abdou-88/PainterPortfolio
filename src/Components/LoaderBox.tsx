@@ -18,8 +18,8 @@ function LoaderBox() {
 
   return (
     <Html position={[-3.2, 1.55, 0]} style={{ textAlign: "center" }}>
-      {/* <div>
-        {/* loader bar and percentage *
+      <div>
+       {/* loader bar and percentage  */}
         <div>
           <img src={loadimg} />
           <div className="containerpercentage">
@@ -30,7 +30,7 @@ function LoaderBox() {
         <div id="loaderContainer">
           <div id="loaderBar"></div>
         </div>
-      </div> */}
+      </div>
     </Html>
   );
 }

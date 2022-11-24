@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Html, Scroll, ScrollControls } from "@react-three/drei";
+import { Html, OrthographicCamera, Scroll, ScrollControls } from "@react-three/drei";
 import LoaderBox from "./LoaderBox";
 import Box from "./Models/Box";
 import { Chair } from "./Models/Chair";
@@ -23,10 +23,10 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
       ref={refCanvas}
       dpr={[1, 2]}
       shadows
-      camera={{ position: [0, 0, 10], near: 0.1, far: 1000 }}
+      
       className="test3"
     >
-
+      {/* <OrthographicCamera makeDefault zoom={200} /> */}
       <ambientLight intensity={0.03} />
 
       <Suspense fallback={<LoaderBox />}>

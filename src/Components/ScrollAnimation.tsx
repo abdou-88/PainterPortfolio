@@ -11,14 +11,14 @@ export function ScrollAnimation(
   if (offset <= 0.1) { 
     changeCamP(4, 7, 9, state), state;
   } else if (offset > 0.1 && offset <= 0.125) {
-    changeCamP(1, 2, 1, state);
+    changeCamP(0, 2, 1, state);
     setActiveBox(true);
     setContentBox("Boxfolio");
   } else if (offset > 0.125 && offset <= 0.15) {
-    changeCamP(-1, 1.5, 1, state);
+    changeCamP(-1.5, 1.5, 1, state);
     setActiveBox(false);
   } else if (offset > 0.15 && offset <= 0.175) {
-    changeCamP(-1, 1, -1, state);
+    changeCamP(-2, 1, -1, state);
   } else if (offset > 0.175 && offset <= 0.2) {
     changeCamP(1, 1, -1, state);
     changeScenP(0, 0, 0, state, box);
