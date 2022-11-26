@@ -1,129 +1,254 @@
-import React, { useRef } from "react";
+
+import * as THREE from 'three'
 import { useGLTF } from "@react-three/drei";
+import { useLoader } from '@react-three/fiber';
+
+import paper1 from "/img-1870.jpg";
+import paper2 from "/img-1869.jpg";
 
 export function Tools(props:any) {
-    const { nodes, materials } = useGLTF("/MainTable.glb");
+    const { nodes, materials } = useGLTF("/mainroom.glb");
+
+    const tPaper1 = useLoader(THREE.TextureLoader, paper1);
+    const tPaper2 = useLoader(THREE.TextureLoader, paper2);
+
     return (
-        <group {...props} dispose={null}>
+        <group scale ={0.1} position={[0.2,0.2,-0.7]} {...props} dispose={null}>
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.desk_VRayMtl1_0.geometry}
-                material={nodes.desk_VRayMtl1_0.material}
-                position={[0.59, 0.41, -0.56]}
-                rotation={[3.13, -1.16, -Math.PI]}
-                scale={0.02}
+                geometry={nodes.rolledPaper1.geometry}
+                material={nodes.rolledPaper1.material}
+                position={[3.72, 0.17, 2.56]}
+                rotation={[0.08, 0.29, 0.24]}
+                scale={0.19}
+            > <meshBasicMaterial
+                    transparent={true}
+                    side={THREE.DoubleSide}
+                    attach="material"
+                    map={tPaper1}
+                    toneMapped={false}
+                />
+            </mesh>
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.papertrash1.geometry}
+                material={materials.test}
+                position={[4.37, 0.05, 5.15]}
+                scale={0.19}
+            />
+            {/* paper on top f the table */}
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.paper1.geometry}
+                position={[2.49, 2.59, 1.71]}
+                rotation={[0.01, 1.34, 3.13]}
+                scale={0.19}
+            >
+                <meshBasicMaterial
+                    transparent={true}
+                    side={THREE.DoubleSide}
+                    attach="material"
+                    map={tPaper1}
+                    toneMapped={false}
+                />
+            </mesh>
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.desk.geometry}
+                material={materials["Material.003"]}
+                position={[3.57, 2.08, 2.12]}
+                rotation={[Math.PI, -1.16, Math.PI]}
+                scale={0.19}
             />
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.paper3_VRayMtl1_0.geometry}
-                material={nodes.paper3_VRayMtl1_0.material}
-                position={[0.71, -0.04, -0.36]}
-                rotation={[0.05, 0.29, 0.23]}
-                scale={0.02}
+                geometry={nodes.picturehands.geometry}
+                material={materials.test}
+                position={[3.63, 0.84, 4.24]}
+                rotation={[-0.15, 0, 3.14]}
+                scale={0.11}
             />
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.paper16_VRayMtl1_0.geometry}
-                material={materials.handspicture}
-                position={[0.67, 0.2, -0.26]}
-                rotation={[-0.01, 0, 0]}
-                scale={0.02}
+                geometry={nodes.rolledPaper2.geometry}
+                material={nodes.rolledPaper2.material}
+                position={[3.85, 0.05, 2.91]}
+                rotation={[0.02, 0.01, -0.01]}
+                scale={0.19}
+            > <meshBasicMaterial
+                    transparent={true}
+                    side={THREE.DoubleSide}
+                    attach="material"
+                    map={tPaper1}
+                    toneMapped={false}
+                />
+            </mesh>
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.papertrash2.geometry}
+                material={materials.test}
+                position={[1.34, 0.08, 4.9]}
+                scale={0.08}
             />
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.paper19_VRayMtl1_0.geometry}
-                material={nodes.paper19_VRayMtl1_0.material}
-                position={[0.49, 0.45, -0.6]}
-                rotation={[0.02, 1.47, 3.11]}
-                scale={0.02}
-            />
+                geometry={nodes.rolledPaper3.geometry}
+                material={nodes.rolledPaper3.material}
+                position={[3.9, 0.05, 2.35]}
+                rotation={[0.02, -0.27, -0.01]}
+                scale={0.19}
+            > 
+            <meshBasicMaterial
+                    transparent={true}
+                    side={THREE.DoubleSide}
+                    attach="material"
+                    map={tPaper1}
+                    toneMapped={false}
+                />
+            </mesh>
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.paper2_VRayMtl1_0.geometry}
-                material={nodes.paper2_VRayMtl1_0.material}
-                position={[0.73, -0.04, -0.32]}
-                rotation={[-0.01, 0, 0]}
-                scale={0.02}
-            />
-            <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.frame_VRayMtl1_0.geometry}
-                material={materials.handspicture}
-                position={[0.6, 0.28, -0.35]}
-                rotation={[-0.16, 0, 3.14]}
-                scale={0.01}
-            />
-            <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.cloth01_VRayMtl1_0.geometry}
+                geometry={nodes.towel1.geometry}
                 material={materials.board1}
-                position={[0.52, 0.36, -0.35]}
-                rotation={[3.02, 0.79, 3.12]}
-                scale={0.01}
+                position={[2.82, 1.67, 4.27]}
+                rotation={[3.03, 0.79, 3.12]}
+                scale={0.11}
             />
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.paper15_VRayMtl1_0.geometry}
-                material={materials.handspicture}
-                position={[0.38, 0.2, -0.28]}
-                rotation={[-0.01, 0, 0]}
-                scale={0.01}
+                geometry={nodes.bigbrushhead.geometry}
+                material={materials["Material.004"]}
+                position={[4, 3.23, 1.39]}
+                rotation={[1.57, -0.01, -1.37]}
+                scale={0.05}
             />
+            {/* paper under the table */}
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.paper18_VRayMtl1_0.geometry}
-                material={nodes.paper18_VRayMtl1_0.material}
-                position={[0.38, 0.2, -0.51]}
-                rotation={[3.13, 0.14, -Math.PI]}
+                geometry={nodes.paper2.geometry}
+                position={[1.42, 0.08, 2.6]}
+                rotation={[-Math.PI, 0.14, -Math.PI]}
+                scale={0.19}
+            >  
+            <meshBasicMaterial
+                    transparent={true}
+                    side={THREE.DoubleSide}
+                    attach="material"
+                    map={tPaper2}
+                    toneMapped={false}
+                />
+            </mesh>
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.paintboard.geometry}
+                material={materials["Material.009"]}
+                position={[-0.85, 0.77, 5.73]}
+                rotation={[-2.13, 1.27, -0.36]}
                 scale={0.02}
             />
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.paper_VRayMtl1_0.geometry}
-                material={nodes.paper_VRayMtl1_0.material}
-                position={[0.73, -0.04, -0.37]}
-                rotation={[-0.01, -0.27, 0]}
-                scale={0.02}
+                geometry={nodes.bigBrushhand.geometry}
+                material={materials["Material.006"]}
+                position={[4.15, 3.12, 2.51]}
+                rotation={[0, -0.16, 0]}
+                scale={0.05}
             />
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.polySurface20_All_0.geometry}
+                geometry={nodes.Cylinder.geometry}
+                material={materials["Material.002"]}
+                position={[4.02, 2.83, 1.19]}
+                rotation={[-Math.PI, 0.35, -Math.PI]}
+                scale={0.29}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Cylinder001.geometry}
+                material={materials.carpet}
+                position={[-2, 1.09, 7.98]}
+                scale={1.91}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Plane_Material_0.geometry}
+                material={materials.Material}
+                position={[-7.01, 0, 11.62]}
+                rotation={[-Math.PI / 2, 0, 0]}
+                scale={2.39}
+            />
+            <group
+                position={[-6.48, 2.6, 3.42]}
+                rotation={[-1.59, 0, -0.63]}
+                scale={0.03}
+            >
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes["Cylinder006_Material_#27_0_1"].geometry}
+                    material={materials.Material_27}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes["Cylinder006_Material_#27_0_2"].geometry}
+                    material={materials.Material_31}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes["Cylinder006_Material_#27_0_3"].geometry}
+                    material={materials.Material_30}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes["Cylinder006_Material_#27_0_4"].geometry}
+                    material={materials.Material_29}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes["Cylinder006_Material_#27_0_5"].geometry}
+                    material={materials.Material_28}
+                />
+            </group>
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.bigbrushmiddle001.geometry}
+                material={materials["Material.005"]}
+                position={[3.93, 3.03, 1.38]}
+                rotation={[-1.57, 0, 1.4]}
+                scale={0.05}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.cover.geometry}
                 material={materials.redcolor}
-                position={[0.16, 0.27, -0.43]}
-                rotation={[-1.6, 0, 0]}
-                scale={0}
-            />
-            <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.cloth02_VRayMtl1_0.geometry}
-                material={nodes.cloth02_VRayMtl1_0.material}
-                position={[0.65, 0.35, -0.37]}
-                rotation={[-0.25, -0.72, 0]}
-                scale={0.01}
-            />
-            <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.cloth_VRayMtl1_0.geometry}
-                material={materials.redcolor}
-                position={[0.58, 0.47, -0.56]}
-                rotation={[-3.1, -1.16, -3.1]}
-                scale={0.025}
+                position={[3.45, 2.77, 2.11]}
+                rotation={[-3.09, -1.16, -3.1]}
+                scale={0.23}
             />
         </group>
     );
 }
 
-useGLTF.preload("/MainTable.glb");
+useGLTF.preload("/mainroom.glb");
