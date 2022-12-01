@@ -30,11 +30,12 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
       <ambientLight intensity={0.5} />
      
       <Suspense fallback={<LoaderBox />}>
+    
         <spotLight
           angle={0.24}
-          color="#eab37b"
+          color="#fff"
           penumbra={1}
-          position={[15, 50, 30]}
+          position={[0, 0, 0]}
           shadow-mapSize={[2048, 2048]}
           shadow-bias={-0.001}
           castShadow
@@ -49,7 +50,6 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
           shadow-bias={-0.001}
           castShadow
         />
-
 
         {/* Wrap contents you want to scroll into <ScrollControls> */}
         <ScrollControls
