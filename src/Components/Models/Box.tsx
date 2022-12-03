@@ -8,7 +8,8 @@ import { ScrollAnimation } from "../ScrollAnimation";
 import { Chair } from "./Chair";
 import { ChairAvatar } from "./ChairAvatar";
 import { Tools } from "./tools";
-import { Sofa } from "./sofa";
+
+import { Projects } from "./Projects";
 
 export default function Box(props: JSX.IntrinsicElements["group"]) {
   const { setActiveBox, setContentBox, scrollSide, setScrollSide } = useGlobalContext();
@@ -67,7 +68,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <Chair />
           <ChairAvatar />
           <Tools />
-          
+          <Projects/>
           <group name="fullBox" position={[0.02, 0.98, 0.03]}>
             <group name="backCover" position={[-0.02, 0.89, -0.96]}>
               <mesh

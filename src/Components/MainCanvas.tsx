@@ -50,7 +50,7 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
           shadow-bias={-0.001}
           castShadow
         />
-
+        
         {/* Wrap contents you want to scroll into <ScrollControls> */}
         <ScrollControls
         
@@ -62,9 +62,9 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
           infinite={false}
           pages={10}
         >
-          <LeftContent active={activeBox} headerText={contentBox} />
           
-
+          
+          <LeftContent active={activeBox} headerText={contentBox} />
           <Box scale={2} position={[0, 0, 0]} />
 
 
