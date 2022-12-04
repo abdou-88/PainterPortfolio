@@ -15,32 +15,32 @@ interface LeftProps {
 const LeftContent: FC<LeftProps> = ({ active, headerText }) => {
 
   const ref: any = useRef()
-  const scrollHtml = useScroll();
+  // const scrollHtml = useScroll();
 
 
-  useFrame((state, delta) => {
+  // useFrame((state, delta) => {
 
-    const offset = scrollHtml.offset;
+  //   const offset = scrollHtml.offset;
 
-    // The offset is between 0 and 1, you can apply it to your models any way you like
+  //   // The offset is between 0 and 1, you can apply it to your models any way you like
 
-    if (offset <= 0.1) {
+  //   if (offset <= 0.1) {
 
-      console.log(scrollHtml);
-    } else if (offset > 0.1 && offset <= 0.125) {
+  //     console.log(scrollHtml);
+  //   } else if (offset > 0.1 && offset <= 0.125) {
 
-      console.log(scrollHtml);
-    }
+  //     console.log(scrollHtml);
+  //   }
 
 
-  });
+  // });
 
 
   return (
 
 
 
-    <Html ref={ref} style={{}} zIndexRange={[10, 0]} fullscreen >
+    <Html position = {[0,0,0]} as='div' sprite ref={ref} style={{ position: "absolute", overflow: "hidden" }} zIndexRange={[10, 0]} fullscreen >
 
       <div className={active ? "section-header" : "section-header-nobefore"}>
         <div className="text-wrapper">
