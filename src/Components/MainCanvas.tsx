@@ -9,6 +9,7 @@ import { Chair } from "./Models/Chair";
 import { ChairAvatar } from "./Models/ChairAvatar";
 import LeftContent from "./OverLay/LeftContent";
 import { useGlobalContext } from "./GlobalContext";
+import { BoxFull } from "./Models/BoxFull";
 
 
 interface CanvasProps { }
