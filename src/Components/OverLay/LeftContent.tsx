@@ -40,7 +40,7 @@ const LeftContent: FC<LeftProps> = ({ active, headerText }) => {
 
 
 
-    <Html  ref={ref} style={{ overflow: "hidden" }} zIndexRange={[10, 0]} fullscreen >
+    <Html  as = "div" ref={ref} style={{ position: "absolute" }} zIndexRange={[10, 0]} fullscreen >
 
       <div className={active ? "section-header" : "section-header-nobefore"}>
         <div className="text-wrapper">

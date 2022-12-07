@@ -1,28 +1,29 @@
 /* /////////////////////////////// */
 .section-header-nobefore {
-  
+  position: fixed;
   background-image: url("acn-header-img2.png");
   background-position: top left;
   background-size: auto 100%;
   background-repeat: no-repeat;
   height: 10vh;
   min-height: 80vh;
-  width: 50%;
-  
+  width: 50vw;  
   z-index: 1;
 }
 .section-header {
+  position: fixed;
   background-image: url("acn-header-img2.png");
   background-position: top left;
   background-size: auto 100%;
   background-repeat: no-repeat;
   height: 10vh;
   min-height: 80vh;
-  width: 50%;
+  width: 50vw;
  
   z-index: 1;
 }
 .section-header:before {
+  position: fixed;
   content: "";
   height: 90%;
   width: 60% ;

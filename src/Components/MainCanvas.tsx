@@ -1,12 +1,11 @@
 import { FC } from "react";
-
+import { events } from "@react-three/fiber"
 import { Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Html, OrbitControls, OrthographicCamera, Scroll, ScrollControls } from "@react-three/drei";
 import LoaderBox from "./LoaderBox";
 import Box from "./Models/Box";
-import { Chair } from "./Models/Chair";
-import { ChairAvatar } from "./Models/ChairAvatar";
+
 import LeftContent from "./OverLay/LeftContent";
 import { useGlobalContext } from "./GlobalContext";
 import { BoxFull } from "./Models/BoxFull";
@@ -21,10 +20,12 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
   return (
 
     <Canvas
+    
       ref={refCanvas}
       dpr={[1, 2]}
       shadows
       
+    
       className="test3"
     >
       {/* <OrthographicCamera makeDefault zoom={200} /> */}
@@ -51,7 +52,7 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
           shadow-bias={-0.001}
           castShadow
         />
-        
+        <LeftContent active={activeBox} headerText={contentBox} />
         {/* Wrap contents you want to scroll into <ScrollControls> */}
         <ScrollControls
         
@@ -65,7 +66,7 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
         >
           
           
-          <LeftContent active={activeBox} headerText={contentBox} />
+          
           <Box scale={2} position={[0, 0, 0]} />
 
 
