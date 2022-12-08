@@ -1,12 +1,11 @@
 import { FC } from "react";
-import { events } from "@react-three/fiber"
+
 import { Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Html, OrbitControls, OrthographicCamera, Scroll, ScrollControls } from "@react-three/drei";
+import {  ScrollControls } from "@react-three/drei";
 import LoaderBox from "./LoaderBox";
 import Box from "./Models/Box";
 
-import LeftContent from "./OverLay/LeftContent";
 import { useGlobalContext } from "./GlobalContext";
 import { BoxFull } from "./Models/BoxFull";
 
@@ -15,8 +14,7 @@ interface CanvasProps { }
 
 const MainCanvas: FC<CanvasProps> = ({ }) => {
   const refCanvas: any = useRef(null);
-  const { activeBox, contentBox } = useGlobalContext();
-
+ 
   return (
 
     <Canvas
@@ -26,10 +24,8 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
       className="test3"
     >
       {/* <OrthographicCamera makeDefault zoom={200} /> */}
-      <ambientLight intensity={0.5} />
-     
-      <Suspense fallback={<LoaderBox />}>
-    
+      <ambientLight intensity={0.5} />     
+      <Suspense fallback={<LoaderBox />}>    
         <spotLight
           angle={0.24}
           color="#fff"
@@ -39,7 +35,6 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
           shadow-bias={-0.001}
           castShadow
         />
-
         <spotLight
           angle={0.24}
           color="#eab37b"
@@ -59,13 +54,7 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
           infinite={false}
           pages={8}
         >
-          
-          <Box scale={2} position={[0, 0, 0]} />
-          
-          
-
-
-
+          <Box scale={2} position={[0, 0, 0]} />          
         </ScrollControls>
 
       </Suspense>

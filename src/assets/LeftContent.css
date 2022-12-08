@@ -8,6 +8,7 @@
   height: 10vh;
   min-height: 80vh;
   width: 50vw;  
+  top:5%;
   z-index: 1;
 }
 .section-header {
@@ -18,12 +19,11 @@
   background-repeat: no-repeat;
   height: 10vh;
   min-height: 80vh;
-  width: 50vw;
- 
+  width: 50vw; 
+   top:50px;
   z-index: 1;
 }
-.section-header:before {
-  position: fixed;
+.section-header:before { 
   content: "";
   height: 90%;
   width: 60% ;
@@ -100,7 +100,7 @@ h3 {
 /* ////////////////////// */
 
 
-/* .rotate-left {
+.rotate-left {
   opacity: 0;
   transform: translateZ(100px) translateX(-100%) rotateY(90deg);
   transform-style: perserve-3d;
@@ -114,7 +114,7 @@ h3 {
     rotateX(0deg);
   transform-style: perserve-3d;
    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-} */
+}
 
 
 

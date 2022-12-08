@@ -8,10 +8,20 @@ import Footer from "./Components/OverLay/Footer";
 import ScrollDiv from "./Components/OverLay/Scroll";
 
 import { useEffect, useRef, useState } from "react";
-import { MyGlobalContext } from "./Components/GlobalContext";
+import { MyGlobalContext, useGlobalContext } from "./Components/GlobalContext";
+import LeftContent from "./Components/OverLay/LeftContent";
 
 
+function Overlay() {
+  const { activeBox, contentBox } = useGlobalContext();
 
+  return (
+    <div style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none', width: '100%', height: '100%' }}>
+      <LeftContent active={activeBox} headerText={contentBox} />
+      <Footer active={activeBox} />
+    </div>
+  )
+}
 
 
 export default function App() {
@@ -24,6 +34,7 @@ export default function App() {
     <MyGlobalContext.Provider value={{
       activeBox, setActiveBox, contentBox, setContentBox, scrollSide, setScrollSide
     }}>
+      
       <div>
         <div className="container">
           <div className="main">
@@ -37,10 +48,11 @@ export default function App() {
             <Menu active={activeBox} />
           </div>
           <div className="footer">
-            <Footer active={activeBox} />
+            
           </div>
         </div>
       </div>
+      <Overlay />
     </MyGlobalContext.Provider>
   );
 }
