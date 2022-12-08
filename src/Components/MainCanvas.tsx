@@ -20,12 +20,9 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
   return (
 
     <Canvas
-    
       ref={refCanvas}
       dpr={[1, 2]}
       shadows
-      
-    
       className="test3"
     >
       {/* <OrthographicCamera makeDefault zoom={200} /> */}
@@ -52,22 +49,20 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
           shadow-bias={-0.001}
           castShadow
         />
-        <LeftContent active={activeBox} headerText={contentBox} />
+       
         {/* Wrap contents you want to scroll into <ScrollControls> */}
         <ScrollControls
-        
           style={{
             msOverflowStyle: "none",
             scrollbarWidth: "none",
           }}
-
           infinite={false}
-          pages={10}
+          pages={8}
         >
           
-          
-          
           <Box scale={2} position={[0, 0, 0]} />
+          
+          
 
 
 
