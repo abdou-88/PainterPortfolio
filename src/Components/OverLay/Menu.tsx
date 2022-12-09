@@ -1,6 +1,5 @@
 import { FC, useEffect, useState } from "react";
 
-import menuBGUp from "/menubgUp.png";
 import {menuItems}  from "../../Data/general"
 
 import "../../assets/menu.css";
@@ -55,10 +54,7 @@ const Menu: FC<MenuProps> = ({ active }) => {
       <div className={open ? "mcd-menu opened" : "mcd-menu"} >
         {MButtons()}        
       </div>
-      <img
-        className={active ? "menuBGUp-hovered" : "menuBGUp"}
-        src={menuBGUp}
-      />
+     
       <div
         id="nav-icon"
         className={open ? "open" : ""}
