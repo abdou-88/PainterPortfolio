@@ -6,6 +6,7 @@
   border-radius: 6px;
   border: 2px solid #b07c54;
   align-items: center;
+  z-index: 1;
 }
 
 @keyframes load {
@@ -23,7 +24,7 @@
   background: linear-gradient(to bottom right, #e7b37e, #b07c54);
   border-radius: 6px;
   box-shadow: 0 0 10px #b07c54;
-
+z-index: 1;
   animation: load 0.25s infinite alternate ease-in-out;
 }
 

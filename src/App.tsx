@@ -1,5 +1,6 @@
 import "./App.css";
 
+import menuBGUp from "/menubgUp.png";
 import Menu from "./Components/OverLay/Menu";
 
 import MainCanvas from "./Components/MainCanvas";
@@ -7,7 +8,7 @@ import Footer from "./Components/OverLay/Footer";
 
 import ScrollDiv from "./Components/OverLay/Scroll";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { MyGlobalContext, useGlobalContext } from "./Components/GlobalContext";
 import LeftContent from "./Components/OverLay/LeftContent";
 
@@ -17,6 +18,10 @@ function Overlay() {
 
   return (
     <div style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none', width: '100%', height: '100%' }}>
+      <img
+        className={activeBox ? "menuBGUp-hovered" : "menuBGUp"}
+        src={menuBGUp}
+      />
       <LeftContent active={activeBox} headerText={contentBox} />
       <Footer active={activeBox} />
     </div>
@@ -47,54 +52,11 @@ export default function App() {
           <div className="header">
             <Menu active={activeBox} />
           </div>
-          <div className="footer">
-            
-          </div>
+         
         </div>
       </div>
       <Overlay />
     </MyGlobalContext.Provider>
   );
 }
-
-
-
-const Content = (props: any) => {
-  const [contentHover, setContentHover] = useState(false);
-  const contentRef: any = useRef(null);
-
-  useEffect(() => {
-    const handleScrolling = (event: any) => {
-      if (contentRef !== null) {
-        if (contentHover === false) {
-          contentRef.current.scrollTo({
-            top: contentRef.current.scrollTop + event.deltaY,
-            behavior: "smooth",
-          });
-        }
-      }
-    };
-
-    window.addEventListener("wheel", handleScrolling);
-
-    return () => {
-      window.removeEventListener("wheel", handleScrolling);
-    };
-  });
-
-  return (
-    <div
-      className="content"
-      ref={contentRef}
-      onMouseEnter={() => {
-        setContentHover(true);
-      }}
-      onMouseLeave={() => {
-        setContentHover(false);
-      }}
-    >
-      {/* YOUR LIST OF CONTENT OR WHATEVER */}
-    </div>
-  );
-};
 
