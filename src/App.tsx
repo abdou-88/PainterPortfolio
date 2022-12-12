@@ -12,6 +12,8 @@ import { useState } from "react";
 import { MyGlobalContext, useGlobalContext } from "./Components/GlobalContext";
 import LeftContent from "./Components/OverLay/LeftContent";
 
+import PopUp from "./Components/PopUp";
+
 
 function Overlay() {
   const { activeBox, contentBox } = useGlobalContext();
@@ -39,11 +41,12 @@ export default function App() {
     <MyGlobalContext.Provider value={{
       activeBox, setActiveBox, contentBox, setContentBox, scrollSide, setScrollSide
     }}>
-      
+      <PopUp activeP={true} />
       <div>
         <div className="container">
           <div className="main">
             <MainCanvas />
+            
           </div>
          
           <div className="rightMain">
@@ -56,6 +59,7 @@ export default function App() {
         </div>
       </div>
       <Overlay />
+     
     </MyGlobalContext.Provider>
   );
 }
