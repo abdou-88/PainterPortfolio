@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useScroll, useGLTF, useAnimations } from "@react-three/drei";
 
@@ -12,9 +12,13 @@ import { Tools } from "./tools";
 import { Projects } from "./Projects";
 
 export default function Box(props: JSX.IntrinsicElements["group"]) {
-  const { setActiveBox, setContentBox, scrollSide, setScrollSide } = useGlobalContext();
+  const { setActiveBox, setContentBox, setPopup } = useGlobalContext();
 
+  const [hovered, setHovered] = useState(false);
 
+  useEffect(() => {
+    document.body.style.cursor =  hovered? 'pointer': 'auto' ;
+  }, [hovered])
 
   const scroll = useScroll();
   const group: any = useRef<THREE.Group>();
@@ -49,13 +53,6 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
       delta
     );
 
-    if (scrollSide === "U") {
-      scroll.offset = offset + 0.0102;
-      setScrollSide("N");
-    } else if (scrollSide === "D") {
-      scroll.offset = offset - 0.0102;
-      setScrollSide("N");
-    }
 
     ScrollAnimation(offset, setActiveBox, setContentBox, state, box);
   });
@@ -67,7 +64,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
         <group ref={box} name="Scene">
           <Chair />
           <ChairAvatar />
-          <Tools />
+          <Tools  />
           <Projects/>
           <group name="fullBox" position={[0.02, 0.98, 0.03]}>
             <group name="backCover" position={[-0.02, 0.89, -0.96]}>
@@ -142,7 +139,9 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           </group>
 
           <mesh
-            onClick={(e) => console.log('tableau clicked')}
+            onClick={(e) => setPopup(true)}
+            onPointerEnter={() => setHovered(true)}
+            onPointerLeave={() => setHovered(false)}            
             name="MainPaint"
             castShadow
             receiveShadow
@@ -155,15 +154,11 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
 
           />
           
-          <mesh
-            onClick={(e) => console.log('head  clicked')}
-            onPointerOver={(e) => console.log('over')}
-            onPointerOut={(e) => console.log('out')}
-            onPointerEnter={(e) => console.log('enter')}
-            onPointerLeave={(e) => console.log('leave')}
+          <mesh   
+          
             name="Cube"
             castShadow
-            receiveShadow
+            receiveShadow           
             // @ts-ignore
             geometry={nodes.Cube.geometry}
             material={materials["Material.003"]}

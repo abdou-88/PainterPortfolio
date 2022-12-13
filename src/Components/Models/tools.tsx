@@ -1,22 +1,35 @@
 
 import * as THREE from 'three'
+import { useEffect, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useLoader } from '@react-three/fiber';
 
+import { useGlobalContext } from "../GlobalContext";
 import paper1 from "/img-1870.jpg";
 import paper2 from "/img-1869.jpg";
 
-export function Tools(props:any) {
+export function Tools(props: any) {
+
+    const { setPopup } = useGlobalContext();
+
+    const [hovered, setHovered] = useState(false);
+
+    useEffect(() => {
+        document.body.style.cursor = hovered ? 'pointer' : 'auto';
+    }, [hovered])
+
+
     const { nodes, materials } = useGLTF("/mainroom.glb");
 
     const tPaper1 = useLoader(THREE.TextureLoader, paper1);
     const tPaper2 = useLoader(THREE.TextureLoader, paper2);
 
     return (
-        <group scale ={0.1} position={[0.2,0.2,-0.7]} {...props} dispose={null}>
+        <group scale={0.1} position={[0.2, 0.2, -0.7]} {...props} dispose={null}>
             <mesh
                 castShadow
                 receiveShadow
+               
                 // @ts-ignore
                 geometry={nodes.rolledPaper1.geometry}
                 // @ts-ignore
@@ -72,6 +85,9 @@ export function Tools(props:any) {
             <mesh
                 castShadow
                 receiveShadow
+                onClick={(e) => setPopup(true)}
+                onPointerEnter={() => setHovered(true)}
+                onPointerLeave={() => setHovered(false)}
                 // @ts-ignore
                 geometry={nodes.picturehands.geometry}
                 material={materials.test}
@@ -116,8 +132,8 @@ export function Tools(props:any) {
                 position={[3.9, 0.05, 2.35]}
                 rotation={[0.02, -0.27, -0.01]}
                 scale={0.19}
-            > 
-            <meshBasicMaterial
+            >
+                <meshBasicMaterial
                     transparent={true}
                     side={THREE.DoubleSide}
                     attach="material"
@@ -154,8 +170,8 @@ export function Tools(props:any) {
                 position={[1.42, 0.08, 2.6]}
                 rotation={[-Math.PI, 0.14, -Math.PI]}
                 scale={0.19}
-            >  
-            <meshBasicMaterial
+            >
+                <meshBasicMaterial
                     transparent={true}
                     side={THREE.DoubleSide}
                     attach="material"

@@ -1,18 +1,21 @@
 import { FC, useState, } from "react";
 
 import "../assets/PopUp.css";
+import { useGlobalContext } from "./GlobalContext";
 
 interface PopProps {
     imgSrc?: string;
-    activeP: boolean;
+    
 }
 
-const PopUp: FC<PopProps> = ({ activeP }) => {
-    const [active, setActive] = useState(activeP);
+const PopUp: FC<PopProps> = ({  }) => {
+    const { popup, setPopup } = useGlobalContext();
+
+
 
     return (
         <>
-            <div id="modal-container" onClick={() => setActive(false)} className={active ? "popup" : "popup out"}>
+            <div id="modal-container" onClick={() => setPopup(false)} className={popup ? "popup" : "popup out"}>
                 <div className="modal-background">
                     <div className="modal">
 

@@ -1,9 +1,8 @@
-.black{
-  height: 700px;
-  background-color: black;
-} 
 
-#modal-container {
+ html.modal-active, body.modal-active {
+	 overflow: hidden;
+}
+ #modal-container {
 	 position: fixed;
 	 display: table;
 	 height: 100%;
@@ -13,42 +12,60 @@
 	 transform: scale(0);
 	 z-index: 1;
 }
- .popup {
+ #modal-container.popup {
 	 transform: scaleY(0.01) scaleX(0);
 	 animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
- .popup .modal-background .modal {
+ #modal-container.popup .modal-background .modal {
 	 transform: scale(0);
 	 animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
- .popup.out {
+ #modal-container.popup.out {
 	 transform: scale(1);
 	 animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
-
- .modal-background {
+ #modal-container.popup.out .modal-background .modal {
+	 animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+ 
+ #modal-container .modal-background {
 	 display: table-cell;
-	 background: rgba(255, 255, 255, .7);
+	 background: rgba(255, 255, 255, .6);
 	 text-align: center;
 	 vertical-align: middle;
 }
-
- .modal {
-	 background: rgba(0, 0, 0, .7);
+ #modal-container .modal-background .modal {
+	 background: white;
+	 padding: 0px;
 	 display: inline-block;
 	 border-radius: 3px;
-   border: 3px red solid;
+	 font-weight: 300;
 	 position: relative;
-   animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44,1) forwards;
+}
+ #modal-container .modal-background .modal h2 {
+	 font-size: 25px;
+	 line-height: 25px;
+	 margin-bottom: 15px;
+}
+ #modal-container .modal-background .modal p {
+	 font-size: 18px;
+	 line-height: 22px;
+}
+ #modal-container .modal-background .modal .modal-svg {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 height: 100%;
+	 width: 100%;
+	 border-radius: 3px;
+}
+ #modal-container .modal-background .modal .modal-svg rect {
+	 stroke: #fff;
+	 stroke-width: 2px;
+	 stroke-dasharray: 778;
+	 stroke-dashoffset: 778;
 }
 
- .content {
-	 min-height: 100%;
-	 height: 100%;
-	 background: white;
-	 position: relative;
-	 z-index: 0;
-}
 
  @keyframes unfoldIn {
 	 0% {
@@ -88,4 +105,3 @@
 		 transform: scale(0);
 	}
 }
- 

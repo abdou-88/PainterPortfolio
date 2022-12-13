@@ -1,6 +1,6 @@
 import "./App.css";
 
-import menuBGUp from "/menubgUp.png";
+
 import Menu from "./Components/OverLay/Menu";
 
 import MainCanvas from "./Components/MainCanvas";
@@ -20,10 +20,7 @@ function Overlay() {
 
   return (
     <div style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none', width: '100%', height: '100%' }}>
-      <img
-        className={activeBox ? "menuBGUp-hovered" : "menuBGUp"}
-        src={menuBGUp}
-      />
+     
       <LeftContent active={activeBox} headerText={contentBox} />
       <Footer active={activeBox} />
     </div>
@@ -35,13 +32,12 @@ export default function App() {
 
   const [activeBox, setActiveBox] = useState<boolean>(true);
   const [contentBox, setContentBox] = useState<string>("boxfolio");
-  const [scrollSide, setScrollSide] = useState<string>("boxfolio");
+  const [popup, setPopup] = useState<boolean>(false);
 
   return (
     <MyGlobalContext.Provider value={{
-      activeBox, setActiveBox, contentBox, setContentBox, scrollSide, setScrollSide
-    }}>
-      <PopUp activeP={true} />
+      activeBox, setActiveBox, contentBox, setContentBox, popup, setPopup }}>
+      <PopUp  />
       <div>
         <div className="container">
           <div className="main">

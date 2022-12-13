@@ -75,7 +75,7 @@
   position: absolute;
   left: 50%;
   top: 0px;
-  z-index: 17;
+  
   opacity: 0;
   transform: translateY(-100%) rotateX(-90deg);
   transform-style: perserve-3d;
@@ -86,7 +86,7 @@
   position: absolute;
   left: 50%;
   top: 0px;
-   z-index: 17;
+  
   opacity: 1;
   transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
     rotateX(0deg);

@@ -5,8 +5,8 @@ export type GlobalContent = {
   setActiveBox: (c: boolean) => void;
   contentBox: string;
   setContentBox: (c: string) => void;
-  scrollSide : string;
-  setScrollSide: (c: string) => void;
+  popup : boolean;
+  setPopup: (c: boolean) => void;
   
 };
 export const MyGlobalContext = createContext<GlobalContent>({
@@ -14,8 +14,8 @@ export const MyGlobalContext = createContext<GlobalContent>({
   setActiveBox: () => {},
   contentBox: "Boxfolio", // set a default value
   setContentBox: () => { },
-  scrollSide: "N",
-  setScrollSide: () => { },
+  popup: false,
+  setPopup: () => { },
   
 });
 export const useGlobalContext = () => useContext(MyGlobalContext);
