@@ -6,9 +6,6 @@ import {  ScrollControls } from "@react-three/drei";
 import LoaderBox from "./LoaderBox";
 import Box from "./Models/Box";
 
-import { useGlobalContext } from "./GlobalContext";
-import { BoxFull } from "./Models/BoxFull";
-
 
 interface CanvasProps { }
 

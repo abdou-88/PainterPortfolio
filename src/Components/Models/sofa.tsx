@@ -12,6 +12,7 @@ export function Sofa(props:any) {
                         <mesh
                             castShadow
                             receiveShadow
+                            // @ts-ignore
                             geometry={nodes.Plane_Material_0.geometry}
                             material={materials.Material}
                         />
