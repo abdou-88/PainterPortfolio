@@ -10,6 +10,7 @@ import { ChairAvatar } from "./ChairAvatar";
 import { Tools } from "./tools";
 
 import { Projects } from "./Projects";
+import { PaintingChar } from "./PaintingChar";
 
 export default function Box(props: JSX.IntrinsicElements["group"]) {
   const { setActiveBox, setContentBox, setPopup } = useGlobalContext();
@@ -63,6 +64,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
       <group ref={group} {...props} dispose={null}>
         <group ref={box} name="Scene">
           <Chair />
+          <PaintingChar/>
           <ChairAvatar />
           <Tools  />
           <Projects/>
