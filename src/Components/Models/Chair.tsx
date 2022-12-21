@@ -14,9 +14,9 @@ export function Chair(props: JSX.IntrinsicElements["group"]) {
                 // @ts-ignore
                 geometry={nodes.ChairOb.geometry}
                 material={materials["default"]}
-                position={[0.001026, 0.285, 0.015]}
-                rotation = {[-1.57,0,0]}
-                scale={0.0014}
+                position={[-0.7, 0.3, -0.5]}
+                rotation = {[-1.57,0,1.5]}
+                scale={0.0015}
             />
         </group>
     );

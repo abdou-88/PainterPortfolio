@@ -65,7 +65,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
         <group ref={box} name="Scene">
           <Chair />
           <PaintingChar/>
-          <ChairAvatar />
+         
           <Tools  />
           <Projects/>
           <group name="fullBox" position={[0.02, 0.98, 0.03]}>
@@ -155,19 +155,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             scale={0.26}
 
           />
-          
-          <mesh   
-          
-            name="Cube"
-            castShadow
-            receiveShadow           
-            // @ts-ignore
-            geometry={nodes.Cube.geometry}
-            material={materials["Material.003"]}
-            position={[0, 0.45, -0.02]}
-            rotation={[-0.23, 0, 0]}
-            scale={-0.032}
-          />
+     
         </group>
       </group>
 
