@@ -86,7 +86,7 @@
   position: absolute;
   left: 50%;
   top: 0px;
-  
+  z-index: 20;
   opacity: 1;
   transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
     rotateX(0deg);
@@ -255,11 +255,11 @@
 
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1150px) {
  .mcd-menu { 
   position: absolute;
   z-index: 15;
- padding-top: 20%;
+ padding-top: 10%;
   background-color: rgba(0, 0, 0, 0.7);
   height: 100%;
 }
@@ -267,4 +267,15 @@
   float:none;
 
 }
+}
+
+
+@media only screen and (max-width: 600px) {
+ .mcd-menu { 
+ 
+  
+ padding-top: 20%;
+ 
+}
+
 }

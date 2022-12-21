@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from "react";
 
-import {menuItems}  from "../../Data/general"
+import {menuItems}  from "../Data/general"
 
-import "../../assets/menu.css";
+import "../assets/menu.css";
 import React from "react";
 
 interface MenuProps {
