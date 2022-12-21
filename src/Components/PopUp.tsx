@@ -18,7 +18,7 @@ const PopUp: FC<PopProps> = ({  }) => {
             <div id="modal-container" onClick={() => setPopup(false)} className={popup ? "popup" : "popup out"}>
                 <div className="modal-background">
                     <div className="modal">
-
+                        <div className={"closeBtn"}><span>X</span></div>
                         <img src='https://www.planetware.com/wpimages/2019/11/canada-in-pictures-beautiful-places-to-photograph-morraine-lake.jpg' />
 
 

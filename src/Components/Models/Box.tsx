@@ -6,13 +6,13 @@ import { useScroll, useGLTF, useAnimations } from "@react-three/drei";
 import { useGlobalContext } from "../GlobalContext";
 import { ScrollAnimation } from "../ScrollAnimation";
 import { Chair } from "./Chair";
-import { ChairAvatar } from "./ChairAvatar";
-import { Tools } from "./tools";
+import { MainArea } from "./MainArea";
 
 import { Projects } from "./Projects";
 import { PaintingChar } from "./PaintingChar";
 
 export default function Box(props: JSX.IntrinsicElements["group"]) {
+
   const { setActiveBox, setContentBox, setPopup } = useGlobalContext();
 
   const [hovered, setHovered] = useState(false);
@@ -64,9 +64,8 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
       <group ref={group} {...props} dispose={null}>
         <group ref={box} name="Scene">
           <Chair />
-          <PaintingChar/>
-         
-          <Tools  />
+          <PaintingChar/>         
+          <MainArea  />
           <Projects/>
           <group name="fullBox" position={[0.02, 0.98, 0.03]}>
             <group name="backCover" position={[-0.02, 0.89, -0.96]}>

@@ -1,16 +1,16 @@
 import "./App.css";
 
 
-import Menu from "./Components/OverLay/Menu";
+import Menu from "./Components/Menu";
 
 import MainCanvas from "./Components/MainCanvas";
-import Footer from "./Components/OverLay/Footer";
+import Footer from "./Components/Footer";
 
-import ScrollDiv from "./Components/OverLay/Scroll";
+
 
 import { useState } from "react";
 import { MyGlobalContext, useGlobalContext } from "./Components/GlobalContext";
-import LeftContent from "./Components/OverLay/LeftContent";
+import LeftContent from "./Components/OverLay";
 
 import PopUp from "./Components/PopUp";
 
@@ -40,14 +40,11 @@ export default function App() {
       <PopUp  />
       <div>
         <div className="container">
+
           <div className="main">
-            <MainCanvas />
-            
-          </div>
-         
-          <div className="rightMain">
-            <ScrollDiv active={activeBox} />
-          </div>
+            <MainCanvas />            
+          </div>        
+      
           <div className="header">
             <Menu active={activeBox} />
           </div>

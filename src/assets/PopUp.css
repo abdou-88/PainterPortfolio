@@ -9,6 +9,7 @@
 	 width: 100%;
 	 top: 0;
 	 left: 0;
+	
 	 transform: scale(0);
 	 z-index: 1;
 }
@@ -29,6 +30,7 @@
 }
  
  #modal-container .modal-background {
+	
 	 display: table-cell;
 	 background: rgba(255, 255, 255, .6);
 	 text-align: center;
@@ -41,6 +43,7 @@
 	 border-radius: 3px;
 	 font-weight: 300;
 	 position: relative;
+	  border: rgb(250, 185, 6) 3px solid;
 }
  #modal-container .modal-background .modal h2 {
 	 font-size: 25px;
@@ -58,6 +61,25 @@
 	 height: 100%;
 	 width: 100%;
 	 border-radius: 3px;
+}
+.closeBtn{
+	background-color: rgb(250, 185, 6);
+	position: absolute;
+	right: -15px;
+	top: -15px;
+	width: 30px;
+	height: 30px;;
+	border-radius: 50%;
+	
+}
+.closeBtn span{
+	
+	color: white;
+	position: absolute;
+	top: 50%;
+	right: 30%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
  #modal-container .modal-background .modal .modal-svg rect {
 	 stroke: #fff;
