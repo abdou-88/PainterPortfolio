@@ -58,7 +58,7 @@ h3 {
   font-family: "OpenSans";
 }
 .text-wrapper > h1 {
-  font-size: 4.5em;
+  font-size: clamp(3rem, calc(1rem + ((1vw - .48rem) * 1.389)), 2rem);
   font-weight: 800;
 }
 .text-wrapper > h3 {
@@ -99,6 +99,51 @@ h3 {
 
 /* ////////////////////// */
 
+.menuBGUp {
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  
+  opacity: 0;
+  transform: translateY(-100%) rotateX(-90deg);
+  transform-style: perserve-3d;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.menuBGUp-hovered {
+  position: absolute;
+  width: 50%;
+	height: auto;
+  left: 50%;
+  top: 0px;
+  z-index: 20;
+  opacity: 1;
+  transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
+    rotateX(0deg);
+  transform-style: perserve-3d;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.signatureBG {
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  opacity: 0;
+  transform: translateY(100%) rotateX(90deg);
+  transform-style: perserve-3d;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.signatureBG-hovered {
+  position: absolute;
+  left: 50%;
+   width: 50%;
+  bottom: 0px;
+  opacity: 1;
+  transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
+    rotateX(0deg);
+  transform-style: perserve-3d;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
 
 .rotate-left {
   opacity: 0;
@@ -116,12 +161,43 @@ h3 {
    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
+@media only screen and (max-width: 800px) {
+  .menuBGUp {
+    left: 0%;
+    width: 100%;
+  }
+  .menuBGUp-hovered {
+    left: 0%;
+    width: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  .signatureBG {
+  z-index: 18;
+  left: 0%;
+ width: 100%;
+}
+
+.signatureBG-hovered {
+ z-index: 17;
+  left: 0%;
+  width: 100%;
+}
+}
 
 
 @media only screen and (max-width: 600px) {
   .text-wrapper > h1 {
-  font-size: 2.1em;
-  font-weight: 800;
+  font-size: clamp(1.5rem, calc(1rem + ((1vw - .48rem) * 1.389)), 2rem);
+
+}
+}
+@media only screen and (max-width: 800px) {
+  .text-wrapper > h1 {
+  font-size: clamp(1rem, calc(2rem + ((1vw - .48rem) * 1.389)), 2rem);
+ 
 }
 .text-wrapper > h3 {
   font-weight: 100;

@@ -28,14 +28,24 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
 
   const { actions }: any = useAnimations(animations, group);
 
-  useLayoutEffect(() =>
 
-    Object.values(nodes).forEach(
-      (node) => (node.receiveShadow = node.castShadow = true)
-    ),
+  useEffect(() => {
+    function handleResize() {
+      // Update the state or perform any other actions when the
+      // browser is resized
+      console.log('resized!!');
+    }
 
-  );
+    // Attach the event listener to the window object
+    window.addEventListener('resize', handleResize);
 
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  
   useEffect(() => void (actions["Take 001"].play().paused = true), [actions]);
 
 

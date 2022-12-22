@@ -75,7 +75,7 @@ function changeScenP(x: number, y: number, z: number, state: any, box:any) {
 
     duration: 1.5,
     onUpdate: function () {
-      state.camera.lookAt(0, 1, 0);
+      state.camera.lookAt(0, 1, -1);
     },
   });
 }
@@ -87,7 +87,7 @@ function changeCamP(x: number, y: number, z: number, state: any) {
 
     duration: 1.5,
     onUpdate: function () {
-      state.camera.lookAt(0, 1, 0);
+      state.camera.lookAt(0, 1, -1);
     },
   });
 }

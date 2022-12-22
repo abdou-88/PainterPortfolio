@@ -55,22 +55,9 @@ body {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .menuBGUp {
-    left: 10%;
+   .leftMain {
+    grid-area: 2 / 1 / 3 / 3;
   }
-
-  .menuBGUp-hovered {
-    position: absolute;
-    left: 10%;
-    top: 0px;
-    opacity: 1;
-    transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
-      rotateX(0deg);
-    transform-style: perserve-3d;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  }
-
-  /* //////////////////////// */
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -85,8 +72,3 @@ body {
 @media only screen and (min-width: 1200px) {
 }
 
-@media only screen and (max-width: 600px) {
-  .leftMain {
-    grid-area: 2 / 1 / 3 / 3;
-  }
-}
