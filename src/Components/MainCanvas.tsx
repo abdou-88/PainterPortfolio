@@ -18,11 +18,13 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
       ref={refCanvas}
       dpr={[1, 2]}
       shadows
-      className="test3"
+      
     >
       {/* <OrthographicCamera makeDefault zoom={200} /> */}
       <ambientLight intensity={0.5} />     
-      <Suspense fallback={<LoaderBox />}>    
+
+      <Suspense fallback={<LoaderBox />}>   
+       
         <spotLight
           angle={0.24}
           color="#fff"

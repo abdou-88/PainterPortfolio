@@ -56,18 +56,7 @@ body {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .menuBGUp {
-    left: 10%;
-  }
-
-  .menuBGUp-hovered {
-    position: absolute;
-    left: 10%;
-    top: 0px;
-    opacity: 1;
-    transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
-      rotateX(0deg);
-    transform-style: perserve-3d;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    
   }
 
   /* //////////////////////// */

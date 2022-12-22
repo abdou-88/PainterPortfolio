@@ -71,36 +71,10 @@
   transform: rotate(-135deg);
 }
 
-.menuBGUp {
-  position: absolute;
-  left: 50%;
-  top: 0px;
-  
-  opacity: 0;
-  transform: translateY(-100%) rotateX(-90deg);
-  transform-style: perserve-3d;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
 
-.menuBGUp-hovered {
-  position: absolute;
-  left: 50%;
-  top: 0px;
-  z-index: 20;
-  opacity: 1;
-  transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
-    rotateX(0deg);
-  transform-style: perserve-3d;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
+
 
 @media only screen and (max-width: 600px) {
-  .menuBGUp {
-    left: 0%;
-  }
-  .menuBGUp-hovered {
-    left: 0%;
-  }
 
   #nav-icon {
     width: 30px;
