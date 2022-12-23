@@ -8,7 +8,7 @@ interface PopProps {
     
 }
 
-const PopUp: FC<PopProps> = ({  }) => {
+const PopUp: FC<PopProps> = ({ imgSrc }) => {
     const { popup, setPopup } = useGlobalContext();
 
 
@@ -19,7 +19,7 @@ const PopUp: FC<PopProps> = ({  }) => {
                 <div className="modal-background">
                     <div className="modal">
                         <div className={"closeBtn"}><span>X</span></div>
-                        <img src='https://www.planetware.com/wpimages/2019/11/canada-in-pictures-beautiful-places-to-photograph-morraine-lake.jpg' />
+                        <img src={imgSrc} />
 
 
                     </div>

@@ -43,7 +43,7 @@
 	 border-radius: 3px;
 	 font-weight: 300;
 	 position: relative;
-	  border: rgb(250, 185, 6) 3px solid;
+	  border: rgb(206, 140, 64) 3px solid;
 }
  #modal-container .modal-background .modal h2 {
 	 font-size: 25px;
@@ -63,7 +63,7 @@
 	 border-radius: 3px;
 }
 .closeBtn{
-	background-color: rgb(250, 185, 6);
+	background-color: rgb(206, 140, 64);
 	position: absolute;
 	right: -15px;
 	top: -15px;

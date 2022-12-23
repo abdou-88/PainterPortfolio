@@ -37,7 +37,7 @@ export default function App() {
   return (
     <MyGlobalContext.Provider value={{
       activeBox, setActiveBox, contentBox, setContentBox, popup, setPopup }}>
-      <PopUp  />
+      <PopUp imgSrc= '#' />
       <div>
         <div className="container">
 
