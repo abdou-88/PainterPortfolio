@@ -1,6 +1,6 @@
 import { Html, useProgress } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
-import loadimg from "/Loading.png";
+
 import "../assets/Loader.css";
 
 function LoaderBox() {
@@ -17,20 +17,29 @@ function LoaderBox() {
   }, []);
 
   return (
-    <Html  style={{ textAlign: "center" }}>
-      <div>
-       {/* loader bar and percentage  */}
-        <div>
-          <img src={loadimg} />
-          <div className="containerpercentage">
-            <div className="bottom-left">{progress.toFixed(0)}%</div>
-          </div>
-        </div>
+    <Html  >
+      <div className="percentage">  {progress.toFixed(0)}%</div>
+    
+      <div className="demo">
 
-        <div id="loaderContainer">
-          <div id="loaderBar"></div>
+        <div className="circle">
+          <div className="inner"></div>
         </div>
+        <div className="circle">
+          <div className="inner"></div>
+        </div>
+        <div className="circle">
+          <div className="inner"></div>
+        </div>
+        <div className="circle">
+          <div className="inner"></div>
+        </div>
+        <div className="circle">
+          <div className="inner"></div>
+        </div>
+        
       </div>
+     
     </Html>
   );
 }
