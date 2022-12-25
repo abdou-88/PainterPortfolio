@@ -1,111 +1,28 @@
-.scrollimg {
-  position: absolute;
-  right: 0px;
-  top: 40%;
-}
 
-/* ////////// */
-.text-wrapperScroll {
-  top: 45%;
-  opacity: 0;
-  left: 85%;
-  position: relative;
-  width: 12.5%;
- transform: translateZ(100px) translateX(100%) rotateY(-90deg);
-	 transform-style: perserve-3d;
-	 transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-
-}
-.text-wrapperScroll-hovered {
-  top: 45%;
-  opacity: 1;
-  left: 85%;
-  position: relative;
-  width: 12.5%;
-  opacity: 1;
-  transform: translateZ(0) translateX(0) translateY(0) rotateY(0deg)
-    rotateX(0deg);
-  transform-style: perserve-3d;
-   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-
-}
-.text-wrapperScroll, .text-wrapperScroll-hovered > h3 {
-  font-weight: 200;
-  letter-spacing: 0.1em;
-  color: #ccc;
-
-  text-transform: uppercase;
-  font-family: "OpenSans";
+ .scroll-down3 {
+	 position: absolute;
+	 width: 50px;
+	 height: auto;
+	 font-size: 30px;
+	 overflow: hidden;
+	 cursor: pointer;
+	 align-items: center;
+	 right: 5%;
+	 top:40%;
+	 justify-content: center;
+	 animation: scrollDown3 2s ease infinite;
 }
 
 @media only screen and (max-width: 800px) {
-  .text-wrapperScroll {
-   top:  70%;  
-  	left:100px;
-  
  
-
-}
-.text-wrapperScroll-hovered {
-   top:  70%;
-  
-  left:100px;
-
-
-
- 
-
-}
-.text-wrapperScroll, .text-wrapperScroll-hovered > h3 {
-  font-weight: 100;
-
-}
-}
-
-
-/* ////////////////////////////////////////// */
-
-
-.scroll-down1 {
-	 width: 50px;
-	 height: 130px;
-	 font-size: 30px;
-	 overflow: hidden;
-	 cursor: pointer;
-	 align-items: center;
-	 justify-content: center;
-}
- .scroll-down1 img {
-	 
-	 animation: scrollDown1 1.5s ease infinite;
-}
- @keyframes scrollDown1 {
-	 0% {
-		 transform: translateY(-15px);
-		 opacity: 0;
+	.scroll-down3{
+		width: 40px;
+		left: 7%;
+		top:70%;
 	}
-	 50% {
-		 transform: translateY(0px);
-		 opacity: 1;
-	}
-	 100% {
-		 transform: translateY(15px);
-		 opacity: 0;
-	}
+
 }
- .scroll-down3 {
-	 width: 50px;
-	 height: 130px;
-	 font-size: 30px;
-	 overflow: hidden;
-	 cursor: pointer;
-	 align-items: center;
-	 justify-content: center;
-}
- .scroll-down3 img {
-	
-	 animation: scrollDown3 2s ease infinite;
-}
+
  @keyframes scrollDown3 {
 	 0% {
 		 transform: translateY(-15px);

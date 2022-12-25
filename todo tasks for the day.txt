@@ -1,0 +1,17 @@
+CSS TASKS :
+
+- edit scroll icon to be responsive  = Done
+- edit the text area to be responsive 
+- adding github link
+- fix the resizing canvas recenter bug ( may be adding the canvas W & H to work with page demesions)
+- checking the popup centring issue in small devices
+- 
+
+3D TASKS :
+
+- add the boxes piramid in the right down area
+- fixing the brush bug with the character
+- adding the brushes table in the middle 50%
+- fixing the projests area
+- fixing the possition of the drawing file in the floor
+- adding Postbox in the Contact area

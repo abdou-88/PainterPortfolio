@@ -15,20 +15,21 @@ const LeftContent: FC<LeftProps> = ({ active, headerText }) => {
 
 
   return (
-    <> 
-      <div style ={{maxWidth: "50%" }}>  
+    <>
+      <div>
+
         <img
-        className={active ? "menuBGUp-hovered" : "menuBGUp"}
-        src={menuBGUp}
-        
-      />
+          className={active ? "menuBGUp-hovered" : "menuBGUp"}
+          src={menuBGUp} />
         <img
           className={active ? "signatureBG-hovered" : "signatureBG"}
-          src={signtureBG}
-        />
+          src={signtureBG} />
+        <img
+          className="scroll-down3"
+          src={scrolldown} />
 
       </div>
-     
+
 
       <div className={active ? "rotate-left-hovered" : "rotate-left"}>
         <div className={active ? "section-header" : "section-header-nobefore"}>
@@ -38,26 +39,9 @@ const LeftContent: FC<LeftProps> = ({ active, headerText }) => {
           </div>
         </div>
       </div >
-      
-      <div
-        className={active ? "text-wrapperScroll-hovered" : "text-wrapperScroll"}
-      >
-        
-        <div className="scroll-down3">
-          <img
-            style={{
-              position: "absolute",
-              right: "0px",
-              
-            }}
-            src={scrolldown}
-          />
-        </div>
-        
-      </div>
-      </>
-    
-   
+    </>
+
+
 
 
   );
