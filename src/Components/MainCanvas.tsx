@@ -7,6 +7,7 @@ import LoaderBox from "./LoaderBox";
 import Box from "./Models/Box";
 
 
+
 interface CanvasProps { }
 
 const MainCanvas: FC<CanvasProps> = ({ }) => {
@@ -20,6 +21,7 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
       shadows
       
     >
+      
       {/* <OrthographicCamera makeDefault zoom={200} /> */}
       <ambientLight intensity={0.5} />     
 
@@ -53,6 +55,7 @@ const MainCanvas: FC<CanvasProps> = ({ }) => {
           infinite={false}
           pages={8}
         >
+          
           <Box scale={2} position={[0, 0, 0]} />          
         </ScrollControls>
 

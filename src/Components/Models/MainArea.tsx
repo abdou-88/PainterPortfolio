@@ -6,8 +6,9 @@ import { useLoader } from '@react-three/fiber';
 import paper1 from "/img-1870.jpg";
 import paper2 from "/img-1869.jpg";
 
-export function MainArea(props:any) {
+export const MainArea = (props:any) => {
     const { nodes, materials } = useGLTF("/mainroom.glb");
+
 
     const tPaper1 = useLoader(THREE.TextureLoader, paper1);
     const tPaper2 = useLoader(THREE.TextureLoader, paper2);

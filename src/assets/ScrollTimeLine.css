@@ -1,0 +1,61 @@
+.timeline {
+  border-radius: 25px;
+  opacity: 0.8;
+  width: 350px;
+  background-color: #ccc;
+  height: 3px;
+  display: flex;
+  position: absolute; 
+  top :50%;
+  left: 85%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+   -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.timeline__progress {
+  min-width: 15px;
+  z-index: 1;
+  position: absolute;
+  background-color: #ce8d40;
+  height: 3px;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.2s ease;
+}
+
+
+.timeline__ball {
+  z-index: 2;
+  background-color: #ce8d40;
+  height: 5px;
+  width: 5px;
+  border: 10px solid #ccc;
+  background-color: #ccc;
+  border-radius: 100px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.timeline__ball.active {
+  border-color: #ce8d40;
+}
+
+.iconTimeLine{
+    width: 30px;
+    height: auto;
+}

@@ -1,18 +1,19 @@
-import { FC, } from "react";
+import { FC, useEffect, useState, } from "react";
 import menuBGUp from "/menubgUp.png";
 import signtureBG from "/signturebg.png";
 import scrolldown from "/scrolldown.png";
 
+
 import "../assets/scroll.css";
-import "../assets/LeftContent.css";
+import "../assets/OverLay.css";
+
 
 interface LeftProps {
   active: boolean;
   headerText?: string;
 }
 
-const LeftContent: FC<LeftProps> = ({ active, headerText }) => {
-
+const OverLay: FC<LeftProps> = ({ active, headerText }) => {
 
   return (
     <>
@@ -25,9 +26,10 @@ const LeftContent: FC<LeftProps> = ({ active, headerText }) => {
           className={active ? "signatureBG-hovered" : "signatureBG"}
           src={signtureBG} />
         <img
-          className="scroll-down3"
+          className={active ? "scrollDownIcon" : 'hide'}
           src={scrolldown} />
 
+       
       </div>
 
 
@@ -39,6 +41,7 @@ const LeftContent: FC<LeftProps> = ({ active, headerText }) => {
           </div>
         </div>
       </div >
+
     </>
 
 
@@ -47,4 +50,4 @@ const LeftContent: FC<LeftProps> = ({ active, headerText }) => {
   );
 };
 
-export default LeftContent;
+export default OverLay;

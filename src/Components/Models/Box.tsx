@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useScroll, useGLTF, useAnimations } from "@react-three/drei";
 
@@ -13,7 +13,7 @@ import { PaintingChar } from "./PaintingChar";
 
 export default function Box(props: JSX.IntrinsicElements["group"]) {
 
-  const { setActiveBox, setContentBox, setPopup } = useGlobalContext();
+  const { setActiveBox, setContentBox, setPopup, scOffSet,  setScOffSet } = useGlobalContext();
 
   const [hovered, setHovered] = useState(false);
 
@@ -51,7 +51,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
 
 
   useFrame((state, delta) => {
-    const offset = scroll.offset;
+    setScOffSet( scroll.offset);
 
     const action: any = actions["Take 001"];
     // The offset is between 0 and 1, you can apply it to your models any way you like
@@ -59,13 +59,13 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
     // run first animation
     action.time = THREE.MathUtils.damp(
       action.time,
-      action.getClip().duration * (offset * 10),
+      action.getClip().duration * (scOffSet * 10),
       100,
       delta
     );
 
 
-    ScrollAnimation(offset, setActiveBox, setContentBox, state, box);
+    ScrollAnimation(scOffSet, setActiveBox, setContentBox, state, box);
   });
 
   return (
@@ -77,6 +77,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <PaintingChar/>         
           <MainArea  />
           <Projects/>
+          
           <group name="fullBox" position={[0.02, 0.98, 0.03]}>
             <group name="backCover" position={[-0.02, 0.89, -0.96]}>
               <mesh

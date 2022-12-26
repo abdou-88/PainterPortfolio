@@ -1,6 +1,7 @@
 
- .scroll-down3 {
+ .scrollDownIcon {
 	 position: absolute;
+	 display: block;
 	 width: 50px;
 	 height: auto;
 	 font-size: 30px;
@@ -13,9 +14,13 @@
 	 animation: scrollDown3 2s ease infinite;
 }
 
+ .hide {
+	 display: none;
+}
+
 @media only screen and (max-width: 800px) {
  
-	.scroll-down3{
+	.scrollDownIcon{
 		width: 40px;
 		left: 7%;
 		top:70%;

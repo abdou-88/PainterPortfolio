@@ -7,7 +7,8 @@ export type GlobalContent = {
   setContentBox: (c: string) => void;
   popup : boolean;
   setPopup: (c: boolean) => void;
-  
+  scOffSet: number;
+  setScOffSet: (c: number) => void;
 };
 export const MyGlobalContext = createContext<GlobalContent>({
   activeBox: true, // set a default value
@@ -16,6 +17,8 @@ export const MyGlobalContext = createContext<GlobalContent>({
   setContentBox: () => { },
   popup: false,
   setPopup: () => { },
+  scOffSet: 0, // set a default value
+  setScOffSet: () => { },
   
 });
 export const useGlobalContext = () => useContext(MyGlobalContext);

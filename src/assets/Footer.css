@@ -11,11 +11,12 @@
   bottom: 0px;
 }
 .linkcright {
-  position: absolute;
+position: fixed;
   left: 35px;
   bottom: 10px;
-  z-index: 17;
+  z-index: 21;
   color: #ccc;
+  cursor: pointer;
   text-decoration: none;
 }
 

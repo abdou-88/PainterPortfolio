@@ -24,42 +24,42 @@ export function ScrollAnimation(
     changeScenP(0, 0, 0, state, box);
     setActiveBox(false);
     // going to selected works area   - second area
-  } else if (offset > 0.2 && offset <= 0.25) {
+  } else if (offset > 0.2 && offset <= 0.3) {
     setActiveBox(true);
     setContentBox("Projects");
     changeCamP(1, 1, 0, state);
     changeScenP(0, 0, 2, state, box);    
-  } else if (offset > 0.25 && offset <= 0.3) {
+  } else if (offset > 0.3 && offset <= 0.4) {
     setActiveBox(false);    
     changeCamP(0, 1.7, 2, state);
     changeScenP(0, 0, 2, state, box);
     // going to news area - 3rd area
-  } else if (offset > 0.3 && offset <= 0.35) {
+  } else if (offset > 0.4 && offset <= 0.5) {
     setContentBox("news");
     setActiveBox(true);
     changeCamP(1, 2, 1, state);
     changeScenP(-2, 0, 0, state, box);    
-  } else if (offset > 0.35 && offset <= 0.4) {
+  } else if (offset > 0.5 && offset <= 0.6) {
     setActiveBox(false);
     changeCamP(0, 1, 1, state);    
     changeScenP(-2, 0, 0, state, box);
     // going to media area - 4th area
-  } else if (offset > 0.4 && offset <= 0.45) {
+  } else if (offset > 0.6 && offset <= 0.7) {
     setContentBox("Media");
     setActiveBox(true);
     changeCamP(-1, 1, 1, state);
     changeScenP(2, 0, 0, state, box);    
-  } else if (offset > 0.45 && offset <= 0.5) {
+  } else if (offset > 0.7 && offset <= 0.8) {
     setActiveBox(false);
     changeCamP(-1, 1, -1, state);
     changeScenP(2, 0, 0, state, box);  
     // going to contact area - 5th area
-  } else if (offset > 0.5 && offset <= 0.55) {
+  } else if (offset > 0.8 && offset <= 0.9) {
     setContentBox("Contact");
     setActiveBox(true);
     changeCamP(1, 1, -1, state);
     changeScenP(0, 0, -2, state, box);
-  } else if (offset > 0.55 && offset <= 0.6) {
+  } else if (offset > 0.9 && offset <= 1) {
     setActiveBox(false);
     changeCamP(1, 1, 1, state);
     

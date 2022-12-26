@@ -1,11 +1,12 @@
 CSS TASKS :
 
 - edit scroll icon to be responsive  = Done
+- add the scroll offset context = Done
+- adding github link = in progress needs to be over the overlay 
 - edit the text area to be responsive 
-- adding github link
 - fix the resizing canvas recenter bug ( may be adding the canvas W & H to work with page demesions)
 - checking the popup centring issue in small devices
-- 
+- adding timeline for the scroll progress
 
 3D TASKS :
 

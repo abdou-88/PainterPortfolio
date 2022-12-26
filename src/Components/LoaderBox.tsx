@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 import "../assets/Loader.css";
 
-function LoaderBox() {
+const  LoaderBox = ()  => {
   const box: any = useRef();
   const { progress } = useProgress();
 

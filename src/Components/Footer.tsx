@@ -5,17 +5,18 @@ import CR from "/Cright.png";
 
 import "../assets/Footer.css";
 interface FooterProps {
-  active: boolean;
+  
 }
 
-const Footer: FC<FooterProps> = ({ active }) => {
+const Footer: FC<FooterProps> = () => {
   return (
     <>
-      <img className="signature" src={signature} />
-      <img className="Cright" src={CR} />
-      <a className="linkcright" href="#">
+      <a className="linkcright" href="https://abdou-88.github.io">
         A.Yousfi
       </a>
+      <img className="signature" src={signature} />
+      <img className="Cright" src={CR} />
+      
     </>
   );
 };
