@@ -7,11 +7,13 @@ import paper1 from "/img-1870.jpg";
 import paper2 from "/img-1869.jpg";
 
 export const MainArea = (props:any) => {
+    const tPaper1: any = useLoader(THREE.TextureLoader, paper1);
+    const tPaper2: any = useLoader(THREE.TextureLoader, paper2);
+    
     const { nodes, materials } = useGLTF("/mainroom.glb");
 
 
-    const tPaper1 = useLoader(THREE.TextureLoader, paper1);
-    const tPaper2 = useLoader(THREE.TextureLoader, paper2);
+    
 
     return (
         <group scale ={0.1} position={[0.2,0.2,-0.7]} {...props} dispose={null}>

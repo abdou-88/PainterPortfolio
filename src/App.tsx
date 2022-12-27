@@ -44,7 +44,7 @@ export default function App() {
       <div>
         <div className="container">
 
-          <div className="main">
+          <div className="main" style={{ height:'89vh', width: '100vw' }}>
             <MainCanvas />
           </div>
 

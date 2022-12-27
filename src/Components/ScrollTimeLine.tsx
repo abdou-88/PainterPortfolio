@@ -4,8 +4,9 @@ import { FC, useState } from "react";
 
 import "../assets/ScrollTimeLine.css";
 import { useGlobalContext } from "./GlobalContext";
-import iconsClosed from "/closedboxicon.png"
-import iconsOpened from "/openedboxicon.png"
+import iconsClosed from "/closedboxicon.png";
+import iconsOpened from "/openedboxicon.png";
+import arrow from '/arrowTimeLine.png';
 
 
 
@@ -33,7 +34,7 @@ const ScrollTimeLine: FC<{}> = () => {
     return (
         
         <div className="timeline">
-            <div className="timeline__progress" style={{ width: `${calculatedWidth}%` }} />
+            <div className="timeline__progress" style={{ width: `${calculatedWidth}%` }} ><img style={{ float: "right", position: "relative", width: "30px", height: "30px" }} src={arrow}/></div>
             {timeLineBalls(intermediaryBalls , setScOffSet, scOffSet)}
         </div>
       

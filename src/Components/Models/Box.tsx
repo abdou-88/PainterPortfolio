@@ -72,7 +72,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
     <>
 
       <group ref={group} {...props} dispose={null}>
-        <group ref={box} name="Scene">
+        <group ref={box} position={[0.1,0,0]} name="Scene">
           <Chair />
           <PaintingChar/>         
           <MainArea  />
