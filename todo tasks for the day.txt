@@ -7,6 +7,7 @@ CSS TASKS :
 - adding github link = in progress needs to be over the overlay 
 - edit the text area to be responsive 
 - checking the popup centring issue in small devices
+- fixing small menu responsive issues
 
 
 3D TASKS :
