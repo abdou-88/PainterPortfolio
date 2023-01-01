@@ -16,5 +16,6 @@ CSS TASKS :
 - fixing the brush bug with the character
 - adding the brushes table in the middle 50%
 - fixing the projests area
+- move main paint to the center and the artist
 - fixing the possition of the drawing file in the floor
 - adding Postbox in the Contact area

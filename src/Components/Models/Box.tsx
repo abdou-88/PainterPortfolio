@@ -17,17 +17,12 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
 
   const [hovered, setHovered] = useState(false);
 
-  useEffect(() => {
-    document.body.style.cursor =  hovered? 'pointer': 'auto' ;
-  }, [hovered])
-
   const scroll = useScroll();
   const group: any = useRef<THREE.Group>();
   const box: any = useRef<THREE.Group>();
   const { nodes, materials, animations } = useGLTF("/cleanerversioEyes.glb");
 
   const { actions }: any = useAnimations(animations, group);
-
 
   useEffect(() => {
     function handleResize() {
@@ -45,10 +40,15 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
     };
   }, []);
 
-  
+
   useEffect(() => void (actions["Take 001"].play().paused = true), [actions]);
 
 
+  useEffect(() => {
+    document.body.style.cursor =  hovered? 'pointer': 'auto' ;
+  }, [hovered])
+
+ 
 
   useFrame((state, delta) => {
     setScOffSet( scroll.offset);
@@ -68,6 +68,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
     ScrollAnimation(scOffSet, setActiveBox, setContentBox, state, box);
   });
 
+  
   return (
     <>
 
