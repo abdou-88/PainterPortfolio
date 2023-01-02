@@ -45,7 +45,7 @@ export function PaintingChar(props: JSX.IntrinsicElements["group"]) {
 
     return (
         <group ref={group} {...props} dispose={null}>
-            <group rotation={[-0.1,3.2,0]} scale={0.7} position={[-0.2,0.21,-0.595]} name="Scene">
+            <group rotation={[-0.1,3.2,0]} scale={0.8} position={[-0.2,0.62,-0.24]} name="Scene">
                 <group name="Armature" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
                     <group  name="Object_75" />
                     <primitive object={nodes.mixamorigHips} />

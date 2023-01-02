@@ -16,7 +16,7 @@ export const MainArea = (props:any) => {
     
 
     return (
-        <group scale ={0.1} position={[0.2,0.2,-0.7]} {...props} dispose={null}>
+        <group scale ={0.1} position={[0.2,0.62,-0.7]} {...props} dispose={null}>
             <mesh
                 castShadow
                 receiveShadow
@@ -202,7 +202,7 @@ export const MainArea = (props:any) => {
                 // @ts-ignore
                 geometry={nodes.Cylinder001.geometry}
                 material={materials.carpet}
-                position={[-2, 1.09, 7.98]}
+                position={[-2.9, 1.09, 7.98]}
                 scale={1.91}
             />
             <mesh
@@ -211,13 +211,13 @@ export const MainArea = (props:any) => {
                 // @ts-ignore
                 geometry={nodes.Plane_Material_0.geometry}
                 material={materials.Material}
-                position={[-7.01, 0, 11.62]}
-                rotation={[-Math.PI / 2, 0, 0]}
+                position={[-9.01, 0, 8.62]}
+                rotation={[-Math.PI / 2, 0, -1.5]}
                 scale={2.39}
             />
             <group
-                position={[-6.48, 2.6, 3.42]}
-                rotation={[-1.59, 0, -0.63]}
+                position={[2.48, 2.6, 11.82]}
+                rotation={[-1.6, 0, 0.67]}
                 scale={0.03}
             >
                 <mesh

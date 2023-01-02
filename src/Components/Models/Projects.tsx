@@ -4,7 +4,7 @@ import { useGLTF } from "@react-three/drei";
 export function Projects(props:any) {
     const { nodes, materials } = useGLTF("/Projectsarea.glb");
     return (
-        <group position={[0.03, 0, 0]} {...props} dispose={null}>
+        <group position={[0.03, 0.5, 0]} {...props} dispose={null}>
             <mesh
                 castShadow
                 receiveShadow

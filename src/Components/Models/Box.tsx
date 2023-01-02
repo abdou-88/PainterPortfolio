@@ -20,25 +20,10 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
   const scroll = useScroll();
   const group: any = useRef<THREE.Group>();
   const box: any = useRef<THREE.Group>();
-  const { nodes, materials, animations } = useGLTF("/cleanerversioEyes.glb");
+  const { nodes, materials, animations } = useGLTF("/NewBoxPrpject.glb");
 
   const { actions }: any = useAnimations(animations, group);
 
-  useEffect(() => {
-    function handleResize() {
-      // Update the state or perform any other actions when the
-      // browser is resized
-      console.log('resized!!');
-    }
-
-    // Attach the event listener to the window object
-    window.addEventListener('resize', handleResize);
-
-    // Remove the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
 
   useEffect(() => void (actions["Take 001"].play().paused = true), [actions]);
@@ -78,95 +63,171 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <PaintingChar/>         
           <MainArea  />
           <Projects/>
-          
-          <group name="fullBox" position={[0.02, 0.98, 0.03]}>
-            <group name="backCover" position={[-0.02, 0.89, -0.96]}>
-              <mesh
-                name="backCoverMesh"
-                castShadow
-                receiveShadow
-                // @ts-ignore
-                geometry={nodes.backCoverMesh.geometry}
-                material={materials.lambert4}
-                position={[-0.02, 1.22, -1.12]}
-              />
+     
+          <group name="FullBox" position={[0.02, 0.98, 0.03]}>
+            <group name="BackCover" position={[-0.02, 0.89, -0.96]}>
+              <group name="backCover" position={[-0.02, 0.76, -1.47]}>
+                <mesh
+                  name="backCover_1"
+                  castShadow
+                  receiveShadow
+                  // @ts-ignore
+                  geometry={nodes.backCover_1.geometry}
+                  material={materials.lambert4}
+                />
+                <mesh
+                  name="backCover_2"
+                  castShadow
+                  receiveShadow
+                  // @ts-ignore
+                  geometry={nodes.backCover_2.geometry}
+                  material={materials.lambert4}
+                />
+              </group>
             </group>
-            <group name="frontCover" position={[-0.02, 0.89, 0.89]}>
+            <group name="box" position={[-0.02, -1.28, -0.03]}>
               <mesh
-                name="frontCoverMesh"
+                name="boxBase"
                 castShadow
                 receiveShadow
                 // @ts-ignore
-                geometry={nodes.frontCoverMesh.geometry}
-                material={materials.lambert4}
-                position={[0.01, 1.13, 1.21]}
-              />
-            </group>
-            <group name="Box" position={[-0.02, -1.28, -0.03]}>
-              <mesh
-                name="emptySide"
-                castShadow
-                receiveShadow
-                // @ts-ignore
-                geometry={nodes.emptySide.geometry}
+                geometry={nodes.boxBase.geometry}
                 material={materials.lambert2}
-                position={[-0.83, 0.52, 0.01]}
               />
               <mesh
-                name="EyesSide"
+                name="backSide"
                 castShadow
                 receiveShadow
                 // @ts-ignore
-                geometry={nodes.EyesSide.geometry}
+                geometry={nodes.backSide.geometry}
                 material={materials.lambert2}
                 position={[-0.02, 0.52, -0.82]}
+                rotation={[-0.01, 0, 0]}
               />
               <mesh
-                name="RecycleSide"
+                name="upSide"
                 castShadow
                 receiveShadow
                 // @ts-ignore
-                geometry={nodes.RecycleSide.geometry}
-                material={materials.lambert2}
-                position={[0.01, 0.52, 0.84]}
-              />
-              <mesh
-                name="UpArrowSide"
-                castShadow
-                receiveShadow
-                // @ts-ignore
-                geometry={nodes.UpArrowSide.geometry}
+                geometry={nodes.upSide.geometry}
                 material={materials.lambert2}
                 position={[0.83, 0.52, -0.01]}
               />
               <mesh
-               
-                name="bottomSide"
+                name="eyeSide"
                 castShadow
                 receiveShadow
                 // @ts-ignore
-                geometry={nodes.bottomSide.geometry}
+                geometry={nodes.eyeSide.geometry}
                 material={materials.lambert2}
+                position={[0.01, 0.52, 0.84]}
+              />
+              <mesh
+                name="leftSide"
+                castShadow
+                receiveShadow
+                // @ts-ignore
+                geometry={nodes.leftSide.geometry}
+                material={materials.lambert2}
+                position={[-0.83, 0.52, 0.01]}
+              />
+            </group>
+            <group name="FrontCover" position={[-0.02, 0.89, 0.89]}>
+              <mesh
+                name="frontCover"
+                castShadow
+                receiveShadow
+                // @ts-ignore
+                geometry={nodes.frontCover.geometry}
+                material={materials.lambert4}
+                position={[0.01, 0.87, 1.41]}
               />
             </group>
           </group>
-
           <mesh
-            onClick={(e) => setPopup(true)}
-            onPointerEnter={() => setHovered(true)}
-            onPointerLeave={() => setHovered(false)}            
-            name="MainPaint"
+            name="Cube"
             castShadow
             receiveShadow
             // @ts-ignore
-            geometry={nodes.MainPaint.geometry}
-            material={materials["Material.001"]}
-            position={[-0.01, 0.46, -0.73]}
-            rotation={[1.54, 0, 0]}
-            scale={0.26}
-
+            geometry={nodes.Cube.geometry}
+            material={materials.lambert4}
+            position={[0.7, 0.69, 0.73]}
+            rotation={[0, -0.21, 0]}
+            scale={-0.08}
           />
-     
+          <mesh
+            name="Cube003"
+            castShadow
+            receiveShadow
+            // @ts-ignore
+            geometry={nodes.Cube003.geometry}
+            material={materials.lambert4}
+            position={[0.68, 0.69, 0.56]}
+            scale={-0.08}
+          />
+          <mesh
+            name="Cube005"
+            castShadow
+            receiveShadow
+            // @ts-ignore
+            geometry={nodes.Cube005.geometry}
+            material={materials.lambert4}
+            position={[0.68, 0.85, 0.54]}
+            scale={-0.08}
+          />
+          <mesh
+            name="Cube006"
+            castShadow
+            receiveShadow
+            // @ts-ignore
+            geometry={nodes.Cube006.geometry}
+            material={materials.lambert4}
+            position={[0.68, 1, 0.71]}
+            rotation={[0, 0.27, 0]}
+            scale={-0.08}
+          />
+          <mesh
+            name="Cube001"
+            castShadow
+            receiveShadow
+            // @ts-ignore
+            geometry={nodes.Cube001.geometry}
+            material={materials.lambert2}
+            position={[0.51, 0.69, 0.75]}
+            scale={-0.08}
+          />
+          <mesh
+            name="Cube002"
+            castShadow
+            receiveShadow
+            // @ts-ignore
+            geometry={nodes.Cube002.geometry}
+            material={materials.lambert2}
+            position={[0.34, 0.69, 0.71]}
+            rotation={[0, 0.18, 0]}
+            scale={-0.08}
+          />
+          <mesh
+            name="Cube004"
+            castShadow
+            receiveShadow
+            // @ts-ignore
+            geometry={nodes.Cube004.geometry}
+            material={materials.lambert2}
+            position={[0.68, 0.84, 0.71]}
+            scale={-0.08}
+          />
+          <mesh
+            name="Plane"
+            castShadow
+            receiveShadow
+            // @ts-ignore
+            geometry={nodes.Plane.geometry}
+            material={materials.Material}
+            position={[0, 0.77, -0.04]}
+            rotation={[1.35, 0, 0]}
+            scale={[0.48, 0.28, 0.47]}
+          />
         </group>
       </group>
 
@@ -174,7 +235,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/cleanerversioEyes.glb");
+useGLTF.preload("/NewBoxPrpject.glb'");
 
             // onContextMenu={(e) => console.log('context menu')}
             // onDoubleClick={(e) => console.log('double click')}
