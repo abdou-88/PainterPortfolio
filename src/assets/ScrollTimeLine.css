@@ -10,7 +10,7 @@
   left: 85%;
   justify-content: space-between;
   align-items: center;
-  z-index: 21;
+  z-index: 1;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -o-transform: rotate(90deg);

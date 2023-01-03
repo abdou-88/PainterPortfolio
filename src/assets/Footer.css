@@ -20,3 +20,13 @@ position: absolute;
   text-decoration: none;
 }
 
+
+@media only screen and (max-width: 400px) {
+ .signature {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 50%;
+}
+
+}
