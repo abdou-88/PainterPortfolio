@@ -209,6 +209,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
                 geometry={nodes.Object_6002.geometry}
                 material={materials["Material.003"]}
                 position={[0, 259.08, -0.82]}
+                scale={1.5}
               />
             </group>
             <group
@@ -539,9 +540,9 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             receiveShadow
             geometry={nodes.cover.geometry}
             material={materials["redcolor.002"]}
-            position={[0.56, 0.94, -0.55]}
+            position={[0.56, 0.899, -0.55]}
             rotation={[-3.11, -1.16, -3.1]}
-            scale={0.03}
+            scale={0.024}
           />
           <mesh
             name="nexttoyoutubeBtn"
@@ -685,9 +686,9 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             receiveShadow
             geometry={nodes.sofa.geometry}
             material={materials["Material.019"]}
-            position={[-0.65, 0.64, 0.25]}
+            position={[-0.65, 0.64, 0.2]}
             rotation={[-1.57, 0.02, -1.58]}
-            scale={0.32}
+            scale={0.25}
           />
           <mesh
             name="paper2"
