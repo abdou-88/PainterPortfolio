@@ -35,7 +35,7 @@ export function ScrollAnimation(
     changeScenP(0, 0, 2, state, box);
     // going to news area - 3rd area
   } else if (offset > 0.4 && offset <= 0.5) {
-    setContentBox("news");
+    setContentBox("News");
     setActiveBox(true);
     changeCamP(1, 3, 1, state);
     changeScenP(-2, 0, 0, state, box);    
