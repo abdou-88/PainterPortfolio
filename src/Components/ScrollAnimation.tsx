@@ -13,7 +13,7 @@ export function ScrollAnimation(
   } else if (offset > 0.1 && offset <= 0.125) {
     changeCamP(0, 3, 1.5, state);
     setActiveBox(true);
-    setContentBox("Boxfolio");
+    setContentBox("BoxfolIo");
   } else if (offset > 0.125 && offset <= 0.15) {
     changeCamP(-1.5, 2.5, 1, state);
     setActiveBox(false);

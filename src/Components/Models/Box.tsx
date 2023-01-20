@@ -696,7 +696,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             receiveShadow
             geometry={nodes.paper2.geometry}
             material={nodes.paper2.material}
-            position={[0.32, 0.63, -0.49]}
+            position={[0.32, 0.60, -0.49]}
             rotation={[3.12, 0.14, -Math.PI]}
             scale={0.02}
           />
@@ -706,7 +706,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             receiveShadow
             geometry={nodes.towel.geometry}
             material={materials["board1.002"]}
-            position={[0.49, 0.82, -0.3]}
+            position={[0.49, 0.80, -0.3]}
             rotation={[3.01, 0.79, 3.12]}
             scale={0.01}
           />
@@ -736,7 +736,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             receiveShadow
             geometry={nodes.rolledPaper1.geometry}
             material={nodes.rolledPaper1.material}
-            position={[0.59, 0.64, -0.49]}
+            position={[0.59, 0.63, -0.49]}
             rotation={[0.06, 0.29, 0.24]}
             scale={0.02}
           />
@@ -821,7 +821,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             receiveShadow
             geometry={nodes.paper1.geometry}
             material={materials["Material.015"]}
-            position={[0.45, 0.92, -0.6]}
+            position={[0.465, 0.88, -0.6]}
             rotation={[-0.01, 1.34, 3.13]}
             scale={0.02}
           />
