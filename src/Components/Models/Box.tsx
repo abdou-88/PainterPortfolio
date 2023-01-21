@@ -253,7 +253,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <group
             name="body012"
             position={[0.43, 1.11, 0.39]}
-            rotation={[2.74, -0.43, -0.17]}
+            rotation={[2.74, -0.63, -0.17]}
             scale={[0.19, 0.13, 0.13]}
           >
             <mesh
@@ -594,6 +594,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             rotation={[0.02, 0, -0.01]}
             scale={0.05}
           />
+          {/* the light of the projector */}
           <mesh
             name="Object_8001"
             castShadow
@@ -602,7 +603,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             material={materials["Material.004"]}
             position={[-1.81, 0.94, 0.74]}
             rotation={[-3.14, -0.01, 0.01]}
-            scale={0.19}
+            scale={0.2}
           />
           <mesh
             name="Rectangle002_15_-_Default_0"

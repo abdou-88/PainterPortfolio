@@ -11,7 +11,7 @@ export function ScrollAnimation(
   if (offset <= 0.1) { 
     changeCamP(4, 7, 9, state), state;
   } else if (offset > 0.1 && offset <= 0.125) {
-    changeCamP(0, 3, 1.5, state);
+    changeCamP(0, 3, 2, state);
     setActiveBox(true);
     setContentBox("BoxfolIo");
   } else if (offset > 0.125 && offset <= 0.15) {
@@ -41,13 +41,13 @@ export function ScrollAnimation(
     changeScenP(-2, 0, 0, state, box);    
   } else if (offset > 0.5 && offset <= 0.6) {
     setActiveBox(false);
-    changeCamP(0, 2.5, 1, state);    
+    changeCamP(-1, 2.5, 1, state);    
     changeScenP(-2, 0, 0, state, box);
     // going to media area - 4th area
   } else if (offset > 0.6 && offset <= 0.7) {
     setContentBox("MEdia");
     setActiveBox(true);
-    changeCamP(-1, 3, 1, state);
+    changeCamP(-1.5, 3, 1, state);
     changeScenP(2, 0, 0, state, box);    
   } else if (offset > 0.7 && offset <= 0.8) {
     setActiveBox(false);
@@ -75,7 +75,7 @@ function changeScenP(x: number, y: number, z: number, state: any, box:any) {
 
     duration: 1.5,
     onUpdate: function () {
-      state.camera.lookAt(0, 1, 0);
+      state.camera.lookAt(0, 2, 0);
     },
   });
 }
@@ -87,7 +87,7 @@ function changeCamP(x: number, y: number, z: number, state: any) {
 
     duration: 1.5,
     onUpdate: function () {
-      state.camera.lookAt(0, 1, 0);
+      state.camera.lookAt(0, 2, 0);
     },
   });
 }
