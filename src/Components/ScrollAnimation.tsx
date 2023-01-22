@@ -26,7 +26,7 @@ export function ScrollAnimation(
     // going to selected works area   - second area
   } else if (offset > 0.2 && offset <= 0.3) {
     setActiveBox(true);
-    setContentBox("My Work");
+    setContentBox("My WOrk");
     changeCamP(1, 2.3, 1, state);
     changeScenP(0, 0, 2, state, box);    
   } else if (offset > 0.3 && offset <= 0.4) {
