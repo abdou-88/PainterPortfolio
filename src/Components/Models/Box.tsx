@@ -18,7 +18,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
   const scroll = useScroll();
   const group: any = useRef<THREE.Group>();
   const box: any = useRef<THREE.Group>();
-  const { nodes, materials, animations } = useGLTF("/FullBox.glb");
+  const { nodes, materials, animations } = useGLTF("/Box.glb");
 
   const { actions }: any = useAnimations(animations, group);
 
@@ -145,7 +145,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             name="projector"
             position={[0.42, 0.9, 0.4]}
             rotation={[-1.58, 0.02, 0.45]}
-            scale={0}
+            scale={0.003}
           >
             <mesh
               name="Cylinder006_Material_#27_0001"
@@ -264,181 +264,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             material={materials.sofaMatrial}
             position={[-0.5, 0.61, 0.32]}
             rotation={[-2.05, 1.56, 2.05]}
-            scale={0}
-          />
-          <mesh
-            name="instxt"
-            castShadow
-            receiveShadow
-            geometry={nodes.instxt.geometry}
-            material={materials.sofaMatrial}
-            position={[-0.58, 0.72, 2.25]}
-            rotation={[0.55, 0.3, -0.18]}
-            scale={0.13}
-          />
-          <mesh
-            name="papertrash"
-            castShadow
-            receiveShadow
-            geometry={nodes.papertrash.geometry}
-            material={materials["test.001"]}
-            position={[0.67, 0.63, -0.19]}
-            rotation={[-0.02, 0, 0]}
-            scale={0.02}
-          />
-          <mesh
-            name="SBox1"
-            castShadow
-            receiveShadow
-            geometry={nodes.SBox1.geometry}
-            material={materials.lambert4}
-            position={[0.7, 0.69, 0.73]}
-            rotation={[0, -0.21, 0]}
-            scale={-0.08}
-          />
-          <mesh
-            name="SBox2"
-            castShadow
-            receiveShadow
-            geometry={nodes.SBox2.geometry}
-            material={materials.lambert2}
-            position={[0.51, 0.69, 0.75]}
-            scale={-0.08}
-          />
-          <mesh
-            name="painttablestand"
-            castShadow
-            receiveShadow
-            geometry={nodes.painttablestand.geometry}
-            material={materials["Material.021"]}
-            position={[0.04, 0.79, -2.49]}
-            rotation={[-0.02, 1.56, 0.31]}
-            scale={0.01}
-          />
-          <mesh
-            name="SBox3"
-            castShadow
-            receiveShadow
-            geometry={nodes.SBox3.geometry}
-            material={materials.lambert2}
-            position={[0.34, 0.69, 0.71]}
-            rotation={[0, 0.18, 0]}
-            scale={-0.08}
-          />
-          <mesh
-            name="projectstables"
-            castShadow
-            receiveShadow
-            geometry={nodes.projectstables.geometry}
-            material={materials["table3.001"]}
-            position={[0.01, 1.15, -2.4]}
-            rotation={[1.38, 0, 0]}
-            scale={0.02}
-          />
-          <mesh
-            name="SBox4"
-            castShadow
-            receiveShadow
-            geometry={nodes.SBox4.geometry}
-            material={materials.lambert4}
-            position={[0.68, 0.69, 0.56]}
-            scale={-0.08}
-          />
-          <mesh
-            name="SBox5"
-            castShadow
-            receiveShadow
-            geometry={nodes.SBox5.geometry}
-            material={materials.lambert2}
-            position={[0.68, 0.84, 0.71]}
-            scale={-0.08}
-          />
-          <group
-            name="Ropes_Red_Carpet_mtl_0"
-            position={[0, 0.7, -2.26]}
-            scale={0.16}
-          >
-            <mesh
-              name="Ropes_Red_Carpet_mtl_0_1"
-              castShadow
-              receiveShadow
-              geometry={nodes.Ropes_Red_Carpet_mtl_0_1.geometry}
-              material={materials.lambert3}
-            />
-            <mesh
-              name="Ropes_Red_Carpet_mtl_0_2"
-              castShadow
-              receiveShadow
-              geometry={nodes.Ropes_Red_Carpet_mtl_0_2.geometry}
-              material={materials.Post_Metal_mtl}
-            />
-          </group>
-          <mesh
-            name="SBox6"
-            castShadow
-            receiveShadow
-            geometry={nodes.SBox6.geometry}
-            material={materials.lambert4}
-            position={[0.68, 0.85, 0.54]}
-            scale={-0.08}
-          />
-          <mesh
-            name="PostBOx"
-            castShadow
-            receiveShadow
-            geometry={nodes.PostBOx.geometry}
-            material={materials.lambert2}
-            position={[0.01, 0.66, 1.21]}
-            rotation={[-Math.PI / 2, 0, -3.13]}
-            scale={0}
-          />
-          <mesh
-            name="NewsScreen"
-            castShadow
-            receiveShadow
-            geometry={nodes.NewsScreen.geometry}
-            material={materials["llll.001"]}
-            position={[2.15, 0.9, -0.48]}
-            rotation={[3.14, 0.69, -3.12]}
-            scale={0.02}
-          />
-          <mesh
-            name="NewsFloorB"
-            castShadow
-            receiveShadow
-            geometry={nodes.NewsFloorB.geometry}
-            material={nodes.NewsFloorB.material}
-            position={[1.65, 1.14, 0.09]}
-            scale={0.56}
-          />
-          <mesh
-            name="NewsFloorS"
-            castShadow
-            receiveShadow
-            geometry={nodes.NewsFloorS.geometry}
-            material={materials["redcolor.002"]}
-            position={[1.65, 0.98, 0.09]}
-            scale={0.34}
-          />
-          <mesh
-            name="boxNews"
-            castShadow
-            receiveShadow
-            geometry={nodes.boxNews.geometry}
-            material={materials["Material.002"]}
-            position={[1.69, 1.98, -0.28]}
-            rotation={[1.71, 0.39, -0.32]}
-            scale={0.64}
-          />
-          <mesh
-            name="News"
-            castShadow
-            receiveShadow
-            geometry={nodes.News.geometry}
-            material={materials.lambert2}
-            position={[1.45, 0.69, -0.22]}
-            rotation={[1.57, 0, 0.63]}
-            scale={0.18}
+            scale={0.004}
           />
           <group
             name="Table"
@@ -489,24 +315,250 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
               material={materials["Material.020"]}
             />
           </group>
+          <mesh
+            name="instxt"
+            castShadow
+            receiveShadow
+            geometry={nodes.instxt.geometry}
+            material={materials.sofaMatrial}
+            position={[-0.58, 0.72, 2.25]}
+            rotation={[0.55, 0.3, -0.18]}
+            scale={0.13}
+          />
+          <mesh
+            name="papertrash"
+            castShadow
+            receiveShadow
+            geometry={nodes.papertrash.geometry}
+            material={materials["test.001"]}
+            position={[0.67, 0.63, -0.19]}
+            rotation={[-0.02, 0, 0]}
+            scale={0.02}
+          />
+          <mesh
+            name="fcbtxt"
+            castShadow
+            receiveShadow
+            geometry={nodes.fcbtxt.geometry}
+            material={materials["sofaMatrial.001"]}
+            position={[-0.58, 0.72, 1.96]}
+            rotation={[0.55, 0.3, -0.18]}
+            scale={0.13}
+          />
+          <mesh
+            name="SBox1"
+            castShadow
+            receiveShadow
+            geometry={nodes.SBox1.geometry}
+            material={materials.lambert4}
+            position={[0.7, 0.69, 0.73]}
+            rotation={[0, -0.21, 0]}
+            scale={-0.08}
+          />
+          <mesh
+            name="WTptxt"
+            castShadow
+            receiveShadow
+            geometry={nodes.WTptxt.geometry}
+            material={materials.sofaMatrial}
+            position={[-0.58, 0.72, 1.66]}
+            rotation={[0.55, 0.3, -0.18]}
+            scale={0.13}
+          />
           <group
-            name="whatsapp"
-            position={[-0.68, 0.8, 1.64]}
-            rotation={[1.45, 0.01, -1.58]}
-            scale={0.1}
+            name="instagram"
+            position={[-0.66, 0.8, 2.21]}
+            rotation={[3.09, -0.01, -1.57]}
+            scale={0.05}
           >
             <mesh
-              name="Object_1001"
+              name="Object_3"
               castShadow
               receiveShadow
-              geometry={nodes.Object_1001.geometry}
+              geometry={nodes.Object_3.geometry}
               material={materials["Material.003"]}
             />
             <mesh
-              name="Object_1001_1"
+              name="Object_3_1"
               castShadow
               receiveShadow
-              geometry={nodes.Object_1001_1.geometry}
+              geometry={nodes.Object_3_1.geometry}
+              material={materials.lambert2}
+            />
+          </group>
+          <mesh
+            name="SBox2"
+            castShadow
+            receiveShadow
+            geometry={nodes.SBox2.geometry}
+            material={materials.lambert2}
+            position={[0.51, 0.69, 0.75]}
+            scale={-0.08}
+          />
+          <mesh
+            name="painttablestand"
+            castShadow
+            receiveShadow
+            geometry={nodes.painttablestand.geometry}
+            material={materials["Material.021"]}
+            position={[0.04, 0.79, -2.49]}
+            rotation={[-0.02, 1.56, 0.31]}
+            scale={0.01}
+          />
+          <mesh
+            name="SBox3"
+            castShadow
+            receiveShadow
+            geometry={nodes.SBox3.geometry}
+            material={materials.lambert2}
+            position={[0.34, 0.69, 0.71]}
+            rotation={[0, 0.18, 0]}
+            scale={-0.08}
+          />
+          <mesh
+            name="background"
+            castShadow
+            receiveShadow
+            geometry={nodes.background.geometry}
+            material={materials.lambert4}
+            position={[-2.3, 1.68, -0.52]}
+            rotation={[-0.01, 0, -0.01]}
+            scale={0.05}
+          />
+          <mesh
+            name="projectstables"
+            castShadow
+            receiveShadow
+            geometry={nodes.projectstables.geometry}
+            material={materials["table3.001"]}
+            position={[0.01, 1.15, -2.4]}
+            rotation={[1.38, 0, 0]}
+            scale={0.02}
+          />
+          <mesh
+            name="SBox4"
+            castShadow
+            receiveShadow
+            geometry={nodes.SBox4.geometry}
+            material={materials.lambert4}
+            position={[0.68, 0.69, 0.56]}
+            scale={-0.08}
+          />
+          <mesh
+            name="SBox5"
+            castShadow
+            receiveShadow
+            geometry={nodes.SBox5.geometry}
+            material={materials.lambert2}
+            position={[0.68, 0.84, 0.71]}
+            scale={-0.08}
+          />
+          <group
+            name="brogresscyrcle"
+            position={[-2.27, 0.71, -0.58]}
+            rotation={[0.02, 0, -0.01]}
+            scale={0.05}
+          >
+            <mesh
+              name="Cylinder001_03_-_Default_0"
+              castShadow
+              receiveShadow
+              geometry={nodes["Cylinder001_03_-_Default_0"].geometry}
+              material={materials["03_-_Default"]}
+            />
+            <mesh
+              name="Cylinder001_03_-_Default_0_1"
+              castShadow
+              receiveShadow
+              geometry={nodes["Cylinder001_03_-_Default_0_1"].geometry}
+              material={materials["08_-_Default"]}
+            />
+          </group>
+          <mesh
+            name="Carpet_Red_Carpet_mtl_0"
+            castShadow
+            receiveShadow
+            geometry={nodes.Carpet_Red_Carpet_mtl_0.geometry}
+            material={materials.lambert3}
+            position={[0, 0.72, -2.26]}
+            scale={0.16}
+          />
+          <group
+            name="Ropes_Red_Carpet_mtl_0"
+            position={[0, 0.7, -2.26]}
+            scale={0.16}
+          >
+            <mesh
+              name="Ropes_Red_Carpet_mtl_0_1"
+              castShadow
+              receiveShadow
+              geometry={nodes.Ropes_Red_Carpet_mtl_0_1.geometry}
+              material={materials.lambert3}
+            />
+            <mesh
+              name="Ropes_Red_Carpet_mtl_0_2"
+              castShadow
+              receiveShadow
+              geometry={nodes.Ropes_Red_Carpet_mtl_0_2.geometry}
+              material={materials.Post_Metal_mtl}
+            />
+          </group>
+          <mesh
+            name="SBox6"
+            castShadow
+            receiveShadow
+            geometry={nodes.SBox6.geometry}
+            material={materials.lambert4}
+            position={[0.68, 0.85, 0.54]}
+            scale={-0.08}
+          />
+          <mesh
+            name="mainscreen"
+            castShadow
+            receiveShadow
+            geometry={nodes.mainscreen.geometry}
+            material={materials["01_-_Default"]}
+            position={[-2.3, 1.68, -0.56]}
+            rotation={[-0.01, 0, -0.01]}
+            scale={0.05}
+          />
+          <mesh
+            name="Posts_Post_Metal_mtl_0001"
+            castShadow
+            receiveShadow
+            geometry={nodes.Posts_Post_Metal_mtl_0001.geometry}
+            material={materials.lambert4}
+            position={[0, 0.72, -2.26]}
+            scale={0.16}
+          />
+          <mesh
+            name="PostBOx"
+            castShadow
+            receiveShadow
+            geometry={nodes.PostBOx.geometry}
+            material={materials.lambert2}
+            position={[0.01, 0.66, 1.21]}
+            rotation={[-Math.PI / 2, 0, -3.13]}
+            scale={0.0003}
+          />
+          <group
+            name="play_and_volum"
+            position={[0, 0.04, 0]}
+            rotation={[3.14, 0, 0.02]}
+            scale={0.05}
+          >
+            <mesh
+              name="Shape020_03_-_Default_0"
+              castShadow
+              receiveShadow
+              geometry={nodes["Shape020_03_-_Default_0"].geometry}
+              material={materials["01_-_Default"]}
+            />
+            <mesh
+              name="Shape020_03_-_Default_0_1"
+              castShadow
+              receiveShadow
+              geometry={nodes["Shape020_03_-_Default_0_1"].geometry}
               material={materials.lambert2}
             />
           </group>
@@ -531,147 +583,13 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
               material={materials["sofaMatrial.001"]}
             />
           </group>
-          <group
-            name="instagram"
-            position={[-0.66, 0.8, 2.21]}
-            rotation={[3.09, -0.01, -1.57]}
-            scale={0.05}
-          >
-            <mesh
-              name="Object_3"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_3.geometry}
-              material={materials["Material.003"]}
-            />
-            <mesh
-              name="Object_3_1"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_3_1.geometry}
-              material={materials.lambert2}
-            />
-          </group>
           <mesh
-            name="fcbtxt"
+            name="playBtn"
             castShadow
             receiveShadow
-            geometry={nodes.fcbtxt.geometry}
-            material={materials["sofaMatrial.001"]}
-            position={[-0.58, 0.72, 1.96]}
-            rotation={[0.55, 0.3, -0.18]}
-            scale={0.13}
-          />
-          <mesh
-            name="WTptxt"
-            castShadow
-            receiveShadow
-            geometry={nodes.WTptxt.geometry}
-            material={materials.sofaMatrial}
-            position={[-0.58, 0.72, 1.66]}
-            rotation={[0.55, 0.3, -0.18]}
-            scale={0.13}
-          />
-          <group
-            name="facebook"
-            position={[-0.67, 0.8, 1.91]}
-            rotation={[0.02, 0.01, -1.57]}
-            scale={0.06}
-          >
-            <mesh
-              name="Object_1"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_1.geometry}
-              material={materials["Material.002"]}
-            />
-            <mesh
-              name="Object_1_1"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_1_1.geometry}
-              material={materials.lambert2}
-            />
-          </group>
-          <group name="CDRack" position={[-1.23, 0.62, -0.12]} scale={0.38}>
-            <mesh
-              name="Object_0001"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_0001.geometry}
-              material={materials["Wood_Tall_CD_Rack.001"]}
-            />
-            <mesh
-              name="Object_0001_1"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_0001_1.geometry}
-              material={materials["Wood_Trim_Tall_CD_Rack.001"]}
-            />
-            <mesh
-              name="Object_0001_2"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_0001_2.geometry}
-              material={materials["Black_Metal_Tall_CD_Rack.001"]}
-            />
-          </group>
-          <mesh
-            name="background"
-            castShadow
-            receiveShadow
-            geometry={nodes.background.geometry}
-            material={materials.lambert4}
-            position={[-2.3, 1.68, -0.52]}
-            rotation={[-0.01, 0, -0.01]}
-            scale={0.05}
-          />
-          <mesh
-            name="Carpet_Red_Carpet_mtl_0"
-            castShadow
-            receiveShadow
-            geometry={nodes.Carpet_Red_Carpet_mtl_0.geometry}
-            material={materials.lambert3}
-            position={[0, 0.72, -2.26]}
-            scale={0.16}
-          />
-          <mesh
-            name="Posts_Post_Metal_mtl_0001"
-            castShadow
-            receiveShadow
-            geometry={nodes.Posts_Post_Metal_mtl_0001.geometry}
-            material={materials.lambert4}
-            position={[0, 0.72, -2.26]}
-            scale={0.16}
-          />
-          <group
-            name="brogresscyrcle"
-            position={[-2.27, 0.71, -0.58]}
-            rotation={[0.02, 0, -0.01]}
-            scale={0.05}
-          >
-            <mesh
-              name="Cylinder001_03_-_Default_0"
-              castShadow
-              receiveShadow
-              geometry={nodes["Cylinder001_03_-_Default_0"].geometry}
-              material={materials["03_-_Default"]}
-            />
-            <mesh
-              name="Cylinder001_03_-_Default_0_1"
-              castShadow
-              receiveShadow
-              geometry={nodes["Cylinder001_03_-_Default_0_1"].geometry}
-              material={materials["08_-_Default"]}
-            />
-          </group>
-          <mesh
-            name="mainscreen"
-            castShadow
-            receiveShadow
-            geometry={nodes.mainscreen.geometry}
-            material={materials["01_-_Default"]}
-            position={[-2.3, 1.68, -0.56]}
+            geometry={nodes.playBtn.geometry}
+            material={materials["Material.014"]}
+            position={[-2.3, 1.68, -0.66]}
             rotation={[-0.01, 0, -0.01]}
             scale={0.05}
           />
@@ -696,55 +614,26 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             />
           </group>
           <group
-            name="play_and_volum"
-            position={[0, 0.04, 0]}
-            rotation={[3.14, 0, 0.02]}
-            scale={0.05}
+            name="whatsapp"
+            position={[-0.68, 0.8, 1.64]}
+            rotation={[1.45, 0.01, -1.58]}
+            scale={0.1}
           >
             <mesh
-              name="Shape020_03_-_Default_0"
+              name="Object_1001"
               castShadow
               receiveShadow
-              geometry={nodes["Shape020_03_-_Default_0"].geometry}
-              material={materials["01_-_Default"]}
+              geometry={nodes.Object_1001.geometry}
+              material={materials["Material.003"]}
             />
             <mesh
-              name="Shape020_03_-_Default_0_1"
+              name="Object_1001_1"
               castShadow
               receiveShadow
-              geometry={nodes["Shape020_03_-_Default_0_1"].geometry}
+              geometry={nodes.Object_1001_1.geometry}
               material={materials.lambert2}
             />
           </group>
-          <mesh
-            name="redCarpt"
-            castShadow
-            receiveShadow
-            geometry={nodes.redCarpt.geometry}
-            material={materials["redcolor.002"]}
-            position={[0.81, 0.63, -1.66]}
-            rotation={[0.05, 0.01, -0.05]}
-          />
-          <mesh
-            name="playBtn"
-            castShadow
-            receiveShadow
-            geometry={nodes.playBtn.geometry}
-            material={materials["Material.014"]}
-            position={[-2.3, 1.68, -0.66]}
-            rotation={[-0.01, 0, -0.01]}
-            scale={0.05}
-          />
-          <mesh
-            name="NewsFrame"
-            castShadow
-            receiveShadow
-            geometry={nodes.NewsFrame.geometry}
-            material={materials.lambert4}
-            position={[2.14, 0.88, -0.47]}
-            rotation={[3.14, 0.69, -3.12]}
-            scale={0.02}
-          />
           <mesh
             name="redBtn"
             castShadow
@@ -756,6 +645,36 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             scale={0.05}
           />
           <mesh
+            name="redCarpt"
+            castShadow
+            receiveShadow
+            geometry={nodes.redCarpt.geometry}
+            material={materials["redcolor.002"]}
+            position={[0.81, 0.63, -1.66]}
+            rotation={[0.05, 0.01, -0.05]}
+          />
+          <group
+            name="facebook"
+            position={[-0.67, 0.8, 1.91]}
+            rotation={[0.02, 0.01, -1.57]}
+            scale={0.06}
+          >
+            <mesh
+              name="Object_1"
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_1.geometry}
+              material={materials["Material.002"]}
+            />
+            <mesh
+              name="Object_1_1"
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_1_1.geometry}
+              material={materials.lambert2}
+            />
+          </group>
+          <mesh
             name="videoight"
             castShadow
             receiveShadow
@@ -765,6 +684,39 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             rotation={[-3.14, -0.01, 0.01]}
             scale={0.19}
           />
+          <mesh
+            name="NewsFrame"
+            castShadow
+            receiveShadow
+            geometry={nodes.NewsFrame.geometry}
+            material={materials.lambert4}
+            position={[2.14, 0.88, -0.47]}
+            rotation={[3.14, 0.69, -3.12]}
+            scale={0.02}
+          />
+          <group name="CDRack" position={[-1.23, 0.62, -0.12]} scale={0.38}>
+            <mesh
+              name="Object_0001"
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_0001.geometry}
+              material={materials["Wood_Tall_CD_Rack.001"]}
+            />
+            <mesh
+              name="Object_0001_1"
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_0001_1.geometry}
+              material={materials["Wood_Trim_Tall_CD_Rack.001"]}
+            />
+            <mesh
+              name="Object_0001_2"
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_0001_2.geometry}
+              material={materials["Black_Metal_Tall_CD_Rack.001"]}
+            />
+          </group>
           <group
             name="videoProjector"
             position={[-1.81, 0.94, 0.74]}
@@ -786,6 +738,54 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
               material={materials.sofaMatrial}
             />
           </group>
+          <mesh
+            name="NewsScreen"
+            castShadow
+            receiveShadow
+            geometry={nodes.NewsScreen.geometry}
+            material={materials["llll.001"]}
+            position={[2.15, 0.9, -0.48]}
+            rotation={[3.14, 0.69, -3.12]}
+            scale={0.02}
+          />
+          <mesh
+            name="NewsFloorB"
+            castShadow
+            receiveShadow
+            geometry={nodes.NewsFloorB.geometry}
+            material={nodes.NewsFloorB.material}
+            position={[1.65, 1.14, 0.09]}
+            scale={0.56}
+          />
+          <mesh
+            name="NewsFloorS"
+            castShadow
+            receiveShadow
+            geometry={nodes.NewsFloorS.geometry}
+            material={materials["redcolor.002"]}
+            position={[1.65, 0.98, 0.09]}
+            scale={0.34}
+          />
+          <mesh
+            name="boxNews"
+            castShadow
+            receiveShadow
+            geometry={nodes.boxNews.geometry}
+            material={materials["Material.002"]}
+            position={[1.69, 1.98, -0.28]}
+            rotation={[1.71, 0.39, -0.32]}
+            scale={0.64}
+          />
+          <mesh
+            name="News"
+            castShadow
+            receiveShadow
+            geometry={nodes.News.geometry}
+            material={materials.lambert2}
+            position={[1.45, 0.69, -0.22]}
+            rotation={[1.57, 0, 0.63]}
+            scale={0.18}
+          />
         </group>
       </group>
 
@@ -793,7 +793,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/FullBox.glb");
+useGLTF.preload("/Box.glb");
 
             // onContextMenu={(e) => console.log('context menu')}
             // onDoubleClick={(e) => console.log('double click')}
