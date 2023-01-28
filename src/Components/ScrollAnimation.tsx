@@ -61,7 +61,7 @@ export function ScrollAnimation(
     changeScenP(0, 0, -2, state, box);
   } else if (offset > 0.9 && offset <= 1) {
     setActiveBox(false);
-    changeCamP(1, 1.5, 1, state);
+    changeCamP(0.5, 2, 1, state);
     
   }
 }
