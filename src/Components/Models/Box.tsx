@@ -423,8 +423,9 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="videoLight"
             castShadow
-            receiveShadow//@ts-ignore
+           
             visible={scOffSet <= 0.1 ? false : true}
+             receiveShadow//@ts-ignore
             geometry={nodes.videoLight.geometry}
             material={materials["Material.004"]}
             position={[-1.81, 0.94, 0.74]}
