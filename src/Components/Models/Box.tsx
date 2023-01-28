@@ -5,7 +5,7 @@ import { useScroll, useGLTF, useAnimations } from "@react-three/drei";
 
 import { useGlobalContext } from "../GlobalContext";
 import { ScrollAnimation } from "../ScrollAnimation";
-import { Chair } from "./Chair";
+
 
 import { PaintingChar } from "./PaintingChar";
 
@@ -65,14 +65,15 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
                 <mesh
                   name="backCover_1"
                   castShadow
-                  receiveShadow
+                  receiveShadow//@ts-ignore
+                  //@ts-ignore
                   geometry={nodes.backCover_1.geometry}
                   material={materials.lambert4}
                 />
                 <mesh
                   name="backCover_2"
                   castShadow
-                  receiveShadow
+                  receiveShadow//@ts-ignore//@ts-ignore
                   geometry={nodes.backCover_2.geometry}
                   material={materials.lambert4}
                 />
@@ -82,7 +83,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
               <mesh
                 name="backSide"
                 castShadow
-                receiveShadow
+                receiveShadow//@ts-ignore//@ts-ignore
                 geometry={nodes.backSide.geometry}
                 material={materials.lambert2}
                 position={[-0.02, 0.52, -0.82]}
@@ -91,14 +92,14 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
               <mesh
                 name="boxBase"
                 castShadow
-                receiveShadow
+                receiveShadow//@ts-ignore//@ts-ignore
                 geometry={nodes.boxBase.geometry}
                 material={materials.lambert2}
               />
               <mesh
                 name="eyeSide"
                 castShadow
-                receiveShadow
+                receiveShadow//@ts-ignore//@ts-ignore
                 geometry={nodes.eyeSide.geometry}
                 material={materials.lambert2}
                 position={[0.01, 0.52, 0.84]}
@@ -106,7 +107,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
               <mesh
                 name="leftSide"
                 castShadow
-                receiveShadow
+                receiveShadow//@ts-ignore//@ts-ignore
                 geometry={nodes.leftSide.geometry}
                 material={materials.lambert2}
                 position={[-0.83, 0.52, 0.01]}
@@ -114,7 +115,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
               <mesh
                 name="upSide"
                 castShadow
-                receiveShadow
+                receiveShadow//@ts-ignore//@ts-ignore
                 geometry={nodes.upSide.geometry}
                 material={materials.lambert2}
                 position={[0.83, 0.52, -0.01]}
@@ -124,7 +125,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
               <mesh
                 name="frontCover"
                 castShadow
-                receiveShadow
+                receiveShadow//@ts-ignore//@ts-ignore
                 geometry={nodes.frontCover.geometry}
                 material={materials.lambert4}
                 position={[0.01, 0.87, 1.41]}
@@ -134,7 +135,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="carpet"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore//@ts-ignore
             geometry={nodes.carpet.geometry}
             material={materials["carpet.001"]}
             position={[0.14, 0.76, 0.09]}
@@ -150,42 +151,42 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             <mesh
               name="Cylinder006_Material_#27_0001"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes["Cylinder006_Material_#27_0001"].geometry}
               material={materials["Material_27.001"]}
             />
             <mesh
               name="Cylinder006_Material_#27_0001_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes["Cylinder006_Material_#27_0001_1"].geometry}
               material={materials["Material_31.001"]}
             />
             <mesh
               name="Cylinder006_Material_#27_0001_2"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes["Cylinder006_Material_#27_0001_2"].geometry}
               material={materials["Material_30.001"]}
             />
             <mesh
               name="Cylinder006_Material_#27_0001_3"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes["Cylinder006_Material_#27_0001_3"].geometry}
               material={materials.cam_body}
             />
             <mesh
               name="Cylinder006_Material_#27_0001_4"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes["Cylinder006_Material_#27_0001_4"].geometry}
               material={materials.cam_body2}
             />
             <mesh
               name="Cylinder006_Material_#27_0001_5"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes["Cylinder006_Material_#27_0001_5"].geometry}
               material={materials.cam_chrome}
             />
@@ -199,14 +200,14 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             <mesh
               name="towel1001"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.towel1001.geometry}
               material={materials["board1.002"]}
             />
             <mesh
               name="towel1001_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.towel1001_1.geometry}
               material={materials["test.001"]}
             />
@@ -214,7 +215,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="Plane"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.Plane.geometry}
             material={materials.Material}
             position={[0, 0.77, -0.04]}
@@ -230,28 +231,28 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             <mesh
               name="boom_h004_cam_body_0"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.boom_h004_cam_body_0.geometry}
               material={materials["cam_body.001"]}
             />
             <mesh
               name="boom_h004_cam_body_0_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.boom_h004_cam_body_0_1.geometry}
               material={materials["cam_body2.001"]}
             />
             <mesh
               name="boom_h004_cam_body_0_2"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.boom_h004_cam_body_0_2.geometry}
               material={materials["cam_chrome.001"]}
             />
             <mesh
               name="boom_h004_cam_body_0_3"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.boom_h004_cam_body_0_3.geometry}
               material={materials["llll.001"]}
             />
@@ -259,7 +260,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="sofa"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.sofa.geometry}
             material={materials.sofaMatrial}
             position={[-0.5, 0.61, 0.32]}
@@ -275,42 +276,42 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             <mesh
               name="table"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.table.geometry}
               material={materials["Material.015"]}
             />
             <mesh
               name="table_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.table_1.geometry}
               material={materials["Material.015"]}
             />
             <mesh
               name="table_2"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.table_2.geometry}
               material={materials["Material.018"]}
             />
             <mesh
               name="table_3"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.table_3.geometry}
               material={materials["redcolor.002"]}
             />
             <mesh
               name="table_4"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.table_4.geometry}
               material={materials["Material.014"]}
             />
             <mesh
               name="table_5"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.table_5.geometry}
               material={materials["Material.020"]}
             />
@@ -318,7 +319,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="instxt"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.instxt.geometry}
             material={materials.sofaMatrial}
             position={[-0.58, 0.72, 2.25]}
@@ -328,7 +329,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="papertrash"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.papertrash.geometry}
             material={materials["test.001"]}
             position={[0.67, 0.63, -0.19]}
@@ -338,7 +339,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="fcbtxt"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.fcbtxt.geometry}
             material={materials["sofaMatrial.001"]}
             position={[-0.58, 0.72, 1.96]}
@@ -348,7 +349,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="SBox1"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.SBox1.geometry}
             material={materials.lambert4}
             position={[0.7, 0.69, 0.73]}
@@ -358,7 +359,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="WTptxt"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.WTptxt.geometry}
             material={materials.sofaMatrial}
             position={[-0.58, 0.72, 1.66]}
@@ -374,14 +375,14 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             <mesh
               name="Object_3"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Object_3.geometry}
               material={materials["Material.003"]}
             />
             <mesh
               name="Object_3_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Object_3_1.geometry}
               material={materials.lambert2}
             />
@@ -389,7 +390,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="SBox2"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.SBox2.geometry}
             material={materials.lambert2}
             position={[0.51, 0.69, 0.75]}
@@ -398,7 +399,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="painttablestand"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.painttablestand.geometry}
             material={materials["Material.021"]}
             position={[0.04, 0.79, -2.49]}
@@ -408,7 +409,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="SBox3"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.SBox3.geometry}
             material={materials.lambert2}
             position={[0.34, 0.69, 0.71]}
@@ -418,17 +419,17 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="background"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.background.geometry}
             material={materials.lambert4}
-            position={[-2.3, 1.68, -0.52]}
+            position={[-2.3, 1.3, -0.52]}
             rotation={[-0.01, 0, -0.01]}
             scale={0.05}
           />
           <mesh
             name="projectstables"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.projectstables.geometry}
             material={materials["table3.001"]}
             position={[0.01, 1.15, -2.4]}
@@ -438,7 +439,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="SBox4"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.SBox4.geometry}
             material={materials.lambert4}
             position={[0.68, 0.69, 0.56]}
@@ -447,7 +448,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="SBox5"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.SBox5.geometry}
             material={materials.lambert2}
             position={[0.68, 0.84, 0.71]}
@@ -455,21 +456,21 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           />
           <group
             name="brogresscyrcle"
-            position={[-2.27, 0.71, -0.58]}
+            position={[-2.275, 0.325, -0.57]}
             rotation={[0.02, 0, -0.01]}
             scale={0.05}
           >
             <mesh
               name="Cylinder001_03_-_Default_0"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes["Cylinder001_03_-_Default_0"].geometry}
               material={materials["03_-_Default"]}
             />
             <mesh
               name="Cylinder001_03_-_Default_0_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes["Cylinder001_03_-_Default_0_1"].geometry}
               material={materials["08_-_Default"]}
             />
@@ -477,7 +478,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="Carpet_Red_Carpet_mtl_0"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.Carpet_Red_Carpet_mtl_0.geometry}
             material={materials.lambert3}
             position={[0, 0.72, -2.26]}
@@ -491,14 +492,14 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             <mesh
               name="Ropes_Red_Carpet_mtl_0_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Ropes_Red_Carpet_mtl_0_1.geometry}
               material={materials.lambert3}
             />
             <mesh
               name="Ropes_Red_Carpet_mtl_0_2"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Ropes_Red_Carpet_mtl_0_2.geometry}
               material={materials.Post_Metal_mtl}
             />
@@ -506,7 +507,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="SBox6"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.SBox6.geometry}
             material={materials.lambert4}
             position={[0.68, 0.85, 0.54]}
@@ -515,17 +516,17 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="mainscreen"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.mainscreen.geometry}
             material={materials["01_-_Default"]}
-            position={[-2.3, 1.68, -0.56]}
+            position={[-2.3, 1.32, -0.56]}
             rotation={[-0.01, 0, -0.01]}
             scale={0.05}
           />
           <mesh
             name="Posts_Post_Metal_mtl_0001"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.Posts_Post_Metal_mtl_0001.geometry}
             material={materials.lambert4}
             position={[0, 0.72, -2.26]}
@@ -534,7 +535,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="PostBOx"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.PostBOx.geometry}
             material={materials.lambert2}
             position={[0.01, 0.66, 1.21]}
@@ -543,21 +544,21 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           />
           <group
             name="play_and_volum"
-            position={[0, 0.04, 0]}
+            position={[0.05, -0.39, 0.016]}
             rotation={[3.14, 0, 0.02]}
             scale={0.05}
           >
             <mesh
               name="Shape020_03_-_Default_0"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes["Shape020_03_-_Default_0"].geometry}
               material={materials["01_-_Default"]}
             />
             <mesh
               name="Shape020_03_-_Default_0_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes["Shape020_03_-_Default_0_1"].geometry}
               material={materials.lambert2}
             />
@@ -571,14 +572,14 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             <mesh
               name="Object_0"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Object_0.geometry}
               material={materials["JA3.1001"]}
             />
             <mesh
               name="Object_0_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Object_0_1.geometry}
               material={materials["sofaMatrial.001"]}
             />
@@ -586,10 +587,10 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="playBtn"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.playBtn.geometry}
             material={materials["Material.014"]}
-            position={[-2.3, 1.68, -0.66]}
+            position={[-2.3, 1.35, -0.655]}
             rotation={[-0.01, 0, -0.01]}
             scale={0.05}
           />
@@ -601,14 +602,14 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             <mesh
               name="Ropes_Red_Carpet_mtl_0001_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Ropes_Red_Carpet_mtl_0001_1.geometry}
               material={materials.lambert3}
             />
             <mesh
               name="Ropes_Red_Carpet_mtl_0001_2"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Ropes_Red_Carpet_mtl_0001_2.geometry}
               material={materials.Post_Metal_mtl}
             />
@@ -622,14 +623,14 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             <mesh
               name="Object_1001"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Object_1001.geometry}
               material={materials["Material.003"]}
             />
             <mesh
               name="Object_1001_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Object_1001_1.geometry}
               material={materials.lambert2}
             />
@@ -637,17 +638,17 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="redBtn"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.redBtn.geometry}
             material={materials.lambert2}
-            position={[-2.3, 1.68, -0.66]}
+            position={[-2.3, 1.35, -0.66]}
             rotation={[-0.01, 0, -0.01]}
             scale={0.05}
           />
           <mesh
             name="redCarpt"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.redCarpt.geometry}
             material={materials["redcolor.002"]}
             position={[0.81, 0.63, -1.66]}
@@ -662,14 +663,14 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             <mesh
               name="Object_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Object_1.geometry}
               material={materials["Material.002"]}
             />
             <mesh
               name="Object_1_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Object_1_1.geometry}
               material={materials.lambert2}
             />
@@ -677,17 +678,17 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="videoight"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.videoight.geometry}
             material={materials["Material.004"]}
-            position={[-1.81, 0.94, 0.74]}
+            position={[-1.81, 0.9, 0.74]}
             rotation={[-3.14, -0.01, 0.01]}
             scale={0.19}
           />
           <mesh
             name="NewsFrame"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.NewsFrame.geometry}
             material={materials.lambert4}
             position={[2.14, 0.88, -0.47]}
@@ -698,21 +699,21 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             <mesh
               name="Object_0001"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Object_0001.geometry}
               material={materials["Wood_Tall_CD_Rack.001"]}
             />
             <mesh
               name="Object_0001_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Object_0001_1.geometry}
               material={materials["Wood_Trim_Tall_CD_Rack.001"]}
             />
             <mesh
               name="Object_0001_2"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Object_0001_2.geometry}
               material={materials["Black_Metal_Tall_CD_Rack.001"]}
             />
@@ -726,14 +727,14 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             <mesh
               name="Object_0003"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Object_0003.geometry}
               material={materials.lambert2}
             />
             <mesh
               name="Object_0003_1"
               castShadow
-              receiveShadow
+              receiveShadow//@ts-ignore
               geometry={nodes.Object_0003_1.geometry}
               material={materials.sofaMatrial}
             />
@@ -741,7 +742,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="NewsScreen"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.NewsScreen.geometry}
             material={materials["llll.001"]}
             position={[2.15, 0.9, -0.48]}
@@ -751,8 +752,9 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="NewsFloorB"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.NewsFloorB.geometry}
+            //@ts-ignore
             material={nodes.NewsFloorB.material}
             position={[1.65, 1.14, 0.09]}
             scale={0.56}
@@ -760,7 +762,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="NewsFloorS"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.NewsFloorS.geometry}
             material={materials["redcolor.002"]}
             position={[1.65, 0.98, 0.09]}
@@ -769,7 +771,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="boxNews"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.boxNews.geometry}
             material={materials["Material.002"]}
             position={[1.69, 1.98, -0.28]}
@@ -779,7 +781,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="News"
             castShadow
-            receiveShadow
+            receiveShadow//@ts-ignore
             geometry={nodes.News.geometry}
             material={materials.lambert2}
             position={[1.45, 0.69, -0.22]}
