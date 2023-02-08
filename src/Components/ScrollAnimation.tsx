@@ -8,6 +8,7 @@ export function ScrollAnimation(
   box: any
 ) {
   //first movement to zoom in to the character
+  
   if (offset <= 0.1) { 
     changeCamP(4, 7, 9, state), state;
   } else if (offset > 0.1 && offset <= 0.125) {
