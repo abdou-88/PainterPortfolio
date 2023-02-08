@@ -38,7 +38,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
     setScOffSet( scroll.offset);
     scOffSet <= 0.1 ? setShowGLB(false) : setShowGLB(true);
     const action: any = actions["Take 001"];
-    // The offset is between 0 and 1, you can apply it to your models any way you like
+    // The offset is between 0 and 1
 
     // run first animation
     action.time = THREE.MathUtils.damp(
@@ -284,7 +284,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             position={[-0.58, 0.72, 1.96]}
             rotation={[0.55, 0.3, -0.18]}
             scale={0.13}
-            visible={showGLB}
+             //visible={showGLB}
           />
           <mesh
             name="SBox1"
@@ -305,7 +305,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             position={[-0.58, 0.72, 2.25]}
             rotation={[0.55, 0.3, -0.18]}
             scale={0.13}
-            visible={showGLB}
+             //visible={showGLB}
           />
           <mesh
             name="SBox2"
@@ -325,7 +325,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             position={[-0.58, 0.72, 1.66]}
             rotation={[0.55, 0.3, -0.18]}
             scale={0.13}
-            visible={showGLB}
+             //visible={showGLB}
           />
           <mesh
             name="SBox3"
@@ -367,7 +367,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="PostBOx"
             castShadow
-            visible={showGLB}
+             //visible={showGLB}
             receiveShadow //@ts-ignore
             geometry={nodes.PostBOx.geometry}
             material={materials.lambert2}
@@ -377,7 +377,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           />
           <group
             name="writeDesk"
-            visible={showGLB}
+             //visible={showGLB}
             position={[0.61, 1.03, 1.73]}
             rotation={[0.14, 1.5, -2.86]}
             scale={0.07}
@@ -401,7 +401,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             name="playbtn"
             position={[-2.3, 1.68, -0.66]}
             rotation={[-0.01, 0, -0.01]}
-            visible={showGLB}
+             //visible={showGLB}
             scale={0.05}
           >
             <mesh
@@ -422,7 +422,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="videoLight"
             castShadow
-            visible={showGLB}
+             //visible={showGLB}
             receiveShadow //@ts-ignore
             geometry={nodes.videoLight.geometry}
             material={materials["Material.004"]}
@@ -434,7 +434,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             name="videoProjector"
             position={[-1.81, 0.94, 0.74]}
             rotation={[3.14, 0.01, -3.14]}
-            visible={showGLB}
+             //visible={showGLB}
             scale={0.19}
           >
             <mesh
@@ -460,7 +460,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             material={materials.lambert3}
             position={[0, 0.72, -2.26]}
             scale={0.16}
-            visible={showGLB}
+             //visible={showGLB}
           />
           <mesh
             name="painttablestand"
@@ -471,7 +471,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             position={[0.04, 0.79, -2.49]}
             rotation={[-0.02, 1.56, 0.31]}
             scale={0.01}
-            visible={showGLB}
+             //visible={showGLB}
           />
           <mesh
             name="projectstables"
@@ -482,13 +482,13 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             position={[0.01, 1.15, -2.4]}
             rotation={[1.38, 0, 0]}
             scale={0.02}
-            visible={showGLB}
+             //visible={showGLB}
           />
           <group
             name="Ropes_Red_Carpet_mtl_0"
             position={[0, 0.7, -2.26]}
             scale={0.16}
-            visible={showGLB}
+             //visible={showGLB}
           >
             <mesh
               name="Ropes_Red_Carpet_mtl_0_1"
@@ -556,7 +556,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           </group>
           <group
             name="instagram"
-            visible={showGLB}
+             //visible={showGLB}
             position={[-0.66, 0.8, 2.21]}
             rotation={[3.09, -0.01, -1.57]}
             scale={0.05}
@@ -578,7 +578,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           </group>
           <group
             name="whatsapp"
-            visible={showGLB}
+             //visible={showGLB}
             position={[-0.68, 0.8, 1.64]}
             rotation={[1.45, 0.01, -1.58]}
             scale={0.1}
@@ -600,7 +600,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           </group>
           <group
             name="videobackground"
-            visible={showGLB}
+             //visible={showGLB}
             position={[-2.3, 1.3, -0.52]}
             rotation={[-0.01, 0, -0.01]}
             scale={0.05}
@@ -645,7 +645,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             name="facebook"
             position={[-0.67, 0.8, 1.91]}
             rotation={[0.02, 0.01, -1.57]}
-            visible={showGLB}
+             //visible={showGLB}
             scale={0.06}
           >
             <mesh
@@ -666,7 +666,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <mesh
             name="Posts_Post_Metal_mtl_0001"
             castShadow
-            visible={showGLB}
+             //visible={showGLB}
             receiveShadow //@ts-ignore
             geometry={nodes.Posts_Post_Metal_mtl_0001.geometry}
             material={materials.lambert4}
@@ -677,7 +677,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             name="Ropes_Red_Carpet_mtl_0001"
             position={[0, 0.72, -2.26]}
             scale={0.16}
-            visible={showGLB}
+             //visible={showGLB}
           >
             <mesh
               name="Ropes_Red_Carpet_mtl_0001_1"
@@ -702,10 +702,10 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             material={materials["redcolor.002"]}
             position={[0.81, 0.63, -1.66]}
             rotation={[0.05, 0.01, -0.05]}
-            visible={showGLB}
+             //visible={showGLB}
           />
           <group
-            visible={showGLB}
+             //visible={showGLB}
             name="CDRack"
             position={[-1.23, 0.62, -0.12]}
             scale={0.38}
@@ -741,7 +741,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             position={[2.15, 0.9, -0.48]}
             rotation={[3.14, 0.69, -3.12]}
             scale={0.02}
-            visible={showGLB}
+             //visible={showGLB}
           />
           <mesh
             name="NewsFloorB"
@@ -752,12 +752,12 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             material={nodes.NewsFloorB.material}
             position={[1.65, 1.14, 0.09]}
             scale={0.56}
-            visible={showGLB}
+             //visible={showGLB}
           />
           <mesh
             name="NewsFloorS"
             castShadow
-            visible={showGLB}
+             //visible={showGLB}
             receiveShadow //@ts-ignore
             geometry={nodes.NewsFloorS.geometry}
             material={materials["redcolor.002"]}
@@ -773,7 +773,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             position={[1.69, 1.98, -0.28]}
             rotation={[1.71, 0.39, -0.32]}
             scale={0.64}
-            visible={showGLB}
+             //visible={showGLB}
           />
           <mesh
             name="News"
@@ -784,7 +784,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             position={[1.45, 0.69, -0.22]}
             rotation={[1.57, 0, 0.63]}
             scale={0.18}
-            visible={showGLB}
+             //visible={showGLB}
           />
           <mesh
             name="NewsFrame"
@@ -795,7 +795,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             position={[2.14, 0.88, -0.47]}
             rotation={[3.14, 0.69, -3.12]}
             scale={0.02}
-            visible={showGLB}
+             //visible={showGLB}
           />
         </group>
       </group>
