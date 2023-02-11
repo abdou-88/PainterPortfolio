@@ -74,17 +74,32 @@
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (max-width: 1300px) {
+
+@media only screen and (max-width: 3000px) {
+  .timeline {
+    left: 88%;
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 2000px) {
+  .timeline {
+    left: 86%;
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 1700px) {
   .timeline {
     left: 85%;
     width: 300px;
   }
 }
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1300px) {
   .timeline {
     left: 83%;
+    width: 300px;
   }
 }
+
 @media only screen and (max-width: 1020px) {
   .timeline {
     left: 81%;
