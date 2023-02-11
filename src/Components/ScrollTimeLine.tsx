@@ -36,12 +36,14 @@ const ScrollTimeLine: FC<{}> = () => {
         "wheel",
         (event) => {
           const delta = Math.sign(event.deltaY);
-          console.info(delta);
+          
           if (delta == 1 ){
-            setScOffSet(scOffSet + 0.02);
+            if (scOffSet<1){setScOffSet(scOffSet + 0.02);} 
+           
           }else{
             setScOffSet(scOffSet - 0.02);
           }
+           console.log(scOffSet);
         },
         false
       );
