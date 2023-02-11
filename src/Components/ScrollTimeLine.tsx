@@ -1,9 +1,9 @@
 
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 
 import "../assets/ScrollTimeLine.css";
-import { useGlobalContext } from "./GlobalContext";
+
 import iconsClosed from "/closedboxicon.png";
 import iconsOpened from "/openedboxicon.png";
 import arrow from '/arrowTimeLine.png';
@@ -25,12 +25,29 @@ const timeLineBalls = (n: number, onClick: Function, current: number) => (
 
 const ScrollTimeLine: FC<{}> = () => {
 
-    const { scOffSet, setScOffSet } = useGlobalContext();
+    const [ scOffSet, setScOffSet ] = useState(0);
 
 
     const intermediaryBalls = 5;
     const calculatedWidth = ((scOffSet) * 100) 
 
+    useEffect(() => {
+      document.addEventListener(
+        "wheel",
+        (event) => {
+          const delta = Math.sign(event.deltaY);
+          console.info(delta);
+          if (delta == 1 ){
+            setScOffSet(scOffSet + 0.02);
+          }else{
+            setScOffSet(scOffSet - 0.02);
+          }
+        },
+        false
+      );
+
+      
+    });
     return (
 
         <div className="timeline">
