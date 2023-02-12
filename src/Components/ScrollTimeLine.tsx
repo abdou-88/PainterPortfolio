@@ -43,7 +43,7 @@ const ScrollTimeLine: FC<{}> = () => {
           }else{
             setScOffSet(scOffSet - 0.02);
           }
-           console.log(scOffSet);
+           
         },
         false
       );
