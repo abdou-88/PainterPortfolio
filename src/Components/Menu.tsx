@@ -19,9 +19,16 @@ const Menu: FC<MenuProps> = ({ active }) => {
  
 
   const MBclick = (index: number) => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
     let items = [false, false, false, false, false];
     items[index] = true;
     setActiveItem(items);
+  
+   
   }
 
 
