@@ -6,12 +6,12 @@ import { useScroll, useGLTF, useAnimations } from "@react-three/drei";
 import { useGlobalContext } from "../GlobalContext";
 import { ScrollAnimation } from "../ScrollAnimation";
 
+import { ProjectsItems } from "../../Data/general";
 
 import { PaintingChar } from "./PaintingChar";
 
 export default function Box(props: JSX.IntrinsicElements["group"]) {
-
-  const { setActiveBox, setContentBox, setPopup, scOffSet,  setScOffSet } = useGlobalContext();
+  const { setActiveBox, setContentBox } = useGlobalContext();
 
   const [hovered, setHovered] = useState(false);
   const [showGLB, setShowGLB] = useState(false);
@@ -23,20 +23,13 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
 
   const { actions }: any = useAnimations(animations, group);
 
-
-
   useEffect(() => void (actions["Take 001"].play().paused = true), [actions]);
 
-
   useEffect(() => {
-    document.body.style.cursor =  hovered? 'pointer': 'auto' ;
-  }, [hovered])
-
- 
+    document.body.style.cursor = hovered ? "pointer" : "auto";
+  }, [hovered]);
 
   useFrame((state, delta) => {
-    
-    
     scroll.offset <= 0.1 ? setShowGLB(false) : setShowGLB(true);
     const action: any = actions["Take 001"];
     // The offset is between 0 and 1
@@ -49,15 +42,53 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
       delta
     );
 
-    
     ScrollAnimation(scroll.offset, setActiveBox, setContentBox, state, box);
   });
 
-  
+  const renderProjects = function () {
+    return (
+      <>
+        <mesh
+          name="mainPstable"
+          castShadow
+          receiveShadow //@ts-ignore
+          geometry={nodes.projectstables.geometry}
+          material={materials["table3.001"]}
+          position={[0.01, 1.15, -2.4]}
+          rotation={[1.38, 0, 0]}
+          scale={0.02}
+          visible={showGLB}
+        />
+        <mesh
+          name="rightPstable"
+          castShadow
+          receiveShadow //@ts-ignore
+          geometry={nodes.projectstables.geometry}
+          material={materials["table3.001"]}
+          position={[0.4, 0.55, -2.3]}
+          rotation={[1.38, 0, 0]}
+          scale={0.02}
+          visible={showGLB}
+        />
+        <mesh
+          name="leftPtable"
+          castShadow
+          receiveShadow //@ts-ignore
+          geometry={nodes.projectstables.geometry}
+          material={materials["table3.001"]}
+          position={[-0.38, 0.55, -2.3]}
+          rotation={[1.38, 0, 0]}
+          scale={0.02}
+          visible={showGLB}
+        />
+      </>
+    );
+  };
+
   return (
     <>
       <group ref={group} {...props} dispose={null}>
-        <group ref={box} position={[0.1, 0, 0]} name="Scene">
+        <group ref={box} position={[0, -0.7, 1]} name="Scene">
           <PaintingChar />
           <group name="FullBox" position={[0.02, 0.98, 0.03]}>
             <group name="BackCover" position={[-0.02, 0.89, -0.96]}>
@@ -474,39 +505,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             scale={0.0145}
             visible={showGLB}
           />
-          <mesh
-            name="projectstables"
-            castShadow
-            receiveShadow //@ts-ignore
-            geometry={nodes.projectstables.geometry}
-            material={materials["table3.001"]}
-            position={[0.01, 1.15, -2.4]}
-            rotation={[1.38, 0, 0]}
-            scale={0.02}
-            visible={showGLB}
-          />
-          <mesh
-            name="projectstables1"
-            castShadow
-            receiveShadow //@ts-ignore
-            geometry={nodes.projectstables.geometry}
-            material={materials["table3.001"]}
-            position={[0.4, 0.55, -2.4]}
-            rotation={[1.38, 0, 0]}
-            scale={0.02}
-            visible={showGLB}
-          />
-          <mesh
-            name="projectstables1"
-            castShadow
-            receiveShadow //@ts-ignore
-            geometry={nodes.projectstables.geometry}
-            material={materials["table3.001"]}
-            position={[-0.39, 0.55, -2.4]}
-            rotation={[1.38, 0, 0]}
-            scale={0.02}
-            visible={showGLB}
-          />
+          {renderProjects()}
           <group
             name="Ropes_Red_Carpet_mtl_0"
             position={[0, 0.7, -2.26]}
@@ -828,15 +827,15 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
 
 useGLTF.preload("/Box.glb");
 
-            // onContextMenu={(e) => console.log('context menu')}
-            // onDoubleClick={(e) => console.log('double click')}
-            // onWheel={(e) => console.log('wheel spins')}
-            // onPointerUp={(e) => console.log('up')}
-            // onPointerDown={(e) => console.log('down')}
-            // onPointerOver={(e) => console.log('over')}
-            // onPointerOut={(e) => console.log('out')}
-            // onPointerEnter={(e) => console.log('enter')}
-            // onPointerLeave={(e) => console.log('leave')}
-            // onPointerMove={(e) => console.log('move')}
-            // onPointerMissed={() => console.log('missed')}
-            // onUpdate={(self) => console.log('props have been updated')}
+// onContextMenu={(e) => console.log('context menu')}
+// onDoubleClick={(e) => console.log('double click')}
+// onWheel={(e) => console.log('wheel spins')}
+// onPointerUp={(e) => console.log('up')}
+// onPointerDown={(e) => console.log('down')}
+// onPointerOver={(e) => console.log('over')}
+// onPointerOut={(e) => console.log('out')}
+// onPointerEnter={(e) => console.log('enter')}
+// onPointerLeave={(e) => console.log('leave')}
+// onPointerMove={(e) => console.log('move')}
+// onPointerMissed={() => console.log('missed')}
+// onUpdate={(self) => console.log('props have been updated')}
