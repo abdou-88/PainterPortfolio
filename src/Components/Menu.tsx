@@ -28,6 +28,7 @@ const Menu: FC<MenuProps> = ({ active }) => {
     items[index] = true;
     setActiveItem(items);
   
+
    
   }
 
