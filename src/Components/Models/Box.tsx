@@ -73,7 +73,8 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
         <mesh
           name="leftPtable"
           castShadow
-          receiveShadow //@ts-ignore
+          receiveShadow 
+          //@ts-ignore
           geometry={nodes.projectstables.geometry}
           material={materials["table3.001"]}
           position={[-0.38, 0.55, -2.3]}
