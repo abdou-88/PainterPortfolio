@@ -22,7 +22,7 @@ export function ScrollAnimation(
     changeCamP(-2, 1.5, -0.5, state);
   } else if (offset > 0.175 && offset <= 0.2) {
     changeCamP(1.6, 1.5, -0.5, state);
-    changeScenP(0, 0, 0, state, box);
+    changeScenP(0, -0.7, 1, state, box);
     setActiveBox(false);
     // going to selected works area   - second area
   } else if (offset > 0.2 && offset <= 0.3) {
