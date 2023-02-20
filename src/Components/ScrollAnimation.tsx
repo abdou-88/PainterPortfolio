@@ -29,11 +29,11 @@ export function ScrollAnimation(
     setActiveBox(true);
     setContentBox("My WOrk");
     changeCamP(1, 1.3, 1, state);
-    changeScenP(0, -0.7, 3, state, box);    
+    changeScenP(0, -0.5, 3, state, box);    
   } else if (offset > 0.3 && offset <= 0.4) {
     setActiveBox(false);    
     changeCamP(0, 2, 2, state);
-    changeScenP(0, -0.7, 3, state, box);
+    changeScenP(0, -0.5, 3, state, box);
     // going to news area - 3rd area
   } else if (offset > 0.4 && offset <= 0.5) {
     setContentBox("News");
