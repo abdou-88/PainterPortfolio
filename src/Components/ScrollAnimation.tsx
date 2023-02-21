@@ -53,13 +53,13 @@ export function ScrollAnimation(
   } else if (offset > 0.7 && offset <= 0.8) {
     setActiveBox(false);
     changeCamP(-1, 1, -1, state);
-    changeScenP(0, -0.5, 0, state, box);  
+    changeScenP(2, -0.5, 1, state, box);  
     // going to contact area - 5th area
   } else if (offset > 0.8 && offset <= 0.9) {
     setContentBox("Contact");
     setActiveBox(true);
     changeCamP(1, 2, -1, state);
-    changeScenP(0, 0, -2, state, box);
+    changeScenP(0, -0.5, -0.4, state, box);
   } else if (offset > 0.9 && offset <= 1) {
     setActiveBox(false);
     changeCamP(0.5, 2, 1, state);
