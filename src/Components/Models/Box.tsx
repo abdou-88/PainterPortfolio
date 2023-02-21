@@ -54,7 +54,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           receiveShadow //@ts-ignore
           geometry={nodes.projectstables.geometry}
           material={materials["table3.001"]}
-          position={[0.01, 1.15, -2.4]}
+          position={[0.01, 0.75, -2.4]}
           rotation={[1.38, 0, 0]}
           scale={0.02}
           visible={showGLB}
