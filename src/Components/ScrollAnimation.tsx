@@ -43,7 +43,7 @@ export function ScrollAnimation(
   } else if (offset > 0.5 && offset <= 0.6) {
     setActiveBox(false);
     changeCamP(-1, 1.5, 1.5, state);    
-    changeScenP(-2, 0, 0, state, box);
+    changeScenP(-2, -0.4, 1, state, box);
     // going to media area - 4th area
   } else if (offset > 0.6 && offset <= 0.7) {
     setContentBox("MEdia");
