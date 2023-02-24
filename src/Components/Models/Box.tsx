@@ -411,7 +411,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
           <group
             name="writeDesk"
             visible={showGLB}
-            position={[0.3, 0.7, 1.6]}
+            position={[0, 0, 10]}
             rotation={[0.14, 1.5, -2.86]}
             scale={0.07}
           >
