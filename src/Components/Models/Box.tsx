@@ -404,7 +404,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             receiveShadow //@ts-ignore
             geometry={nodes.PostBOx.geometry}
             material={materials.lambert2}
-            position={[0.01, 0.66, 1.21]}
+            position={[0.02, 0.66, 1.21]}
             rotation={[-Math.PI / 2, 0, -3.13]}
             scale={0.00035}
           />
