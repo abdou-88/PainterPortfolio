@@ -398,7 +398,7 @@ export default function Box(props: JSX.IntrinsicElements["group"]) {
             scale={-0.08}
           />
           <mesh
-            name="PostBox"
+            name="Postbox"
             castShadow
             visible={showGLB}
             receiveShadow //@ts-ignore
